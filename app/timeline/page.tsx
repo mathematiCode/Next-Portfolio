@@ -24,9 +24,9 @@ function TimelinePage() {
     <>
       <h1>Timeline</h1>
       <svg
-        viewBox="-5 0 30 40"
+        viewBox="-3 0 27 40"
         preserveAspectRatio="none"
-        style={{ width: '100%', height: '100%' }}
+        style={{ minWidth: '100%', minHeight: '100vh' }}
       >
         {timeline.map(snapshot => {
           return <Dot key={snapshot.startDate} snapshot={snapshot} />;

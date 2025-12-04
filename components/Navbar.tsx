@@ -1,10 +1,12 @@
+import Link from 'next/link';
+
 function Navbar() {
   return (
     <div className="navbar">
-      <a href="/home">Home</a>
-      <a href="/projects">Projects</a>
-      <a href="/timeline">Timeline</a>
-      <a href="/challenges">Challenges</a>
+      <Link href="/">Home</Link>
+      <Link href="/projects">Projects</Link>
+      <Link href="/timeline">Timeline</Link>
+      <Link href="/challenges">Challenges</Link>
     </div>
   );
 }
