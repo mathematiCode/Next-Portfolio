@@ -1,5 +1,4 @@
 'use client';
-import Navbar from '../../components/Navbar';
 import Dot from '../../components/Dot';
 import timeline from '../../data/timeline.json';
 import { useRef } from 'react';
@@ -23,7 +22,7 @@ function TimelinePage() {
 
   return (
     <>
-      <Navbar />
+      <h1>Timeline</h1>
       <svg
         viewBox="-5 0 30 40"
         preserveAspectRatio="none"

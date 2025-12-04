@@ -1,13 +1,17 @@
 import Project from '../../components/Project';
-import Navbar from '../../components/Navbar';
 import projects from '../../data/projects.json' assert { type: 'json' };
+
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   justify-content: center;
+//   align-items: center;
+// gap: 15px;
 
 function ProjectsPage() {
   return (
     <>
-      <Navbar />
       <h1> Projects </h1>
-      <div className="projects">
+      <div className="grid grid-cols-[repeat(auto-fit,320px)] mb-12 justify-center align-middle gap-4">
         {projects.map(project => {
           return (
             <Project
