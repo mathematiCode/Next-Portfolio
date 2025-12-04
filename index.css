@@ -1,0 +1,175 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(18, 0, 40, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+button {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: rgb(242, 161, 132);
+  box-shadow: 3px 3px rgb(62, 62, 62);
+  padding-block: 3px;
+  padding-inline: 7px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.title {
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 3rem;
+  margin-bottom: 0px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+
+a:hover {
+  background-color: rgb(248, 187, 165);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 320px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: #c5faf7;
+  border: 2px solid black;
+  box-shadow: 5px 5px rgb(62, 62, 62);
+  position: relative;
+}
+
+.project-title {
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.tag {
+  border-radius: 10px;
+  background-color: rgb(242, 161, 132);
+  padding-block: 3px;
+  padding-inline: 7px;
+  font-size: 14px;
+}
+
+.stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  gap: 5px;
+}
+
+.project-image {
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #c5faf7;
+  box-shadow: 0px 2px 15px 0px #000000;
+  height: 50px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+}
+
+.navbar > a {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  font-weight: 400;
+  font-size: 19px;
+}
+
+.dot {
+  border-radius: 100%;
+  border: solid red 2px;
+  box-shadow: 5px 5px 15px 15px white;
+  cursor: pointer;
+}
+
+.snapshot-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  padding: 10px;
+  padding-inline: 20px;
+  width: 600px;
+  border-radius: 10px;
+  background-color: #c5faf7;
+  border: 2px solid black;
+  box-shadow: 5px 5px rgb(62, 62, 62);
+  position: relative;
+}
+
+.snapshot-card > h2 {
+  margin-bottom: 2px;
+  margin-top: 8px;
+}
+
+.snapshot-card > p {
+  margin: 0px;
+}
+
+.snapshot-projects {
+  display: flex;
+  gap: 10px;
+}
+
+.snapshot-books {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.challenges {
+  margin-top: 30px;
+}
+
+.wonderings {
+  margin-top: 0px;
+}

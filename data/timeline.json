@@ -1,0 +1,311 @@
+[
+  {
+    "startDate": "2024-01-15",
+    "endDate": "2024-05-25",
+    "learning": "Basic Javascript mostly with an app on my phone while teaching full time.",
+    "projects": ["equation-from-table"],
+    "books": [
+      {
+        "title": "The Pragmatic Programmer",
+        "author": "David Thomas and Andrew Hunt"
+      }
+    ],
+    "questions": [
+      "How do I create inputs for the user to interact with the site? And outputs to display things to them? (I was misled into learning Javascript before HTML and CSS)"
+    ],
+    "point": {
+      "x": 3.35,
+      "y": 4.23
+    },
+    "timeframe": "January 2024 - May 2024"
+  },
+  {
+    "startDate": "2024-05-25",
+    "endDate": "2024-06-05",
+    "learning": "UI Design, Figma basics, UX Principles",
+    "projects": [],
+    "books": [],
+    "questions": [
+      "How do I wireframe a website?",
+      "How do I make my website intuitive for users?"
+    ],
+    "point": {
+      "x": 11.45,
+      "y": 6.36
+    },
+    "timeframe": "May 2024 - June 2024"
+  },
+  {
+    "startDate": "2024-06-05",
+    "endDate": "2024-06-25",
+    "learning": "HTML and CSS by doing a lot of Frontend Mentor Projects and watching Kevin Powell videos.",
+    "projects": [
+      "time-tracker",
+      "faq-accordian",
+      "results-summary",
+      "four-cards"
+    ],
+    "books": [],
+    "questions": [
+      "How do I center a div in <fill in the blank scenario>?",
+      "How do I make sure my website is accessible with semantic HTML?",
+      "How do I integrate data from a JSON file?"
+    ],
+    "point": {
+      "x": 9.26,
+      "y": 9.96
+    },
+    "timeframe": "June 2024 - June 2024"
+  },
+  {
+    "startDate": "2024-06-26",
+    "endDate": "2024-07-07",
+    "learning": "",
+    "projects": ["tip-calculator"],
+    "books": [],
+    "questions": [
+      "How do I keep track of error states across the application when a few different user inputs can affect whether a set of inputs is considered an error state?",
+      "How do I use event handlers to update the state with each change in input?"
+    ],
+    "point": {
+      "x": 0.7,
+      "y": 10.79
+    },
+    "timeframe": "June 2024 - July 2024"
+  },
+  {
+    "startDate": "2024-07-08",
+    "endDate": "2024-09-22",
+    "learning": "Building a complex fraction image generation app in Vanilla Javascript as a portfolio project that could have real users.",
+    "projects": ["visual-fraction-library"],
+    "books": [
+      {
+        "title": "Start Small Stay Small",
+        "author": "Rob Walling"
+      }
+    ],
+    "questions": [
+      "What are the benefits and drawbacks of using HTML canvas verses SVG?",
+      "What is the best way to organize my code with tons of pameters being passed around?",
+      "Is Vanilla Javascript the right tool for this kind of project?",
+      "Which parts of this would be made easier with something like React?",
+      "How do I make my SVG generated images fit well on any screen size and allow the user to customize the image size as well?",
+      "How do I ensure evenly spaced items (like circles) with varying quantities and image dimensions?"
+    ],
+    "point": {
+      "x": 2.56,
+      "y": 14.6
+    },
+    "timeframe": "July 2024 - September 2024"
+  },
+  {
+    "startDate": "2024-09-22",
+    "endDate": "2024-10-05",
+    "learning": "Deploying a site and hooking it up a domain, marketing, setting up google analytics and Hotjar, analyzing user sessions and other data.",
+    "projects": ["visual-fraction-library"],
+    "books": [
+      {
+        "title": "Intuitive Design",
+        "author": "Everett N. McKay"
+      },
+      {
+        "title": "Database Design for Mere Mortals (first 3 chapters)",
+        "author": "Michael J. Hernandez"
+      }
+    ],
+    "questions": [
+      "What's the best way to market to such a small audience?",
+      "How can I use my user analytics and session replays to make meaningful improvements to my website?",
+      "How do I decide when to be `done` with a project even if it's not perfect?",
+      "Am I ready to start learning React? Backend?"
+    ],
+    "point": {
+      "x": 11.16,
+      "y": 15.19
+    },
+    "timeframe": "September 2024 - October 2024"
+  },
+  {
+    "startDate": "2024-10-10",
+    "endDate": "2024-11-17",
+    "learning": "Learned basics of React including state, useEffect, useContext, useRef and custom hooks, and Component API Design",
+    "projects": ["wordle"],
+    "books": [
+      {
+        "title": "The Pragmatic Programmer (again)",
+        "author": "David Thomas and Andrew Hunt"
+      }
+    ],
+    "questions": [
+      "When do I need to use useEffect?",
+      "When do I need to use useRef?"
+    ],
+    "point": {
+      "x": 16.01,
+      "y": 19.37
+    },
+    "timeframe": "October 2024 - November 2024"
+  },
+  {
+    "startDate": "2024-11-18",
+    "endDate": "2025-01-05",
+    "learning": "Practiced using React to build some more frontend mentor projects. Used useEffect incorrectly a bunch to get practice with it... and then learned being a good React developer is knowing when NOT to use useEffect and derive variables from state instead. Learned how to organize my state management with encapsulation by creating a context and exporting all functions that update that context along with the context itself.",
+    "projects": ["just-desserts", "job-listings", "mortgage-calculator"],
+    "books": [
+      {
+        "title": "Secrets of the Javascript Ninja",
+        "author": "John Resig, Bear Bibeault, Josip Maras"
+      }
+    ],
+    "questions": [
+      "What are good use cases for custom hooks?",
+      "Should I make these two functionally similar but visually a little different UI components two different components or have a few conditionals to handle the difference?"
+    ],
+    "point": {
+      "x": 7.63,
+      "y": 21
+    },
+    "timeframe": "November 2024 - January 2025"
+  },
+  {
+    "startDate": "2025-01-06",
+    "endDate": "2025-02-05",
+    "learning": "",
+    "projects": ["frectangles"],
+    "books": [
+      {
+        "title": "The Unicorn Project (fiction about tech debt)",
+        "author": "Gene Kim"
+      }
+    ],
+    "questions": [
+      "Is it okay to have three different puzzle piece components (depending on where they're located in the DOM) all visually pretending to be the same puzzle piece?",
+      "If so, how do I create the illusion that they're all the same illusion during and after drag and drop?",
+      "How do I maintain their rotated state without having them re-rotate when they move to a new place in the DOM?",
+      "How do I allow the boards and pieces to be generated dynamically from my levels.json?",
+      "How do I adjust the CSS of the board so it has the right border for any given board shape (with missing corners, inside, etc)?",
+      "How do I set the unit size for each level to fit on various screen sizes and to accommodate the various board dimensions and number of pieces?"
+    ],
+    "point": {
+      "x": 3.69,
+      "y": 24.39
+    },
+    "timeframe": "January 2025 - February 2025"
+  },
+  {
+    "startDate": "2025-02-06",
+    "endDate": "2025-03-06",
+    "learning": "Full Stack Hackathon Project with React and Nest.JS on the backend. I taught and collaborated with another developer and a designer both of whom have never used React to write the frontend. Reviewing others code in a productive way, handling complex merge conflicts, collaborating with a backend team to read and write to a database, dealing with CORS errors.",
+    "projects": ["lesson-links"],
+    "books": [
+      {
+        "title": "Clean Code",
+        "author": "Robert C. Martin"
+      }
+    ],
+    "questions": [
+      "How should I give a code review to prevent regressions and ensure high quality?",
+      "How should I write my own PR's in a way that they are small and easy enough to understand and review?",
+      "What are the best practices for writing commit messages and PR descriptions?",
+      "What should be considered a branch?",
+      "Can I or should I collaborate with someone else on a branch?",
+      "How can Git features and continuous integration help with these challenges?"
+    ],
+    "point": {
+      "x": 12.25,
+      "y": 25.15
+    },
+    "timeframe": "February 2025 - March 2025"
+  },
+  {
+    "startDate": "2025-03-07",
+    "endDate": "2025-04-15",
+    "learning": "Full Stack Solo Frontend Mentor Project with a Node and Express Backend. Also my first time using Tailwind.",
+    "projects": ["to-do"],
+    "books": [
+      {
+        "title": "The Pragmatic Programmer (for a 3rd time)",
+        "author": "David Thomas and Andrew Hunt"
+      }
+    ],
+    "questions": [
+      "How does CORS work?",
+      "What's the point of CORS?",
+      "What are best practices for setting up a REST API?",
+      "How do I use MongoDB?"
+    ],
+    "point": {
+      "x": 20.44,
+      "y": 27.26
+    },
+    "timeframe": "March 2025 - April 2025"
+  },
+  {
+    "startDate": "2025-04-16",
+    "endDate": "2025-06-28",
+    "learning": "Working on a 14 person team, giving and recieving code reviews. Writing unit, integration, and end to end tests.",
+    "projects": ["secret-santa"],
+    "books": [],
+    "questions": [
+      "How do I decide what to test in component testing?",
+      "Where is the line between unit and integration testing? And integration and end to end testing?",
+      "How can we write tests behind a login screen that requires OAUTH (no username and password)?",
+      "How do I avoid testing the implementation details in component testing if the cause or effect occurs outside of that component?"
+    ],
+    "point": {
+      "x": 12.76,
+      "y": 29.81
+    },
+    "timeframe": "April 2025 - June 2025"
+  },
+  {
+    "startDate": "2025-06-29",
+    "endDate": "2025-08-31",
+    "learning": "Frectangles Work Part 2. Figuring out UX of invalid puzzle piece states, keeping track of the board squares to detect overlaps, invalid positions, and whether the user has 'passed' the level. Refactoring my code for cleanliness and reusability.",
+    "projects": ["frectangles"],
+    "books": [
+      {
+        "title": "Designing Data Intensive Applications",
+        "author": "Martin Kleppman"
+      },
+      {
+        "title": "Tao of React",
+        "author": "Alex Kondov"
+      }
+    ],
+    "questions": [
+      "How should I handle piece overlaps in a way that's makes it clear that overlapping is not a valid solution while also not moving pieces unexpectedly?",
+      "How can I allow players to double and halve pieces that result in too long or too tall pieces but make it obvious that that's not a valid state?",
+      "How can I tease apart my state management so each context provider handles it's own state updates and one context provider cannot directly update the state of another?",
+      "How can I use component composition to have one ActionsToolbar component wrap around three different puzzle piece components and act as a controller for each of them?",
+      "How can I pass a ref to a parent component to allow my controller component to rotate each puzzle piece? (I ended up leaving the ref and rotation animation function in each individual puzzle piece component)."
+    ],
+    "point": {
+      "x": 4.14,
+      "y": 30.24
+    },
+    "timeframe": "June 2025 - August 2025"
+  },
+  {
+    "startDate": "2025-09-01",
+    "endDate": "current",
+    "learning": "",
+    "projects": ["meet-near-me"],
+    "books": [
+      {
+        "title": "Tao of Node",
+        "author": "Alex Kondov"
+      },
+      {
+        "title": "Learn Go with Tests - digital book with exercises",
+        "author": "Chris James"
+      }
+    ],
+    "questions": [],
+    "point": {
+      "x": 1.42,
+      "y": 33.32
+    },
+    "timeframe": "September 2025 - Present"
+  }
+]

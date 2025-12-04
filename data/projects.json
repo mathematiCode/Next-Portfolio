@@ -1,0 +1,129 @@
+[
+  {
+    "id": "equation-from-table",
+    "name": "Equation from a table",
+    "stack": ["HTML", "CSS", "Javascript"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331731/Equation_from_Table_ddkrmj.png",
+    "link": "https://equation-from-table.netlify.app/"
+  },
+  {
+    "id": "time-tracker",
+    "name": "Time Tracker",
+    "stack": ["HTML", "CSS", "Javascript"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331723/Time_Tracker_wezwvg.png",
+    "link": "https://time-tracker-fem.netlify.app/"
+  },
+  {
+    "id": "faq-accordian",
+    "name": "FAQ Accordian",
+    "stack": ["HTML", "CSS", "Javascript"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331738/FAQ_Accordian_gukvhe.png",
+    "link": "https://faq-accordian-fem.netlify.app/"
+  },
+  {
+    "id": "results-summary",
+    "name": "Results Summary Card",
+    "stack": ["HTML", "CSS"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331723/Results_Summary_h8li4z.png",
+    "link": "https://results-summary-card-fem.netlify.app/"
+  },
+  {
+    "id": "four-cards",
+    "name": "Four Card Sections",
+    "stack": ["HTML", "CSS"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331817/Four_Cards_jvuloc.png",
+    "link": "https://fourcardfeaturesection-fem.netlify.app/"
+  },
+  {
+    "id": "tip-calculator",
+    "name": "Tip Calculator",
+    "stack": ["HTML", "CSS", "Javascript"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331730/Calcuate_and_Split_yckcfm.png",
+    "link": "https://calculate-and-split-tip.netlify.app/"
+  },
+  {
+    "id": "visual-fraction-library",
+    "name": "Visual Fraction Library",
+    "stack": ["HTML", "CSS", "Javascript"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330588/Visual_Fraction_Library_q7t7sf.jpg",
+    "link": "https://visualfractionlibrary.com"
+  },
+  {
+    "id": "wordle",
+    "name": "Fake Wordle",
+    "stack": ["React"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331326/Fake_Wordle_dfczdp.png",
+    "link": "https://fakewordle-joyofreact.netlify.app/"
+  },
+  {
+    "id": "just-desserts",
+    "name": "Just Desserts",
+    "stack": ["React"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331328/Just_Desserts_h9rs4a.png",
+    "link": "https://just-desserts-fem.netlify.app/"
+  },
+  {
+    "id": "job-listings",
+    "name": "Job Listings",
+    "stack": ["React"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331326/Job_Listings_sppbjr.png",
+    "link": "https://job-listings-fem.netlify.app/"
+  },
+  {
+    "id": "mortgage-calculator",
+    "name": "Mortgage Calculator",
+    "stack": ["React"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331335/Mortgage_Calculator_odm94h.png",
+    "link": "https://mortgagecalculatorfem.netlify.app/"
+  },
+  {
+    "id": "frectangles",
+    "name": "Frectangles",
+    "stack": [
+      "React",
+      "Typescript",
+      "Styled Components",
+      "Framer Motion",
+      "Dnd Kit",
+      "Radix UI"
+    ],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763323963/Game_Cover_ycnke1.png",
+    "link": "https://frectangles.com"
+  },
+  {
+    "id": "lesson-links",
+    "name": "Lesson Links",
+    "stack": ["React", "Nest JS"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330588/Lesson_Links_Cover_uv3vqz.png",
+    "link": "https://lesson-links.netlify.app/"
+  },
+  {
+    "id": "to-do",
+    "name": "To Do App",
+    "stack": ["React", "Tailwind", "Node", "Express"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331336/To_Do_Cover_sczniz.png",
+    "link": "https://todo-fem-project.netlify.app/"
+  },
+  {
+    "id": "secret-santa",
+    "name": "Secret Santa Exchange",
+    "stack": ["React", "NextJS", "Tailwind", "Supabase"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330587/Secret_Santa.png",
+    "link": "https://www.secretsanta-exchange.com/"
+  },
+  {
+    "id": "meet-near-me",
+    "name": "Meet Near Me",
+    "stack": [
+      "Go",
+      "Alpine",
+      "HTMX",
+      "Tailwind",
+      "DaisyUI",
+      "Docker",
+      "Zitadel"
+    ],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763329630/MNM_Cover_a49jdm.png",
+    "link": "https://devnear.me/"
+  }
+]
