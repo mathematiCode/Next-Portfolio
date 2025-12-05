@@ -4,77 +4,88 @@
     "name": "Equation from a table",
     "stack": ["HTML", "CSS", "Javascript"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331731/Equation_from_Table_ddkrmj.png",
-    "link": "https://equation-from-table.netlify.app/"
+    "deployed": "https://equation-from-table.netlify.app/",
+    "github": "https://github.com/mathematiCode/EquationFromTable"
   },
   {
     "id": "time-tracker",
     "name": "Time Tracker",
     "stack": ["HTML", "CSS", "Javascript"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331723/Time_Tracker_wezwvg.png",
-    "link": "https://time-tracker-fem.netlify.app/"
+    "deployed": "https://time-tracker-fem.netlify.app/",
+    "github": "https://github.com/mathematiCode/time-tracking-dashboard-main-fem"
   },
   {
     "id": "faq-accordian",
-    "name": "FAQ Accordian",
+    "name": "FAQ Accordion",
     "stack": ["HTML", "CSS", "Javascript"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331738/FAQ_Accordian_gukvhe.png",
-    "link": "https://faq-accordian-fem.netlify.app/"
+    "deployed": "https://faq-accordian-fem.netlify.app/",
+    "github": "https://github.com/mathematiCode/FAQ-accordian"
   },
   {
     "id": "results-summary",
     "name": "Results Summary Card",
     "stack": ["HTML", "CSS"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331723/Results_Summary_h8li4z.png",
-    "link": "https://results-summary-card-fem.netlify.app/"
+    "deployed": "https://results-summary-card-fem.netlify.app/",
+    "github": "results-summary-component-main-FEM"
   },
   {
     "id": "four-cards",
     "name": "Four Card Sections",
     "stack": ["HTML", "CSS"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331817/Four_Cards_jvuloc.png",
-    "link": "https://fourcardfeaturesection-fem.netlify.app/"
+    "deployed": "https://fourcardfeaturesection-fem.netlify.app/",
+    "github": "https://github.com/mathematiCode/FEM-Four-Card-Feature-Section"
   },
   {
     "id": "tip-calculator",
     "name": "Tip Calculator",
     "stack": ["HTML", "CSS", "Javascript"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331730/Calcuate_and_Split_yckcfm.png",
-    "link": "https://calculate-and-split-tip.netlify.app/"
+    "deployed": "https://calculate-and-split-tip.netlify.app/",
+    "github": "https://github.com/mathematiCode/tip-calculator-fem"
   },
   {
     "id": "visual-fraction-library",
     "name": "Visual Fraction Library",
     "stack": ["HTML", "CSS", "Javascript"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330588/Visual_Fraction_Library_q7t7sf.jpg",
-    "link": "https://visualfractionlibrary.com"
+    "deployed": "https://visualfractionlibrary.com",
+    "github": "https://github.com/mathematiCode/visual-fraction-library"
   },
   {
     "id": "wordle",
     "name": "Fake Wordle",
     "stack": ["React"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331326/Fake_Wordle_dfczdp.png",
-    "link": "https://fakewordle-joyofreact.netlify.app/"
+    "deployed": "https://fakewordle-joyofreact.netlify.app/",
+    "github": "https://github.com/mathematiCode/project-wordle-JOR"
   },
   {
     "id": "just-desserts",
     "name": "Just Desserts",
     "stack": ["React"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331328/Just_Desserts_h9rs4a.png",
-    "link": "https://just-desserts-fem.netlify.app/"
+    "deployed": "https://just-desserts-fem.netlify.app/",
+    "github": "https://github.com/mathematiCode/just-desserts"
   },
   {
     "id": "job-listings",
     "name": "Job Listings",
     "stack": ["React"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331326/Job_Listings_sppbjr.png",
-    "link": "https://job-listings-fem.netlify.app/"
+    "deployed": "https://job-listings-fem.netlify.app/",
+    "github": "https://github.com/mathematiCode/job-listings-fem"
   },
   {
     "id": "mortgage-calculator",
     "name": "Mortgage Calculator",
     "stack": ["React"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331335/Mortgage_Calculator_odm94h.png",
-    "link": "https://mortgagecalculatorfem.netlify.app/"
+    "deployed": "https://mortgagecalculatorfem.netlify.app/",
+    "github": "https://github.com/mathematiCode/mortgage-calculator"
   },
   {
     "id": "frectangles",
@@ -88,28 +99,32 @@
       "Radix UI"
     ],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763323963/Game_Cover_ycnke1.png",
-    "link": "https://frectangles.com"
+    "deployed": "https://frectangles.com",
+    "github": "https://github.com/mathematiCode/math-puzzle"
   },
   {
     "id": "lesson-links",
     "name": "Lesson Links",
     "stack": ["React", "Nest JS"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330588/Lesson_Links_Cover_uv3vqz.png",
-    "link": "https://lesson-links.netlify.app/"
+    "deployed": "https://lesson-links.netlify.app/",
+    "github": "hhttps://github.com/JoleneKearse/lessonLinks"
   },
   {
     "id": "to-do",
     "name": "To Do App",
     "stack": ["React", "Tailwind", "Node", "Express"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763331336/To_Do_Cover_sczniz.png",
-    "link": "https://todo-fem-project.netlify.app/"
+    "deployed": "https://todo-fem-project.netlify.app/",
+    "github": "https://github.com/mathematiCode/to-do-list"
   },
   {
     "id": "secret-santa",
     "name": "Secret Santa Exchange",
     "stack": ["React", "NextJS", "Tailwind", "Supabase"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330587/Secret_Santa.png",
-    "link": "https://www.secretsanta-exchange.com/"
+    "deployed": "https://www.secretsanta-exchange.com/",
+    "github": "https://github.com/LetsGetTechnical/elecretanta"
   },
   {
     "id": "meet-near-me",
@@ -124,6 +139,15 @@
       "Zitadel"
     ],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763329630/MNM_Cover_a49jdm.png",
-    "link": "https://devnear.me/"
+    "deployed": "https://devnear.me/",
+    "github": "https://github.com/meetnearme/api"
+  },
+  {
+    "id": "portfolio",
+    "name": "This Portfolio",
+    "stack": ["NextJS", "React", "Tailwind"],
+    "image": "",
+    "deployed": "https://next-portfolio-git-main-mathematicodes-projects.vercel.app/",
+    "github": "https://github.com/mathematiCode/Next-Portfolio"
   }
 ]

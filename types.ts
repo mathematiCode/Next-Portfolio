@@ -13,3 +13,12 @@ export interface SnapshotType {
   point: { x: number; y: number };
   timeframe: string;
 }
+
+export interface ProjectType {
+  id: string;
+  name: string;
+  stack: string[];
+  image: string;
+  deployed: string;
+  github: string;
+}

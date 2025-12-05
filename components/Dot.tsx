@@ -30,7 +30,7 @@ function Dot({ snapshot, radius }: { snapshot: SnapshotType; radius: string }) {
     closeTimeoutRef.current = setTimeout(() => {
       setOpen(false);
       closeTimeoutRef.current = null;
-    }, 300); // 200ms delay
+    }, 600);
   };
 
   return (
