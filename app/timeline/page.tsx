@@ -1,12 +1,25 @@
 'use client';
 import Dot from '../../components/Dot';
 import timeline from '../../data/timeline.json';
-import { useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 //import { range } from 'lodash';
 
 function TimelinePage() {
   const pathRef = useRef(null);
+  const [thickness, setThickness] = useState('0.2');
+  const [radius, setRadius] = useState('0.3');
 
+  useEffect(() => {
+    const updateTimeline = () => {
+      // Tailwind's sm breakpoint is 640px, so mobile is < 640px
+      setRadius(window.innerWidth < 640 ? '0.6' : '0.3');
+      setThickness(window.innerWidth < 640 ? '0.4' : '0.2');
+    };
+
+    updateTimeline();
+    window.addEventListener('resize', updateTimeline);
+    return () => window.removeEventListener('resize', updateTimeline);
+  }, []);
   // useEffect(() => {
   //   const path = pathRef.current;
   //   const totalLength = path.getTotalLength();
@@ -28,9 +41,6 @@ function TimelinePage() {
         preserveAspectRatio="none"
         style={{ minWidth: '100%', minHeight: '100vh' }}
       >
-        {timeline.map(snapshot => {
-          return <Dot key={snapshot.startDate} snapshot={snapshot} />;
-        })}
         <path
           ref={pathRef}
           d="
@@ -45,8 +55,13 @@ function TimelinePage() {
           "
           fill="none"
           stroke="currentColor"
-          strokeWidth="0.2"
+          strokeWidth={thickness}
         />
+        {timeline.map(snapshot => {
+          return (
+            <Dot key={snapshot.startDate} radius={radius} snapshot={snapshot} />
+          );
+        })}
       </svg>
     </>
   );

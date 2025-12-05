@@ -32,46 +32,23 @@ a:hover {
   background-color: rgb(248, 187, 165);
 }
 
-/* .projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-} */
-
-.project-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 320px;
-  height: 350px;
-  border-radius: 10px;
-  background-color: #c5faf7;
-  border: 2px solid black;
-  box-shadow: 5px 5px rgb(62, 62, 62);
-  position: relative;
-}
-
-.project-title {
-  margin-bottom: 0px;
-  margin-top: 10px;
-}
-
 .tag {
   border-radius: 10px;
-  background-color: rgb(242, 161, 132);
-  padding-block: 3px;
-  padding-inline: 7px;
-  font-size: 14px;
+  border: 2px solid rgb(242, 161, 132);
+  background-color: rgba(242, 161, 132, 0.2);
+  padding-block: 1px;
+  padding-inline: 5px;
+  font-size: 1rem;
 }
 
-.stack-tags {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px;
-  gap: 5px;
+.book {
+  border-radius: 10px;
+  border: 2px solid rgb(242, 161, 132);
+  background-color: rgba(242, 161, 132, 0.2);
+  padding-block: 1px;
+  padding-inline: 5px;
+  font-size: 1rem;
+  width: fit-content;
 }
 
 .project-image {
@@ -141,6 +118,7 @@ a:hover {
 .snapshot-card > h2 {
   margin-bottom: 2px;
   margin-top: 8px;
+  font-size: 1.4rem;
 }
 
 .snapshot-card > p {
@@ -164,4 +142,6 @@ a:hover {
 
 .wonderings {
   margin-top: 0px;
+  display: block;
+  text-align: start;
 }

@@ -1,28 +1,52 @@
+'use client';
+
+import { useState, useRef, useEffect } from 'react';
 import * as Popover from '@radix-ui/react-popover';
 import Snapshot from './Snapshot';
 import type { SnapshotType } from '../types';
 
-function Dot({ snapshot }: { snapshot: SnapshotType }) {
+function Dot({ snapshot, radius }: { snapshot: SnapshotType; radius: string }) {
   const { x, y } = snapshot.point;
-  // const project = projects[0];
+  const [open, setOpen] = useState(false);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpen(false);
+      closeTimeoutRef.current = null;
+    }, 300); // 200ms delay
+  };
 
   return (
-    <Popover.Root>
+    <Popover.Root open={open} onOpenChange={setOpen}>
       <Popover.Trigger asChild>
-        <g>
-          <circle cx={x} cy={y} r="0.3" className="dot" />
+        <g onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <circle cx={x} cy={y} r={radius} className="dot z-10" />
         </g>
       </Popover.Trigger>
       <Popover.Portal>
-        <Popover.Content side="top" sideOffset={5}>
-          {/* <Project
-            key={project.id}
-            title={project.name}
-            stack={project.stack}
-            image={project.image}
-            deployed={project.link}
-            github={project.link}
-          ></Project> */}
+        <Popover.Content
+          side="top"
+          sideOffset={5}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <Snapshot key={'x' + 'y'} snapshot={snapshot} />
         </Popover.Content>
       </Popover.Portal>

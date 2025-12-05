@@ -3,18 +3,12 @@ import * as Popover from '@radix-ui/react-popover';
 import Project from './Project';
 import projects from '../data/projects.json';
 
-// startDate: string;
-//   endDate: string;
-//   learning: string;
-//   projects: string[];
-//   books: Book[];
-//   questions: string[];
-//   point: { x: number; y: number };
-
 function Snapshot({ snapshot }: { snapshot: SnapshotType }) {
   return (
-    <div className="snapshot-card">
-      <span>{snapshot.timeframe}</span>
+    <div className="snapshot-card items-start relative m-5">
+      <span className="absolute top-2 right-2 font-semibold bg-[rgba(242, 161, 132, 0.2)]">
+        {snapshot.timeframe}
+      </span>
       <h2>Learning Focus</h2>
       <p className="snapshot-learning">{snapshot.learning}</p>
       <h2>Projects</h2>
@@ -45,9 +39,9 @@ function Snapshot({ snapshot }: { snapshot: SnapshotType }) {
       <h2>Reading</h2>
       <div className="snapshot-books">
         {snapshot.books.map((book, index) => (
-          <a key={`${snapshot.startDate}-book-${index}`}>
+          <span className="book" key={`${snapshot.startDate}-book-${index}`}>
             {book.title} by {book.author}
-          </a>
+          </span>
         ))}
       </div>
       <h2>Wonderings</h2>

@@ -11,7 +11,7 @@ function ProjectsPage() {
   return (
     <>
       <h1> Projects </h1>
-      <div className="grid grid-cols-[repeat(auto-fit,320px)] mb-12 justify-center align-middle gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,350px)] mb-12 justify-center align-middle gap-6">
         {projects.map(project => {
           return (
             <Project
