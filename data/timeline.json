@@ -2,6 +2,7 @@
   {
     "startDate": "2024-01-15",
     "endDate": "2024-05-25",
+    "summary": "Basic Javascript",
     "learning": "Basic Javascript mostly with an app on my phone while teaching full time.",
     "projects": ["equation-from-table"],
     "books": [
@@ -17,13 +18,18 @@
       "x": 3.35,
       "y": 4.23
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0
+    },
     "timeframe": "January 2024 - May 2024"
   },
   {
     "startDate": "2024-05-25",
     "endDate": "2024-06-05",
+    "summary": "UI and UX",
     "learning": "UI Design, Figma basics, UX Principles",
-    "projects": [],
+    "projects": ["four-cards"],
     "books": [],
     "questions": [
       "How do I wireframe a website?",
@@ -33,18 +39,18 @@
       "x": 11.45,
       "y": 6.36
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0
+    },
     "timeframe": "May 2024 - June 2024"
   },
   {
     "startDate": "2024-06-05",
     "endDate": "2024-06-25",
+    "summary": "HTML and CSS",
     "learning": "HTML and CSS by doing a lot of Frontend Mentor Projects and watching Kevin Powell videos.",
-    "projects": [
-      "time-tracker",
-      "faq-accordian",
-      "results-summary",
-      "four-cards"
-    ],
+    "projects": ["time-tracker", "faq-accordian", "results-summary"],
     "books": [],
     "questions": [
       "How do I center a div in <fill in the blank scenario>?",
@@ -55,11 +61,16 @@
       "x": 9.26,
       "y": 9.96
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0.5
+    },
     "timeframe": "June 2024 - June 2024"
   },
   {
     "startDate": "2024-06-26",
     "endDate": "2024-07-07",
+    "summary": "Stateful Apps",
     "learning": "",
     "projects": ["tip-calculator"],
     "books": [],
@@ -71,11 +82,16 @@
       "x": 0.7,
       "y": 10.79
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0.5
+    },
     "timeframe": "June 2024 - July 2024"
   },
   {
     "startDate": "2024-07-08",
     "endDate": "2024-09-22",
+    "summary": "First big project",
     "learning": "Building a complex fraction image generation app in Vanilla Javascript as a portfolio project that could have real users.",
     "projects": ["visual-fraction-library"],
     "books": [
@@ -96,11 +112,16 @@
       "x": 2.56,
       "y": 14.6
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0
+    },
     "timeframe": "July 2024 - September 2024"
   },
   {
     "startDate": "2024-09-22",
     "endDate": "2024-10-05",
+    "summary": "Launching",
     "learning": "Deploying a site and hooking it up a domain, marketing, setting up google analytics and Hotjar, analyzing user sessions and other data.",
     "projects": ["visual-fraction-library"],
     "books": [
@@ -123,11 +144,16 @@
       "x": 11.16,
       "y": 15.19
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0
+    },
     "timeframe": "September 2024 - October 2024"
   },
   {
     "startDate": "2024-10-10",
     "endDate": "2024-11-17",
+    "summary": "React",
     "learning": "Learned basics of React including state, useEffect, useContext, useRef and custom hooks, and Component API Design",
     "projects": ["wordle"],
     "books": [
@@ -144,11 +170,16 @@
       "x": 16.01,
       "y": 19.37
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0.5
+    },
     "timeframe": "October 2024 - November 2024"
   },
   {
     "startDate": "2024-11-18",
     "endDate": "2025-01-05",
+    "summary": "More React",
     "learning": "Practiced using React to build some more frontend mentor projects. Used useEffect incorrectly a bunch to get practice with it... and then learned being a good React developer is knowing when NOT to use useEffect and derive variables from state instead. Learned how to organize my state management with encapsulation by creating a context and exporting all functions that update that context along with the context itself.",
     "projects": ["just-desserts", "job-listings", "mortgage-calculator"],
     "books": [
@@ -165,11 +196,16 @@
       "x": 7.63,
       "y": 21
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0.5
+    },
     "timeframe": "November 2024 - January 2025"
   },
   {
     "startDate": "2025-01-06",
     "endDate": "2025-02-05",
+    "summary": "Math Game",
     "learning": "",
     "projects": ["frectangles"],
     "books": [
@@ -190,11 +226,16 @@
       "x": 3.69,
       "y": 24.39
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0
+    },
     "timeframe": "January 2025 - February 2025"
   },
   {
     "startDate": "2025-02-06",
     "endDate": "2025-03-06",
+    "summary": "Hackathon",
     "learning": "Full Stack Hackathon Project with React and Nest.JS on the backend. I taught and collaborated with another developer and a designer both of whom have never used React to write the frontend. Reviewing others code in a productive way, handling complex merge conflicts, collaborating with a backend team to read and write to a database, dealing with CORS errors.",
     "projects": ["lesson-links"],
     "books": [
@@ -215,11 +256,16 @@
       "x": 12.25,
       "y": 25.15
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": -0.3
+    },
     "timeframe": "February 2025 - March 2025"
   },
   {
     "startDate": "2025-03-07",
     "endDate": "2025-04-15",
+    "summary": "Backend",
     "learning": "Full Stack Solo Frontend Mentor Project with a Node and Express Backend. Also my first time using Tailwind.",
     "projects": ["to-do"],
     "books": [
@@ -238,11 +284,16 @@
       "x": 20.44,
       "y": 27.26
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0
+    },
     "timeframe": "March 2025 - April 2025"
   },
   {
     "startDate": "2025-04-16",
     "endDate": "2025-06-28",
+    "summary": "Testing and Collaboration",
     "learning": "Working on a 14 person team, giving and recieving code reviews. Writing unit, integration, and end to end tests.",
     "projects": ["secret-santa"],
     "books": [],
@@ -256,11 +307,16 @@
       "x": 12.76,
       "y": 29.81
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0.5
+    },
     "timeframe": "April 2025 - June 2025"
   },
   {
     "startDate": "2025-06-29",
     "endDate": "2025-08-31",
+    "summary": "Math Game",
     "learning": "Frectangles Work Part 2. Figuring out UX of invalid puzzle piece states, keeping track of the board squares to detect overlaps, invalid positions, and whether the user has 'passed' the level. Refactoring my code for cleanliness and reusability.",
     "projects": ["frectangles"],
     "books": [
@@ -284,12 +340,17 @@
       "x": 4.14,
       "y": 30.24
     },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0.5
+    },
     "timeframe": "June 2025 - August 2025"
   },
   {
     "startDate": "2025-09-01",
     "endDate": "current",
-    "learning": "",
+    "summary": "First Job",
+    "learning": "Paid internship at an early stage startup in the events space. I quickly ramped up in a brand new-to-me tech stack of Golang, Templ, Alpine JS, and HTMX. I made an embeddable widget with search and filters for customers to use in their websites. I've learned a lot about server rendered architectures as an alternative to Single Page Apps.",
     "projects": ["meet-near-me"],
     "books": [
       {
@@ -305,6 +366,10 @@
     "point": {
       "x": 1.42,
       "y": 33.32
+    },
+    "textPosition": {
+      "x": 0.5,
+      "y": 0
     },
     "timeframe": "September 2025 - Present"
   }

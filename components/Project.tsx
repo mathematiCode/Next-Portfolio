@@ -20,16 +20,15 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
           </span>
         ))}
       </div>
-      {/* {image && (
-        <CloudinaryImg className="project-image" cldImg={cld.image(image)} />
-      )} */}
-      <Image
-        alt=""
-        width={400}
-        height={300}
-        className="rounded-md border-black border-2 w-4/5"
-        src={image}
-      />
+      {image && (
+        <Image
+          alt=""
+          width={400}
+          height={300}
+          className="rounded-md border-black border-2 w-4/5"
+          src={image}
+        />
+      )}
       <div className="links">
         <a href={deployed} target="_blank" rel="noopener">
           See in Action

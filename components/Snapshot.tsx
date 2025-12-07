@@ -1,5 +1,4 @@
 import type { SnapshotType, ProjectType } from '../types';
-import * as Popover from '@radix-ui/react-popover';
 import Project from './Project';
 import projects from '../data/projects.json';
 import { useState } from 'react';
@@ -75,7 +74,7 @@ function Snapshot({ snapshot }: { snapshot: SnapshotType }) {
         ) : (
           <>
             <ArrowBigLeft
-              className="absolute left-2 top-2"
+              className="absolute left-2 top-2 cursor-pointer transition-all duration-200 hover:scale-118 hover:opacity-80 active:scale-95"
               onClick={() => setCurrentProject(emptyProject)}
             />
             <Project

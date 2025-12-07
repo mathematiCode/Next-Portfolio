@@ -11,10 +11,10 @@ function ProjectsPage() {
   return (
     <>
       <h1> Projects </h1>
-      <p>
-        This will eventually be hidden, I'm just using it to develop the look of
-        the cards. I don't actually want to show off everything I've ever built
-        like this...
+      <p className="mb-3">
+        This will eventually be hidden, I&apos;m just using it to develop the
+        look of the cards. I don&apos;t actually want to show off everything
+        I&apos;ve ever built like this...
       </p>
       <div className="grid grid-cols-[repeat(auto-fit,350px)] mb-12 justify-center align-middle gap-6">
         {projects.map(project => {

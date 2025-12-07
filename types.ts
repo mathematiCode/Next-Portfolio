@@ -6,6 +6,7 @@ export interface Book {
 export interface SnapshotType {
   startDate: string;
   endDate: string;
+  summary: string;
   learning: string;
   projects: string[];
   books: Book[];

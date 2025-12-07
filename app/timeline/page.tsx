@@ -36,14 +36,16 @@ function TimelinePage() {
   return (
     <>
       <h1>Timeline</h1>
-      <svg
-        viewBox="-3 0 27 40"
-        preserveAspectRatio="none"
-        style={{ minWidth: '100%', minHeight: '100vh' }}
-      >
-        <path
-          ref={pathRef}
-          d="
+      <div className="relative">
+        <svg
+          className="justify-self-start"
+          viewBox="-3 0 27 40"
+          preserveAspectRatio="none"
+          style={{ minWidth: '70%', maxWidth: '80%', minHeight: '100vh' }}
+        >
+          <path
+            ref={pathRef}
+            d="
             M 11,2
             A 3 1 0 0 0 8 6
             A 3 1 0 0 1 8 10
@@ -52,17 +54,56 @@ function TimelinePage() {
             A 3 1 0 0 0 8 25
             A 5 1 0 0 1 8 30
             A 5 1 0 0 0 10 34
+            A 3 1 0 0 1 8 40
           "
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={thickness}
-        />
-        {timeline.map(snapshot => {
-          return (
-            <Dot key={snapshot.startDate} radius={radius} snapshot={snapshot} />
-          );
-        })}
-      </svg>
+            fill="none"
+            stroke="#4b4b4f"
+            strokeWidth={thickness}
+          />
+          {timeline.map(snapshot => {
+            return (
+              <g key={snapshot.startDate}>
+                <Dot radius={radius} snapshot={snapshot} />
+                <text
+                  x={snapshot.point.x + snapshot.textPosition.x}
+                  y={snapshot.point.y + snapshot.textPosition.y}
+                  fill="currentColor"
+                  fontSize="0.5"
+                  textAnchor="start"
+                >
+                  {snapshot.summary}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+        <div className="absolute top-0 h-full right-0 w-60 border-gray-600 border-l-4 flex flex-col justify-between mt-15">
+          <span>Jan 2024</span>
+          <span>Feb 2024</span>
+          <span>March 2024</span>
+          <span>April 2024</span>
+          <span>May 2024</span>
+          <span>June 2024</span>
+          <span>July 2024</span>
+          <span>Aug 2024</span>
+          <span>Sept 2024</span>
+          <span>Oct 2024</span>
+          <span>Nov 2024</span>
+          <span>Dec 2024</span>
+          <span>Jan 2025</span>
+          <span>Feb 2025</span>
+          <span>March 2025</span>
+          <span>April 2025</span>
+          <span>May 2025</span>
+          <span>June 2025</span>
+          <span>July 2025</span>
+          <span>Aug 2025</span>
+          <span>Sept 2025</span>
+          <span>Oct 2025</span>
+          <span>Nov 2025</span>
+          <span>Dec 2025</span>
+        </div>
+      </div>
     </>
   );
 }
