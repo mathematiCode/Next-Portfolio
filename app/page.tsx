@@ -8,6 +8,18 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen items-center justify-center font-sans">
       <h1>Julianna Messineo</h1>
+      <div className="flex flex-wrap gap-2 justify-center">
+        {['React', 'Next JS', 'Golang', 'Tailwind', 'Alpine JS', 'HTMX'].map(
+          tech => (
+            <span
+              key={tech}
+              className="px-3 py-1 rounded-md bg-[#c5faf7] text-[#1a5a4a] text-sm font-medium border border-[#1a5a4a]"
+            >
+              {tech}
+            </span>
+          )
+        )}
+      </div>
       <main className="flex w-full flex-col py-10 items-center gap-16">
         <Intro />
         <About />

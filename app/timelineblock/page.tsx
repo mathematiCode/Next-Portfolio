@@ -4,7 +4,7 @@ import snapshots from '../../data/timeline.json';
 
 function TimelineBlockPage() {
   return (
-    <div className="w-full mx-auto">
+    <div className="w-11/12 mx-auto">
       {snapshots.map(snapshot => (
         <SnapshotCollapsed key={snapshot.timeframe} snapshot={snapshot} />
       ))}
