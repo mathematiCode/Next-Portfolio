@@ -24,7 +24,7 @@ function Snapshot({ snapshot }: { snapshot: SnapshotType }) {
   return (
     <>
       <div
-        className={`snapshot-card relative m-5 h-[500px] overflow-auto ${
+        className={`snapshot-card py-10 lg:px-20 px-5 relative m-5 h-[500px] overflow-auto ${
           currentProject.id == '' ? 'items-start' : 'items-center'
         }`}
       >
