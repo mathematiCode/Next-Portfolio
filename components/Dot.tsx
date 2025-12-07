@@ -34,23 +34,31 @@ function Dot({ snapshot, radius }: { snapshot: SnapshotType; radius: string }) {
   };
 
   return (
-    <Popover.Root open={open} onOpenChange={setOpen}>
-      <Popover.Trigger asChild>
-        <g onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          <circle cx={x} cy={y} r={radius} className="dot z-10" />
-        </g>
-      </Popover.Trigger>
-      <Popover.Portal>
-        <Popover.Content
-          side="top"
-          sideOffset={5}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <Snapshot key={'x' + 'y'} snapshot={snapshot} />
-        </Popover.Content>
-      </Popover.Portal>
-    </Popover.Root>
+    <>
+      <Popover.Root open={open} onOpenChange={setOpen}>
+        <Popover.Trigger asChild>
+          <g onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <circle
+              cx={x}
+              cy={y}
+              r={radius}
+              fill="#3a3a3b"
+              className="dot z-10 cursor-pointer"
+            />
+          </g>
+        </Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content
+            side="top"
+            sideOffset={5}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Snapshot key={'x' + 'y'} snapshot={snapshot} />
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
+    </>
   );
 }
 
