@@ -22,4 +22,7 @@ export interface ProjectType {
   image: string;
   deployed: string;
   github: string;
+  description?: string;
+  features?: string[];
+  challenges?: string[];
 }

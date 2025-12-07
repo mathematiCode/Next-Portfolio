@@ -56,8 +56,18 @@
   {
     "id": "visual-fraction-library",
     "name": "Visual Fraction Library",
-    "stack": ["HTML", "CSS", "Javascript"],
+    "stack": ["HTML", "CSS", "Javascript, XML"],
     "priority": 1,
+    "description": "An SVG generator of fully customizable fraction multiplication and division models for teachers and curriculum developers.",
+    "features": [
+      "SVG image generator that illustrates fractions, mixed numbers, multiplication and division",
+      "Average of 75 users per month"
+    ],
+    "challenges": [
+      "calculate-optimal-dimensions",
+      "number-of-colors-for-division",
+      "too-many-params"
+    ],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330588/Visual_Fraction_Library_q7t7sf.jpg",
     "deployed": "https://visualfractionlibrary.com",
     "github": "https://github.com/mathematiCode/visual-fraction-library"
@@ -106,10 +116,20 @@
       "Typescript",
       "Styled Components",
       "Framer Motion",
-      "Dnd Kit",
-      "Radix UI"
+      "Dnd Kit"
+    ],
+    "description": "An engaging math puzzle game that challenges players to fit a variety of rectangular puzzle pieces onto a grid. They can use math concepts to transform the pieces.",
+    "features": [
+      "Drag and Drop Puzzle Pieces",
+      "Pieces can be transformed with math"
     ],
     "priority": 1,
+    "challenges": [
+      "state-across-contexts",
+      "ux-piece-placements",
+      "collision-detection",
+      "untangling-contexts"
+    ],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763323963/Game_Cover_ycnke1.png",
     "deployed": "https://frectangles.com",
     "github": "https://github.com/mathematiCode/math-puzzle"
@@ -137,6 +157,12 @@
     "name": "Secret Santa Exchange",
     "stack": ["React", "NextJS", "Tailwind", "Supabase"],
     "priority": 1,
+    "description": "A collaborative apprenticeship project working on a large team to build a Secret Santa application. Focused on ensuring code quality through comprehensive testing and effective team collaboration.",
+    "features": [
+      "Comprehensive automated testing suite",
+      "Agile CI/CD Team Workflow"
+    ],
+    "challenges": ["testing-multi-user"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330587/Secret_Santa.png",
     "deployed": "https://www.secretsanta-exchange.com/",
     "github": "https://github.com/LetsGetTechnical/elecretanta"
@@ -154,6 +180,9 @@
       "Zitadel"
     ],
     "priority": 1,
+    "description": "",
+    "features": [],
+    "challenges": ["fill-in-later"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763329630/MNM_Cover_a49jdm.png",
     "deployed": "https://devnear.me/",
     "github": "https://github.com/meetnearme/api"
