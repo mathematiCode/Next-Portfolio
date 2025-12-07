@@ -16,9 +16,7 @@ function Snapshot({ snapshot }: { snapshot: SnapshotType }) {
   const [currentProject, setCurrentProject] = useState(emptyProject);
 
   function handleProjectClick(projectId: string) {
-    console.log('Id is', projectId);
     const selected = projects.filter(project => project.id === projectId)[0];
-    console.log('selected:', selected);
     setCurrentProject(selected);
   }
   return (
@@ -43,6 +41,7 @@ function Snapshot({ snapshot }: { snapshot: SnapshotType }) {
                 )[0];
                 return (
                   <button
+                    className="primary-button"
                     key={project.id}
                     onClick={() => handleProjectClick(projID)}
                   >
