@@ -49,25 +49,33 @@ function Snapshot({ snapshot }: { snapshot: SnapshotType }) {
               );
             })}
           </div>
-          <h2>Reading</h2>
-          <div className="snapshot-books">
-            {snapshot.books.map((book, index) => (
-              <span
-                className="book"
-                key={`${snapshot.startDate}-book-${index}`}
-              >
-                {book.title} by {book.author}
-              </span>
-            ))}
-          </div>
-          <h2>Wonderings</h2>
-          <ul className="wonderings">
-            {snapshot.questions.map((question, index) => (
-              <li key={`${snapshot.startDate}-question-${index}`}>
-                {question}
-              </li>
-            ))}
-          </ul>
+          {snapshot.books.length > 0 && (
+            <>
+              <h2>Reading</h2>
+              <div className="snapshot-books">
+                {snapshot.books.map((book, index) => (
+                  <span
+                    className="book"
+                    key={`${snapshot.startDate}-book-${index}`}
+                  >
+                    {book.title} by {book.author}
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
+          {snapshot.questions.length > 0 && (
+            <>
+              <h2>Wonderings</h2>
+              <ul className="wonderings">
+                {snapshot.questions.map((question, index) => (
+                  <li key={`${snapshot.startDate}-question-${index}`}>
+                    {question}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </>
       ) : (
         <>
