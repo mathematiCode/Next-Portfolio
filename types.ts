@@ -18,6 +18,7 @@ export interface SnapshotType {
 export interface ProjectType {
   id: string;
   name: string;
+  subtitle?: string;
   stack: string[];
   image: string;
   deployed: string;

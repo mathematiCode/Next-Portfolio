@@ -206,7 +206,7 @@
     "startDate": "2025-01-06",
     "endDate": "2025-02-05",
     "summary": "Math Game",
-    "learning": "",
+    "learning": "Managing Game Mechanics with React State and Context. Dealing with Complex CSS challenges due to dynamic levels with different board and piece sizes.",
     "projects": ["frectangles"],
     "books": [
       {
@@ -266,7 +266,7 @@
     "startDate": "2025-03-07",
     "endDate": "2025-04-15",
     "summary": "Backend",
-    "learning": "Full Stack Solo Frontend Mentor Project with a Node and Express Backend. Also my first time using Tailwind.",
+    "learning": "Full Stack Frontend Mentor Project with a Node and Express Backend. This was also my first time using Tailwind and making a light and dark mode.",
     "projects": ["to-do"],
     "books": [
       {
@@ -362,7 +362,11 @@
         "author": "Chris James"
       }
     ],
-    "questions": [],
+    "questions": [
+      "What is the optimal UX for updating a users' home location",
+      "What are the benefits of Golang over other languages?",
+      "How do Templ, Alpine, HTMX, and Go all work together?"
+    ],
     "point": {
       "x": 1.42,
       "y": 33.32

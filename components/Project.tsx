@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ExternalLink, Github } from 'lucide-react';
 
 interface ProjectProps {
   title: string;
@@ -12,8 +13,8 @@ interface ProjectProps {
 function Project({ title, stack, image, deployed, github }: ProjectProps) {
   return (
     <>
-      <h2 className="mb-0 mt-2 text-2xl">{title}</h2>
-      <div className="flex flex-wrap m-1 mx-3 gap-2">
+      <h2 className="my-0 text-2xl">{title}</h2>
+      <div className="flex flex-wrap m-1 gap-2">
         {stack.map((item: string) => (
           <span className="tag" key={item}>
             {item}
@@ -29,12 +30,24 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
           src={image}
         />
       )}
-      <div className="links">
-        <a href={deployed} target="_blank" rel="noopener">
-          See in Action
+      <div className="flex gap-3 mt-auto justify-start">
+        <a
+          href={deployed}
+          target="_blank"
+          rel="noopener"
+          className="flex items-center gap-2 px-4 py-2 bg-teal-700 text-white rounded-md hover:bg-teal-600 transition-colors font-medium text-lg"
+        >
+          <ExternalLink size={20} />
+          Live Demo
         </a>
-        <a href={github} target="_blank" rel="noopener">
-          See on Github
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener"
+          className="flex items-center gap-2 px-4 py-2 bg-white text-[#1a5a4a] border-2 border-[#1a5a4a] rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-md"
+        >
+          <Github size={20} />
+          Code
         </a>
       </div>
     </>

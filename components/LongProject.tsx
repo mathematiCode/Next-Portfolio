@@ -1,4 +1,5 @@
 'use client';
+import { CodeBlock } from 'react-code-block';
 import { Github, ExternalLink, ArrowBigLeft } from 'lucide-react';
 import { ProjectType } from '@/types';
 import Image from 'next/image';
@@ -19,15 +20,50 @@ function LongProject({ project }: ProjectProps) {
     codeSnippet: '',
   };
   const [currentChallenge, setCurrentChallenge] = useState(emptyChallenge);
+  const [codeContent, setCodeContent] = useState<string>('');
+
+  const handleChallengeClick = async (challenge: typeof emptyChallenge) => {
+    setCurrentChallenge(challenge);
+
+    if (!challenge.codeSnippet) {
+      setCodeContent('');
+      return;
+    }
+
+    // Check if codeSnippet is a filename (ends with .js, .ts, .tsx, etc.)
+    const isFilename = /\.(js|ts|tsx|jsx|py|java|cpp|c|rb|go)$/i.test(
+      challenge.codeSnippet
+    );
+
+    if (isFilename) {
+      try {
+        const response = await fetch(`/snippets/${challenge.codeSnippet}`);
+        if (response.ok) {
+          const code = await response.text();
+          setCodeContent(code);
+        } else {
+          setCodeContent(challenge.codeSnippet);
+        }
+      } catch (error) {
+        console.error('Error loading code snippet:', error);
+        setCodeContent(challenge.codeSnippet);
+      }
+    } else {
+      setCodeContent(challenge.codeSnippet);
+    }
+  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[550px] rounded-lg bg-[#c5faf7] border-black border-2 relative shadow-[5px_5px_#3e3e3e]">
       {currentChallenge.id === '' ? (
         <>
           <div className="flex flex-col h-full justify-between text-left">
             <div className="flex flex-col gap-4 text-left">
-              <h2 className="text-3xl font-bold text-[#1a5a4a] mb-2 text-left">
-                {project.name}
-              </h2>
+              <div>
+                <h2 className="text-3xl font-bold text-[#1a5a4a] mb-0 text-left">
+                  {project.name}
+                </h2>
+                <span className="mt-0">{project.subtitle}</span>
+              </div>
 
               {project.description && (
                 <p className="text-gray-700 text-md leading-relaxed text-left">
@@ -79,7 +115,7 @@ function LongProject({ project }: ProjectProps) {
                         <button
                           key={challengeId}
                           onClick={() =>
-                            setCurrentChallenge(challenge || emptyChallenge)
+                            handleChallengeClick(challenge || emptyChallenge)
                           }
                           className="challenge-button inline-flex items-center px-4 py-2.5 bg-white text-[#1a5a4a] border-2 border-[#1a5a4a] rounded-lg hover:bg-[#1a5a4a] hover:text-white transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md hover:scale-[1.02]"
                         >
@@ -107,7 +143,7 @@ function LongProject({ project }: ProjectProps) {
                   href={project.deployed}
                   target="_blank"
                   rel="noopener"
-                  className="flex items-center gap-2 px-4 py-2 bg-teal-700 text-white rounded-md hover:bg-teal-600 transition-colors font-medium text-lg"
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-colors font-medium text-lg"
                 >
                   <ExternalLink size={20} />
                   Live Demo
@@ -138,8 +174,25 @@ function LongProject({ project }: ProjectProps) {
             The Solution
           </h2>
           <p>{currentChallenge.explanation}</p>
-          <button onClick={() => setCurrentChallenge(emptyChallenge)}>
-            <ArrowBigLeft className="absolute left-4 top-4 cursor-pointer transition-all duration-200 hover:scale-118 hover:opacity-80 active:scale-95" />
+          {codeContent && (
+            <CodeBlock code={codeContent} language="typescript">
+              <CodeBlock.Code className="bg-gray-900 p-6 rounded-xl shadow-lg text-start max-w-full overflow-x-auto">
+                <CodeBlock.LineContent className="whitespace-pre-wrap break-all">
+                  <CodeBlock.Token />
+                </CodeBlock.LineContent>
+              </CodeBlock.Code>
+            </CodeBlock>
+          )}
+          {/* <pre className="text-start">
+            <code>{currentChallenge.codeSnippet}</code>
+          </pre> */}
+          <button
+            onClick={() => {
+              setCurrentChallenge(emptyChallenge);
+              setCodeContent('');
+            }}
+          >
+            <ArrowBigLeft className="absolute left-2 top-2 cursor-pointer transition-all duration-200 hover:scale-118 hover:opacity-80 active:scale-95" />
           </button>
         </div>
       )}

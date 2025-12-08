@@ -10,7 +10,7 @@ function Contact() {
           </h2>
           <p className="text-xl animate-fade-in-up animate-delay-100">
             I&apos;d love to discuss opportunities in educational technology and
-            frontend development
+            development
           </p>
         </div>
 
@@ -20,10 +20,10 @@ function Contact() {
               <div>
                 <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
                 <p className="text-lg mb-8 leading-relaxed">
-                  Whether you&apos;re looking for a frontend developer
-                  passionate about education, want to collaborate on an edtech
-                  project, or just want to chat about making math more
-                  accessible, I&apos;d love to hear from you!
+                  Whether you&apos;re looking for a developer passionate about
+                  education, want to collaborate on an edtech project, or just
+                  want to chat about making math more accessible, I&apos;d love
+                  to hear from you!
                 </p>
 
                 <div className="space-y-4">

@@ -56,6 +56,7 @@
   {
     "id": "visual-fraction-library",
     "name": "Visual Fraction Library",
+    "subtitle": "Solo Project with Real Users",
     "stack": ["HTML", "CSS", "Javascript, XML"],
     "priority": 1,
     "description": "An SVG generator of fully customizable fraction multiplication and division models for teachers and curriculum developers.",
@@ -111,6 +112,7 @@
   {
     "id": "frectangles",
     "name": "Frectangles",
+    "subtitle": "Solo Project",
     "stack": [
       "React",
       "Typescript",
@@ -155,10 +157,12 @@
   {
     "id": "secret-santa",
     "name": "Secret Santa Exchange",
+    "subtitle": "Apprenticeship",
     "stack": ["React", "NextJS", "Tailwind", "Supabase"],
     "priority": 1,
     "description": "A collaborative apprenticeship project working on a large team to build a Secret Santa application. Focused on ensuring code quality through comprehensive testing and effective team collaboration.",
     "features": [
+      "AI based gift recommendation system for secret santa",
       "Comprehensive automated testing suite",
       "Agile CI/CD Team Workflow"
     ],
@@ -170,6 +174,7 @@
   {
     "id": "meet-near-me",
     "name": "Meet Near Me",
+    "subtitle": "Paid Internship at a Startup",
     "stack": [
       "Go",
       "Alpine",
@@ -181,8 +186,12 @@
     ],
     "priority": 1,
     "description": "",
-    "features": [],
-    "challenges": ["fill-in-later"],
+    "features": [
+      "Embeddable events widget for newsletters",
+      "Vectorized search to find relevant events",
+      "Automated event importing"
+    ],
+    "challenges": ["loading-sequence", "location-UX"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763329630/MNM_Cover_a49jdm.png",
     "deployed": "https://devnear.me/",
     "github": "https://github.com/meetnearme/api"
