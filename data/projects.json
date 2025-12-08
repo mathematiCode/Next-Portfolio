@@ -1,5 +1,77 @@
 [
   {
+    "id": "meet-near-me",
+    "name": "Meet Near Me",
+    "subtitle": "Paid Internship at a Startup",
+    "stack": [
+      "Go",
+      "Alpine",
+      "HTMX",
+      "Tailwind",
+      "DaisyUI",
+      "Docker",
+      "Zitadel"
+    ],
+    "priority": 1,
+    "description": "",
+    "features": [
+      "Embeddable events widget for newsletters",
+      "Vectorized search to find relevant events",
+      "Automated event importing"
+    ],
+    "challenges": ["loading-sequence", "location-UX"],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763329630/MNM_Cover_a49jdm.png",
+    "deployed": "https://devnear.me/",
+    "github": "https://github.com/meetnearme/api"
+  },
+  {
+    "id": "frectangles",
+    "name": "Frectangles",
+    "subtitle": "Solo Project",
+    "stack": [
+      "React",
+      "Typescript",
+      "Styled Components",
+      "Framer Motion",
+      "Dnd Kit"
+    ],
+    "description": "An engaging math puzzle game that challenges players to fit a variety of rectangular puzzle pieces onto a grid. They can use math concepts to transform the pieces.",
+    "features": [
+      "Drag and Drop Puzzle Pieces",
+      "Pieces can be transformed with math"
+    ],
+    "priority": 1,
+    "challenges": [
+      "state-across-contexts",
+      "ux-piece-placements",
+      "collision-detection",
+      "untangling-contexts"
+    ],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763323963/Game_Cover_ycnke1.png",
+    "deployed": "https://frectangles.com",
+    "github": "https://github.com/mathematiCode/math-puzzle"
+  },
+  {
+    "id": "visual-fraction-library",
+    "name": "Visual Fraction Library",
+    "subtitle": "Solo Project with Real Users",
+    "stack": ["HTML", "CSS", "Javascript, XML"],
+    "priority": 1,
+    "description": "An SVG generator of fully customizable fraction multiplication and division models for teachers and curriculum developers.",
+    "features": [
+      "SVG image generator that illustrates fractions, mixed numbers, multiplication and division",
+      "Average of 200 users per month"
+    ],
+    "challenges": [
+      "calculate-optimal-dimensions",
+      "number-of-colors-for-division",
+      "too-many-params"
+    ],
+    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330588/Visual_Fraction_Library_q7t7sf.jpg",
+    "deployed": "https://visualfractionlibrary.com",
+    "github": "https://github.com/mathematiCode/visual-fraction-library"
+  },
+  {
     "id": "equation-from-table",
     "name": "Equation from a table",
     "stack": ["HTML", "CSS", "Javascript"],
@@ -54,26 +126,6 @@
     "github": "https://github.com/mathematiCode/tip-calculator-fem"
   },
   {
-    "id": "visual-fraction-library",
-    "name": "Visual Fraction Library",
-    "subtitle": "Solo Project with Real Users",
-    "stack": ["HTML", "CSS", "Javascript, XML"],
-    "priority": 1,
-    "description": "An SVG generator of fully customizable fraction multiplication and division models for teachers and curriculum developers.",
-    "features": [
-      "SVG image generator that illustrates fractions, mixed numbers, multiplication and division",
-      "Average of 75 users per month"
-    ],
-    "challenges": [
-      "calculate-optimal-dimensions",
-      "number-of-colors-for-division",
-      "too-many-params"
-    ],
-    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330588/Visual_Fraction_Library_q7t7sf.jpg",
-    "deployed": "https://visualfractionlibrary.com",
-    "github": "https://github.com/mathematiCode/visual-fraction-library"
-  },
-  {
     "id": "wordle",
     "name": "Fake Wordle",
     "stack": ["React"],
@@ -110,33 +162,6 @@
     "github": "https://github.com/mathematiCode/mortgage-calculator"
   },
   {
-    "id": "frectangles",
-    "name": "Frectangles",
-    "subtitle": "Solo Project",
-    "stack": [
-      "React",
-      "Typescript",
-      "Styled Components",
-      "Framer Motion",
-      "Dnd Kit"
-    ],
-    "description": "An engaging math puzzle game that challenges players to fit a variety of rectangular puzzle pieces onto a grid. They can use math concepts to transform the pieces.",
-    "features": [
-      "Drag and Drop Puzzle Pieces",
-      "Pieces can be transformed with math"
-    ],
-    "priority": 1,
-    "challenges": [
-      "state-across-contexts",
-      "ux-piece-placements",
-      "collision-detection",
-      "untangling-contexts"
-    ],
-    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763323963/Game_Cover_ycnke1.png",
-    "deployed": "https://frectangles.com",
-    "github": "https://github.com/mathematiCode/math-puzzle"
-  },
-  {
     "id": "lesson-links",
     "name": "Lesson Links",
     "stack": ["React", "Nest JS"],
@@ -170,31 +195,6 @@
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763330587/Secret_Santa.png",
     "deployed": "https://www.secretsanta-exchange.com/",
     "github": "https://github.com/LetsGetTechnical/elecretanta"
-  },
-  {
-    "id": "meet-near-me",
-    "name": "Meet Near Me",
-    "subtitle": "Paid Internship at a Startup",
-    "stack": [
-      "Go",
-      "Alpine",
-      "HTMX",
-      "Tailwind",
-      "DaisyUI",
-      "Docker",
-      "Zitadel"
-    ],
-    "priority": 1,
-    "description": "",
-    "features": [
-      "Embeddable events widget for newsletters",
-      "Vectorized search to find relevant events",
-      "Automated event importing"
-    ],
-    "challenges": ["loading-sequence", "location-UX"],
-    "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763329630/MNM_Cover_a49jdm.png",
-    "deployed": "https://devnear.me/",
-    "github": "https://github.com/meetnearme/api"
   },
   {
     "id": "portfolio",

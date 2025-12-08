@@ -41,7 +41,7 @@ function Navbar() {
           href={isMobile ? '/timelineblock' : '/timeline'}
           className="hover:text-[#1a5a4a] transition-colors"
         >
-          Timeline
+          Learning Journey
         </Link>
       </div>
     </nav>

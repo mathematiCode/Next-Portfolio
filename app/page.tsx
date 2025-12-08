@@ -20,7 +20,7 @@ export default function Home() {
           )
         )}
       </div>
-      <main className="flex w-full flex-col py-10 items-center gap-16">
+      <main className="flex w-full flex-col py-10 px-4 items-center gap-16">
         <Intro />
         <About />
         <div className="flex flex-col items-center mb-12 justify-center align-middle gap-6">

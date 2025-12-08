@@ -16,7 +16,10 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
       <h2 className="my-0 text-2xl">{title}</h2>
       <div className="flex flex-wrap m-1 gap-2">
         {stack.map((item: string) => (
-          <span className="tag" key={item}>
+          <span
+            className="px-3 py-1 rounded-full bg-[#c5faf7] text-[#1a5a4a] text-sm font-medium border border-[#1a5a4a]"
+            key={item}
+          >
             {item}
           </span>
         ))}

@@ -44,9 +44,9 @@
     "id": "collision-detection",
     "project": "frectangles",
     "summary": "Custom Collision Detection Algorithm",
-    "challenge": "",
-    "explanation": "",
-    "codeSnippet": ""
+    "challenge": "Dnd Kit, the drag and drop library I was using assumed each draggable mapped to a single drop target, but my pieces spanned multiple grid cells. This was causing the pieces to occasionally drop into adjacent spaces instead of the correct space when they were placed near the edge.",
+    "explanation": "I dug into the library’s sparse documentation and source code, eventually writing a custom algorithm to determine valid drop positions based on the top-left corner of each piece. This made the drag and drop experience feel much more precise and predictable.",
+    "codeSnippet": "export function rateDroppability(x: number, y: number, droppableRect: any) {\n  const { top, left, width, height } = droppableRect;\n  /* I'm multiplying the width and height by 2 to allow a greater range of droppableRects\n  to be considered by decreasing the likelihood of a negative xOffsetRatio or yOffsetRatio */\n  const xOffsetRatio = (width * 2 - Math.abs(x - left)) / (width * 2);\n  const yOffsetRatio = (height * 2 - Math.abs(y - top)) / (height * 2);\n  if (xOffsetRatio < 0 && yOffsetRatio < 0) return 0;\n  return (xOffsetRatio * yOffsetRatio).toFixed(3);\n}\n\nfunction customCollisionDetection(args: any) {\n  const { collisionRect } = args;\n\n  const x = collisionRect.left;\n  const y = collisionRect.top;\n\n  let potentialDroppables: any = rectIntersection(args);\n  if (potentialDroppables[0]) {\n    potentialDroppables.forEach((droppable: any) => {\n      const droppableRect = droppable.data.droppableContainer.rect.current;\n      droppable.data.value = rateDroppability(x, y, droppableRect);\n    });\n  }\n  return potentialDroppables.sort(compareCollisionRects);\n}"
   },
   {
     "id": "untangling-contexts",

@@ -1,9 +1,10 @@
 import { Github, Linkedin, MapPin, Mail } from 'lucide-react';
+import Calendly from './Calendly';
 
 function Contact() {
   return (
-    <section id="contact" className="py-20 lg:w-2/3 w-full">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 xl:w-2/3 w-full">
+      <div className=" w-full">
         <div className="text-center">
           <h2 className="section-title animate-fade-in-up text-3xl font-bold text-[#1a5a4a] mb-2">
             Let&apos;s Connect
@@ -95,14 +96,12 @@ function Contact() {
             </div>
           </div>
         </div>
-
-        <div className="text-center mt-16">
-          <p>
-            © 2025 Julianna Messineo. Built with passion for education and clean
-            code.
-          </p>
-        </div>
       </div>
+      <Calendly />
+      <p>
+        © 2025 Julianna Messineo. Built with passion for education and clean
+        code.
+      </p>
     </section>
   );
 }

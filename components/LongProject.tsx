@@ -166,14 +166,14 @@ function LongProject({ project }: ProjectProps) {
           {/* <h2>
             {currentChallenge.summary}
             </h2> */}
-          <h2 className="text-start text-xl font-bold text-[#1a5a4a] mb-2">
+          <h2 className="text-start text-xl font-bold text-[#1a5a4a] my-2">
             The Challenge
           </h2>
-          <p>{currentChallenge.challenge}</p>
+          <p className="mb-6 text-start">{currentChallenge.challenge}</p>
           <h2 className="text-start text-xl font-bold text-[#1a5a4a] mb-2">
             The Solution
           </h2>
-          <p>{currentChallenge.explanation}</p>
+          <p className="mb-6 text-start">{currentChallenge.explanation}</p>
           {codeContent && (
             <CodeBlock code={codeContent} language="typescript">
               <CodeBlock.Code className="bg-gray-900 p-6 rounded-xl shadow-lg text-start max-w-full overflow-x-auto">
