@@ -98,10 +98,7 @@ function Contact() {
         </div>
       </div>
       <Calendly />
-      <p>
-        © 2025 Julianna Messineo. Built with passion for education and clean
-        code.
-      </p>
+      <p>© 2025 Julianna Messineo</p>
     </section>
   );
 }
