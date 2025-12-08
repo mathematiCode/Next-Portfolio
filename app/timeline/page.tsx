@@ -77,7 +77,7 @@ function TimelinePage() {
             );
           })}
         </svg>
-        <div className="absolute top-0 h-full right-0 w-60 border-gray-600 border-l-4 flex flex-col justify-between mt-15">
+        <div className="absolute top-0 h-full right-0 w-60 border-gray-600 border-l-4 flex flex-col pt-16 justify-between">
           <span>Jan 2024</span>
           <span>Feb 2024</span>
           <span>March 2024</span>

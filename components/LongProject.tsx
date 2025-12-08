@@ -117,7 +117,7 @@ function LongProject({ project }: ProjectProps) {
                           onClick={() =>
                             handleChallengeClick(challenge || emptyChallenge)
                           }
-                          className="challenge-button inline-flex items-center px-4 py-2.5 bg-white text-[#1a5a4a] border-2 border-[#1a5a4a] rounded-lg hover:bg-[#1a5a4a] hover:text-white transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md hover:scale-[1.02]"
+                          className="button"
                         >
                           {challenge?.summary || challengeId.replace(/-/g, ' ')}
                         </button>
@@ -183,16 +183,14 @@ function LongProject({ project }: ProjectProps) {
               </CodeBlock.Code>
             </CodeBlock>
           )}
-          {/* <pre className="text-start">
-            <code>{currentChallenge.codeSnippet}</code>
-          </pre> */}
           <button
+            className="absolute left-2 top-2 cursor-pointer border-none shadow-none"
             onClick={() => {
               setCurrentChallenge(emptyChallenge);
               setCodeContent('');
             }}
           >
-            <ArrowBigLeft className="absolute left-2 top-2 cursor-pointer transition-all duration-200 hover:scale-118 hover:opacity-80 active:scale-95" />
+            <ArrowBigLeft className="transition-all duration-200 hover:scale-118 hover:opacity-80 active:scale-95" />
           </button>
         </div>
       )}

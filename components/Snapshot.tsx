@@ -40,7 +40,7 @@ function Snapshot({ snapshot }: { snapshot: SnapshotType }) {
               )[0];
               return (
                 <button
-                  className=""
+                  className="button"
                   key={project.id}
                   onClick={() => handleProjectClick(projID)}
                 >
