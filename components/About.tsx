@@ -18,11 +18,11 @@ function About() {
       <div className="max-w-4xl mx-auto">
         <div className="rounded-2xl p-4 animate-fade-in-up animate-delay-200">
           <p className="text-lg leading-relaxed mb-8">
-            I am a frontend developer who enjoys building things to make
-            teaching and learning math more joyful. As a former math teacher, I
-            have extensive experience crafting meaningful and intuitive
-            experiences for learners and hope to continue to do so with
-            technology.
+            I am primarily a frontend developer with some backend experience who
+            enjoys building things to make teaching and learning math more
+            joyful. As a former math teacher, I have extensive experience
+            crafting meaningful and intuitive experiences for learners and hope
+            to continue to do so with technology.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mt-12">

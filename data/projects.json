@@ -15,9 +15,9 @@
     "priority": 1,
     "description": "",
     "features": [
-      "Embeddable events widget for newsletters",
-      "Vectorized search to find relevant events",
-      "Automated event importing"
+      "An embeddable events widget for newsletter publishers with Alpine and HTMX",
+      "A Locate Me feature that uses the geolocation API and saves their city to their profile in the database",
+      "Identified and fixed some bugs and confusing UX in the subdomain setup process"
     ],
     "challenges": ["loading-sequence", "location-UX"],
     "image": "https://res.cloudinary.com/dvxciuy3e/image/upload/v1763329630/MNM_Cover_a49jdm.png",
@@ -55,7 +55,7 @@
     "id": "visual-fraction-library",
     "name": "Visual Fraction Library",
     "subtitle": "Solo Project with Real Users",
-    "stack": ["HTML", "CSS", "Javascript, XML"],
+    "stack": ["HTML", "CSS", "Javascript", "XML"],
     "priority": 1,
     "description": "An SVG generator of fully customizable fraction multiplication and division models for teachers and curriculum developers.",
     "features": [

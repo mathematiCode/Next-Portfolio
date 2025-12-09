@@ -74,7 +74,9 @@ function LongProject({ project }: ProjectProps) {
               {project.features && project.features.length > 0 && (
                 <div className="flex flex-col gap-2 text-left">
                   <h3 className="text-md font-semibold text-gray-800 text-left">
-                    Key Features:
+                    {project.id === 'meet-near-me'
+                      ? 'Key Features I Built:'
+                      : 'Key Features:'}
                   </h3>
                   <ul className="flex flex-col gap-1.5 text-left">
                     {project.features.map((feature, index) => (
@@ -82,7 +84,7 @@ function LongProject({ project }: ProjectProps) {
                         key={index}
                         className="text-md text-gray-700 flex items-start gap-2 text-left"
                       >
-                        <span className="text-[#1a5a4a] mt-0.5">•</span>
+                        <span className="text-[#1a5a4a]">•</span>
                         <span>{feature}</span>
                       </li>
                     ))}
