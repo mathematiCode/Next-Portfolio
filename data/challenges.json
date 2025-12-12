@@ -17,27 +17,19 @@
     "codeSnippet": "findIdealNumColors.js"
   },
   {
-    "id": "too-many-params",
-    "project": "visual-fraction-library",
-    "summary": "Refactoring Too Many Parameters",
-    "challenge": "",
-    "explanation": "",
-    "codeSnippet": ""
-  },
-  {
     "id": "state-across-contexts",
     "project": "frectangles",
     "summary": "Managing State Across Multiple Levels of Context",
-    "challenge": "",
-    "explanation": "",
-    "codeSnippet": ""
+    "challenge": "I wanted to detect when the user had passed the level and I could do that with my BoardSquares context. This uses React Context to keep track of a 2 dimensional array representing each board square and which piece or pieces are currently located in each square. When they pass a level, I wanted to take my PiecesInPlay context (which resets every level) and save it as the solution for that level in GameProgress context. Since these are all separate contexts using React's Context API, I had to nest them so that PiecesInPlay is a child of BoardSquares. Technically these operate at the same level of abstraction and both update with each level change, but I had to make one a child of the other. I could have checked for a winning state within BoardSquares on each update but that would mean updating one context (GameProgress) inside of another (BoardSquares). And since PiecesInPlay is a child of BoardSquares, I wouldn't be able to access it from BoardSquares in order to save the players solution for that level.",
+    "explanation": "One option was to combine the BoardSquaresContext and the PiecesInPlay context into one so I didn't have to deal with the nesting problem. But they were already pretty complex on their own, each with several methods. \n\n\n The challenge was checking for a winning state on each player move which could be done within the contexts where I was already handling each player move. But since this checking wasn't directly related to the responsibilities of PiecesInPlay or BoardSquares, I had to move this checking logic outside of both contexts. LLM's were pushing me to use useEffect but I knew it wasn't necessary for this case. Instead, I came up with a custom hook that returns a callback function that checks BoardSquares to see if it's in a winning state and if so saves the solution to GameProgress. I'm calling that callback on all user events that could result in winning.",
+    "codeSnippet": "import { useBoardSquares } from '../context/BoardSquares';\nimport { useGameProgress } from '../context/GameProgress';\nimport { usePiecesInPlay } from '../context/PiecesInPlay';\nimport { useCurrentLevel } from '../context/CurrentLevel';\nimport { useCallback } from 'react';\n\nexport function useLevelStatus() {\n  const { getUnstablePieces, countEmptySquares } = useBoardSquares();\n  const { setLevelCompleted } = useGameProgress();\n  const { currentLevel } = useCurrentLevel();\n  const { piecesInPlay } = usePiecesInPlay();\n  const unstablePieces = getUnstablePieces();\n\n  const checkAndHandleLevelStatus = useCallback(() => {\n    const isLevelPassed =\n      unstablePieces.length === 0 && countEmptySquares() === 0;\n    if (isLevelPassed) {\n      setLevelCompleted(currentLevel, piecesInPlay);\n    }\n  }, [\n    unstablePieces,\n    countEmptySquares,\n    currentLevel,\n    piecesInPlay,\n    setLevelCompleted,\n  ]);\n\n  return { checkAndHandleLevelStatus };\n}"
   },
   {
     "id": "ux-piece-placements",
     "project": "frectangles",
     "summary": "Optimal UX for out of bounds piece placements",
-    "challenge": "",
-    "explanation": "",
+    "challenge": "I needed a way to handle overlapping and out of bounds pieces. At this stage, it was possible to have a piece hidden under another piece and go completely unnoticed. At first I wanted to completely prevent pieces from overlapping by immediately shifting them into the closest valid location. Unfortunately, this was not always possible for pieces that were overlapping or out of bounds due to a mathematical transformation. For example, it's possible to make a piece wider than the whole game board. I felt having the pieces `sometimes` move into a valid spot and sometimes stay in an unvalid state would be a really confusing user experience. I considered disabling actions that caused the pieces to be longer or taller than the puzzle board but I realized this would take away an opportunity for players to make mistakes and learn from them. I considered transforming the piece into the unvalid state for a moment, and then transforming it back, but this still could remove the opportunity to think and learn from this. All transformations have an inverse so if a student accidentally doubled the width and halved the height of a piece and it ended up wider than the board, I wanted them to realize that they now have to halve the width and double the height, not undo it for them. Additionally, there are some cases where you'd want to temporarily transform a piece into an invalid state so you could apply a second transformation to get the pieces you want.",
+    "explanation": "I decided to allow all piece overlaps and all valid and invalid transformations to maximize learning opportunities from making and fixing mistakes. I provided a clear affordance for overlapping and out of bounds by making the pieces vibrate to represent an unstable state.",
     "codeSnippet": ""
   },
   {
@@ -67,17 +59,17 @@
   {
     "id": "loading-sequence",
     "project": "meet-near-me",
-    "summary": "Dependency Loading Sequence for Embed Widget",
-    "challenge": "",
-    "explanation": "",
+    "summary": "Alpine Loading Sequence for Embed Widget",
+    "challenge": "To create the embed widget, I used innerHTML, but innerHTML doesn't execute javascript. We have several templ files (Go templating language) with script tags in the same file. To handle this, I had to write a script to extract the script tags out, replace them with html markers, and then insert them back after the DOM has been recreated for the embed. One challenge was getting the timing right for Alpine JS because in our HTML we have things like x-data=getHomeState() but getHomeState() uses an Alpine store that is only initialized after the alpine state script runs.",
+    "explanation": "I implemented a retry mechanism that checks if the stores have been registered every 50ms (up to 20 retries, 1 second total) and only initializes Alpine once all stores are confirmed to exist.",
     "codeSnippet": ""
   },
   {
     "id": "location-UX",
     "project": "meet-near-me",
     "summary": "UX for setting location temporarily or permanantly",
-    "challenge": "",
-    "explanation": "",
+    "challenge": "I was creating a `Locate Me` feature that uses the browser geolocation API to locate users when they want to search for events near them, rather than selecting a city from the dropdown. I was asked to automatically update the user's permanent location in the database whenever this feature is used. Since this was just another option to update the state of the events showing (with the source of truth being the dropdown preview) I felt it would be confusing for Locate Me to have a different behavior than the rest of the dropdown.",
+    "explanation": "I pushed for adding a checkbox or modal prompting the user if they want to update their default location. I really wanted the behavior for Locate Me and the rest of the dropdown to be the same but if someone was just checking out many different cities with the dropdown, they may get tired of having to click `No I don't want to update my defualt location` each time, which is honestly fair. So we settled on having a `Do you want to save this as your default city?` prompt only show when someone uses Locate Me.",
     "codeSnippet": ""
   }
 ]

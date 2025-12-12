@@ -9,3 +9,16 @@
 ### Fix contact section
 
 ### Align Bullet points
+
+### Add this to challenges.json
+
+```json
+{
+"id": "too-many-params",
+"project": "visual-fraction-library",
+"summary": "Refactoring Too Many Parameters",
+"challenge": "",
+"explanation": "",
+"codeSnippet": ""
+},
+```
