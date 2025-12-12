@@ -13,6 +13,7 @@
 .button {
   color: black;
   text-decoration: none;
+  text-align: start;
   font-weight: 600;
   border-radius: 5px;
   background-color: transparent;
