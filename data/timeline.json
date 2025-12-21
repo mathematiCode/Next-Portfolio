@@ -14,6 +14,7 @@
     "questions": [
       "How do I create inputs for the user to interact with the site? And outputs to display things to them? (I was misled into learning Javascript before HTML and CSS)"
     ],
+    "percent": 0.06,
     "point": {
       "x": 3.35,
       "y": 4.23
@@ -35,13 +36,14 @@
       "How do I wireframe a website?",
       "How do I make my website intuitive for users?"
     ],
+    "percent": 0.15,
     "point": {
       "x": 11.45,
       "y": 6.36
     },
     "textPosition": {
       "x": 0.5,
-      "y": 0
+      "y": 0.3
     },
     "timeframe": "May 2024 - June 2024"
   },
@@ -57,13 +59,14 @@
       "How do I make sure my website is accessible with semantic HTML?",
       "How do I integrate data from a JSON file?"
     ],
+    "percent": 0.12,
     "point": {
       "x": 9.26,
       "y": 9.96
     },
     "textPosition": {
       "x": 0.5,
-      "y": 0.5
+      "y": 0
     },
     "timeframe": "June 2024 - June 2024"
   },
@@ -78,6 +81,7 @@
       "How do I keep track of error states across the application when a few different user inputs can affect whether a set of inputs is considered an error state?",
       "How do I use event handlers to update the state with each change in input?"
     ],
+    "percent": 0.18,
     "point": {
       "x": 0.7,
       "y": 10.79
@@ -108,6 +112,7 @@
       "How do I make my SVG generated images fit well on any screen size and allow the user to customize the image size as well?",
       "How do I ensure evenly spaced items (like circles) with varying quantities and image dimensions?"
     ],
+    "percent": 0.26,
     "point": {
       "x": 2.56,
       "y": 14.6
@@ -140,13 +145,14 @@
       "How do I decide when to be `done` with a project even if it's not perfect?",
       "Am I ready to start learning React? Backend?"
     ],
+    "percent": 0.32,
     "point": {
       "x": 11.16,
       "y": 15.19
     },
     "textPosition": {
       "x": 0.5,
-      "y": 0
+      "y": -0.2
     },
     "timeframe": "September 2024 - October 2024"
   },
@@ -166,13 +172,14 @@
       "When do I need to use useEffect?",
       "When do I need to use useRef?"
     ],
+    "percent": 0.38,
     "point": {
       "x": 16.01,
       "y": 19.37
     },
     "textPosition": {
       "x": 0.5,
-      "y": 0.5
+      "y": 0.1
     },
     "timeframe": "October 2024 - November 2024"
   },
@@ -192,6 +199,7 @@
       "What are good use cases for custom hooks?",
       "Should I make these two functionally similar but visually a little different UI components two different components or have a few conditionals to handle the difference?"
     ],
+    "percent": 0.45,
     "point": {
       "x": 7.63,
       "y": 21
@@ -222,13 +230,14 @@
       "How do I adjust the CSS of the board so it has the right border for any given board shape (with missing corners, inside, etc)?",
       "How do I set the unit size for each level to fit on various screen sizes and to accommodate the various board dimensions and number of pieces?"
     ],
+    "percent": 0.53,
     "point": {
       "x": 3.69,
       "y": 24.39
     },
     "textPosition": {
       "x": 0.5,
-      "y": 0
+      "y": -0.1
     },
     "timeframe": "January 2025 - February 2025"
   },
@@ -252,6 +261,7 @@
       "Can I or should I collaborate with someone else on a branch?",
       "How can Git features and continuous integration help with these challenges?"
     ],
+    "percent": 0.59,
     "point": {
       "x": 12.25,
       "y": 25.15
@@ -280,6 +290,7 @@
       "What are best practices for setting up a REST API?",
       "How do I use MongoDB?"
     ],
+    "percent": 0.64,
     "point": {
       "x": 20.44,
       "y": 27.26
@@ -303,6 +314,7 @@
       "How can we write tests behind a login screen that requires OAUTH (no username and password)?",
       "How do I avoid testing the implementation details in component testing if the cause or effect occurs outside of that component?"
     ],
+    "percent": 0.75,
     "point": {
       "x": 12.76,
       "y": 29.81
@@ -336,13 +348,14 @@
       "How can I use component composition to have one ActionsToolbar component wrap around three different puzzle piece components and act as a controller for each of them?",
       "How can I pass a ref to a parent component to allow my controller component to rotate each puzzle piece? (I ended up leaving the ref and rotation animation function in each individual puzzle piece component)."
     ],
+    "percent": 0.83,
     "point": {
       "x": 4.14,
       "y": 30.24
     },
     "textPosition": {
-      "x": 0.5,
-      "y": 0.5
+      "x": 0.4,
+      "y": 0.7
     },
     "timeframe": "June 2025 - August 2025"
   },
@@ -367,13 +380,14 @@
       "What are the benefits of Golang over other languages?",
       "How do Templ, Alpine, HTMX, and Go all work together?"
     ],
+    "percent": 0.95,
     "point": {
       "x": 1.42,
       "y": 33.32
     },
     "textPosition": {
       "x": 0.5,
-      "y": 0
+      "y": 0.2
     },
     "timeframe": "September 2025 - Present"
   }

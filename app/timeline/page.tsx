@@ -1,13 +1,14 @@
 'use client';
 import Dot from '../../components/Dot';
 import timeline from '../../data/timeline.json';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 //import { range } from 'lodash';
 
 function TimelinePage() {
-  const pathRef = useRef(null);
+  const pathRef = useRef<SVGPathElement | null>(null);
   const [thickness, setThickness] = useState('0.2');
   const [radius, setRadius] = useState('0.3');
+  const [points, setPoints] = useState<Array<{ x: number; y: number }>>([]);
 
   useEffect(() => {
     const updateTimeline = () => {
@@ -20,18 +21,24 @@ function TimelinePage() {
     window.addEventListener('resize', updateTimeline);
     return () => window.removeEventListener('resize', updateTimeline);
   }, []);
-  // useEffect(() => {
-  //   const path = pathRef.current;
-  //   const totalLength = path.getTotalLength();
 
-  //   const points = [];
-  //   for (let i = 1; i <= 15; i++) {
-  //     let point = path.getPointAtLength(totalLength * (i / 15));
-  //     point = { x: point.x.toFixed(2), y: point.y.toFixed(2) };
-  //     points.push(point);
-  //   }
-  //   console.log(points);
-  // });
+  useLayoutEffect(() => {
+    if (!pathRef.current) return;
+
+    const path = pathRef.current;
+    const totalLength = path.getTotalLength();
+    const calculatedPoints: Array<{ x: number; y: number }> = [];
+
+    timeline.forEach(snapshot => {
+      const tempPoint = path.getPointAtLength(totalLength * snapshot.percent);
+      calculatedPoints.push({
+        x: parseFloat(tempPoint.x.toFixed(2)),
+        y: parseFloat(tempPoint.y.toFixed(2)),
+      });
+    });
+
+    setPoints(calculatedPoints);
+  }, []);
 
   return (
     <>
@@ -60,13 +67,22 @@ function TimelinePage() {
             stroke="#4b4b4f"
             strokeWidth={thickness}
           />
-          {timeline.map(snapshot => {
+          {timeline.map((snapshot, index) => {
+            const point = points[index];
+            if (!point) return null;
+
             return (
               <g key={snapshot.startDate}>
-                <Dot radius={radius} snapshot={snapshot} />
+                <Dot
+                  radius={radius}
+                  snapshot={snapshot}
+                  pathRef={pathRef}
+                  percent={snapshot.percent}
+                  calculatedPoint={point}
+                />
                 <text
-                  x={snapshot.point.x + snapshot.textPosition.x}
-                  y={snapshot.point.y + snapshot.textPosition.y}
+                  x={point.x + snapshot.textPosition.x}
+                  y={point.y + snapshot.textPosition.y}
                   fill="currentColor"
                   fontSize="0.5"
                   textAnchor="start"
