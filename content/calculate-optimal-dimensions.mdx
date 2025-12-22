@@ -1,0 +1,51 @@
+# Optimizing Space in Two Dimensions
+
+## The Challenge
+
+I needed to calculate how big each circle should be for images with mixed numbers that need to show up to 300 circles in an SVG with varying dimensions and width to height ratios. I wanted the circles to be as big as possible and be spaced evenly.
+
+## The Solution
+
+Given a width and height of a container and a number of roughly-square items to fit inside of the container, this function returns the optimal size of each item so that they will all fit and use as much of the available space as possible.
+
+For example, given a width of 900 pixels and a height of 300 pixels, the aspect ratio would be 3 (900 / 300). If we wanted to fit say 100 items in a 900 by 300 container, multiplying 100 by the aspect ratio allows us to consider how to evenly distribute 300 (100\*3) items within a 900 by 900 pixel square.
+
+This can easily be done by taking the square root of 300 (triple the number of items we actually need) to determine that we need a little over 17 items to go in each row. In order to avoid overflow in the horizontal direction, I used `Math.floor()` method which will force the items per row to be 17.
+
+Since we actually only need 100 items in a 900 by 300 pixel container, we can calculate the number of rows needed with 100 / 17. This results in 5.88 which really means we need 6 rows but the last row will not be filled, which is why I used `Math.ceil()`.
+
+Since our container has an aspect ratio of 900:300, simplified 3:1, the ratio of itemsPerRow : numRows should be as close as possible to this ratio, but the function will prioritize making sure all items fully fit inside. If you want the items to be spaced out, multiply the width and height parameters by a scale factor less than one.
+
+## Code
+
+```javascript
+function calculateOptimalDimensions(width, height, numItems) {
+  let optimalDimensions = {};
+  let aspectRatio = width / height;
+
+  let itemsPerRow = Math.floor(Math.sqrt(numItems * aspectRatio));
+  let numRows = Math.ceil(numItems / itemsPerRow);
+
+  let spacesAvailableInLastRow = itemsPerRow * numRows - numItems;
+  let itemsInLastRow = itemsPerRow - spacesAvailableInLastRow;
+  if (itemsInLastRow <= numRows - 1) {
+    itemsPerRow++;
+    numRows--;
+  } else if (numRows <= spacesAvailableInLastRow) {
+    itemsPerRow--;
+  }
+
+  let itemSize = Math.min(width / itemsPerRow, height / numRows);
+
+  optimalDimensions.size = itemSize;
+  optimalDimensions.itemsPerRow = itemsPerRow;
+  optimalDimensions.numRows = numRows;
+  return optimalDimensions;
+}
+```
+
+## Example
+
+[View on CodePen](https://codepen.io/MathematiCode/pen/WNqvXod)
+
+<OptimalSpaceExample />
