@@ -8,7 +8,7 @@
 
 .container {
   display: grid;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   justify-items: center;
   align-items: center;
   justify-self: center;
@@ -29,17 +29,17 @@
 label > input,
 .input-container > input {
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   border: 3px solid white;
   padding-inline: 10px;
 }
 
 label {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
-  width: 210px;
+  width: 192px;
 }
 
 .back-unit {

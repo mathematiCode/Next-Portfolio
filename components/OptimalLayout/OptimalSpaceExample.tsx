@@ -6,28 +6,36 @@ import { range } from 'lodash';
 import './styles.css';
 
 function OptimalSpaceExample({}) {
-  const [numItems, setNumItems] = useState(75);
-  const [spacing, setSpacing] = useState(5);
-  const [width, setWidth] = useState(900);
-  const [height, setHeight] = useState(300);
+  const [numItems, setNumItems] = useState<number | string>(75);
+  const [spacing, setSpacing] = useState<number | string>(5);
+  const [width, setWidth] = useState<number | string>(800);
+  const [height, setHeight] = useState<number | string>(300);
   function handleNumItems(event: React.ChangeEvent<HTMLInputElement>) {
-    setNumItems(Number(event.target.value));
+    setNumItems(event.target.value);
   }
 
   function handleSpacingInput(event: React.ChangeEvent<HTMLInputElement>) {
-    setSpacing(Number(event.target.value));
+    const value = event.target.value;
+    // Check if the string represents a valid non-negative number
+    if (value === '' || (!isNaN(Number(value)) && Number(value) >= 0)) {
+      setSpacing(value);
+    } else {
+      setSpacing(0);
+    }
   }
 
   const updateWidth = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setWidth(Number(event.target.value));
+    setWidth(event.target.value);
   };
 
   const updateHeight = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setHeight(Number(event.target.value));
+    setHeight(event.target.value);
   };
   return (
-    <div className="bg-[#292D3E] w-fit p-6 rounded-lg">
-      <h1 className="text-white">Calculate Optimal Size of Square Items </h1>
+    <div className="bg-[#292D3E] p-6 rounded-lg">
+      <h2 className="text-white text-2xl mb-3">
+        Try toggling the values below to see the algorithm in action
+      </h2>
       <div className="inputs">
         <label htmlFor="num-items-input">
           Number of Items
@@ -46,7 +54,7 @@ function OptimalSpaceExample({}) {
             id="spacing-input"
             className="spacing-input"
             type="number"
-            step={10}
+            step={1}
             placeholder="Spacing"
             value={spacing}
             onChange={event => handleSpacingInput(event)}
@@ -77,12 +85,13 @@ function OptimalSpaceExample({}) {
         </label>
       </div>
       <OptimalLayout
-        width={width}
-        height={height}
-        horizontalSpacing={spacing}
+        width={Number(width) || 0}
+        height={Number(height) || 0}
+        horizontalSpacing={Number(spacing) || 0}
         verticalSpacing={2}
+        backgroundColor="#292D3E"
       >
-        {range(numItems).map((item: number, index: number) => {
+        {range(Number(numItems) || 0).map((item: number, index: number) => {
           return (
             <motion.div layout className="item" key={index}>
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">

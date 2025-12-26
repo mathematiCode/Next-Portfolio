@@ -1,0 +1,45 @@
+# Managing State Across Multiple Levels of Context
+
+## The Challenge
+
+I wanted to detect when the user had passed the level and I could do that with my BoardSquares context. This uses React Context to keep track of a 2 dimensional array representing each board square and which piece or pieces are currently located in each square. When they pass a level, I wanted to take my PiecesInPlay context (which resets every level) and save it as the solution for that level in GameProgress context. Since these are all separate contexts using React's Context API, I had to nest them so that PiecesInPlay is a child of BoardSquares. Technically these operate at the same level of abstraction and both update with each level change, but I had to make one a child of the other. I could have checked for a winning state within BoardSquares on each update but that would mean updating one context (GameProgress) inside of another (BoardSquares). And since PiecesInPlay is a child of BoardSquares, I wouldn't be able to access it from BoardSquares in order to save the players solution for that level.
+
+## The Solution
+
+One option was to combine the BoardSquaresContext and the PiecesInPlay context into one so I didn't have to deal with the nesting problem. But they were already pretty complex on their own, each with several methods.
+
+The challenge was checking for a winning state on each player move which could be done within the contexts where I was already handling each player move. But since this checking wasn't directly related to the responsibilities of PiecesInPlay or BoardSquares, I had to move this checking logic outside of both contexts. LLM's were pushing me to use useEffect but I knew it wasn't necessary for this case. Instead, I came up with a custom hook that returns a callback function that checks BoardSquares to see if it's in a winning state and if so saves the solution to GameProgress. I'm calling that callback on all user events that could result in winning.
+
+## Code
+
+```typescript
+import { useBoardSquares } from '../context/BoardSquares';
+import { useGameProgress } from '../context/GameProgress';
+import { usePiecesInPlay } from '../context/PiecesInPlay';
+import { useCurrentLevel } from '../context/CurrentLevel';
+import { useCallback } from 'react';
+
+export function useLevelStatus() {
+  const { getUnstablePieces, countEmptySquares } = useBoardSquares();
+  const { setLevelCompleted } = useGameProgress();
+  const { currentLevel } = useCurrentLevel();
+  const { piecesInPlay } = usePiecesInPlay();
+  const unstablePieces = getUnstablePieces();
+
+  const checkAndHandleLevelStatus = useCallback(() => {
+    const isLevelPassed =
+      unstablePieces.length === 0 && countEmptySquares() === 0;
+    if (isLevelPassed) {
+      setLevelCompleted(currentLevel, piecesInPlay);
+    }
+  }, [
+    unstablePieces,
+    countEmptySquares,
+    currentLevel,
+    piecesInPlay,
+    setLevelCompleted,
+  ]);
+
+  return { checkAndHandleLevelStatus };
+}
+```

@@ -44,7 +44,7 @@ function Navbar() {
           Learning Journey
         </Link>
         <Link
-          href={`/blogs/calculate-optimal-dimensions`}
+          href={`/blogs`}
           className="hover:text-[#1a5a4a] transition-colors"
         >
           Blog

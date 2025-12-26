@@ -10,11 +10,36 @@ Given a width and height of a container and a number of roughly-square items to 
 
 For example, given a width of 900 pixels and a height of 300 pixels, the aspect ratio would be 3 (900 / 300). If we wanted to fit say 100 items in a 900 by 300 container, multiplying 100 by the aspect ratio allows us to consider how to evenly distribute 300 (100\*3) items within a 900 by 900 pixel square.
 
-This can easily be done by taking the square root of 300 (triple the number of items we actually need) to determine that we need a little over 17 items to go in each row. In order to avoid overflow in the horizontal direction, I used `Math.floor()` method which will force the items per row to be 17.
+<div className="flex justify-between items-center">
+  <div className="w-[300px] h-[100px] relative justify-self-center">
+    <div className="w-full h-[100px] border-2" />
+    <span className="absolute top-[107px] left-[120px]">900px</span>
+    <span className="absolute top-[45px] right-[-50px]">300px</span>
+  </div>
+  <ArrowBigRight size={45} strokeWidth={1.25} />
+  <div className="w-[300px] h-[300px] relative justify-self-center">
+    <div className="w-full h-[100px] border-2" />
+    <div className="w-full h-[100px] border-2" />
+    <div className="w-full h-[100px] border-2" />
+    <span className="absolute top-[75px] left-[120px]">900px</span>
+    <span className="absolute top-[150px] right-[-50px]">900px</span>
+  </div>
+</div>
+<br />
 
-Since we actually only need 100 items in a 900 by 300 pixel container, we can calculate the number of rows needed with 100 / 17. This results in 5.88 which really means we need 6 rows but the last row will not be filled, which is why I used `Math.ceil()`.
+Now that we have a square, we can take the square root of 300 (triple the number of items we actually need) to determine that we need a little over 17 items to go in each row. In order to avoid overflow in the horizontal direction, I used the `Math.floor()` method which will force the items per row to be 17.
 
-Since our container has an aspect ratio of 900:300, simplified 3:1, the ratio of itemsPerRow : numRows should be as close as possible to this ratio, but the function will prioritize making sure all items fully fit inside. If you want the items to be spaced out, multiply the width and height parameters by a scale factor less than one.
+<br />
+<OptimalLayoutWithCircles numItems={300} width={300} height={300} />
+<br />
+
+Since we actually only need 100 items in a 900 by 300 pixel container, we can calculate the number of rows needed with 100 / 17. This results in 5.88 which really means we need 6 rows but the last row will not be filled. So for the number of rows I used `Math.ceil()` to ensure all the items would fit in the container.
+
+<br />
+<OptimalLayoutWithCircles numItems={100} width={300} height={100} />
+<br />
+
+Since our container has an aspect ratio of 900:300, simplified 3:1, the ratio of itemsPerRow : numRows should be as close as possible to this ratio, but the function will prioritize making sure all items fully fit inside. If you wanted the items to be spaced out, multiply the width and height parameters by a scale factor less than one.
 
 ## Code
 
@@ -46,6 +71,6 @@ function calculateOptimalDimensions(width, height, numItems) {
 
 ## Example
 
-[View on CodePen](https://codepen.io/MathematiCode/pen/WNqvXod)
+{/* [View on CodePen](https://codepen.io/MathematiCode/pen/WNqvXod) */}
 
 <OptimalSpaceExample />

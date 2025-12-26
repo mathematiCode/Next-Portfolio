@@ -1,7 +1,8 @@
+'use client';
 import { useState, useRef } from 'react';
 import { random } from 'lodash';
-import { lightenColor } from '../utils/colorUtils';
-import './likeButton.css';
+import { lightenColor, hslToCss } from '../../utils/colorUtils';
+import './like-button.css';
 
 export const LikeButton = ({
   onLike = () => {},
@@ -12,7 +13,7 @@ export const LikeButton = ({
   numParticles = 30,
   fadeDuration = 2000,
   disperseDuration = 1000,
-  heartColor = '#ff6b6b',
+  heartColor = { h: 264, s: 92, l: 57 },
   hueMin = 0,
   hueMax = 360,
   saturation = 80,
@@ -34,7 +35,7 @@ export const LikeButton = ({
     }
   };
 
-  const explodeParticles = numParticles => {
+  const explodeParticles = (numParticles: number) => {
     if (!buttonRef.current) return;
 
     for (let i = 0; i < numParticles; i++) {
@@ -82,15 +83,17 @@ export const LikeButton = ({
       className={`like-button ${liked ? 'liked' : ''}`}
       onClick={handleClick}
       style={{
-        '--heart-color': heartColor,
-        '--heart-color-light': lightenColor(heartColor, 0.3),
+        '--heart-color': hslToCss(heartColor),
+        '--heart-color-light': hslToCss(
+          lightenColor({ h: 264, s: 92, l: 57 }, 0.3)
+        ),
       }}
       {...props}
     >
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
           d="M3.68546 5.43796C8.61936 1.29159 11.8685 7.4309 12.0406 7.4309C12.2126 7.43091 15.4617 1.29159 20.3956 5.43796C26.8941 10.8991 13.5 21.8215 12.0406 21.8215C10.5811 21.8215 -2.81297 10.8991 3.68546 5.43796Z"
-          stroke={heartColor}
+          stroke="red"
           strokeWidth="2"
           strokeLinecap="round"
         />

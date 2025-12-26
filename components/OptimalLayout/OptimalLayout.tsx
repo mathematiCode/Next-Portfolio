@@ -1,3 +1,4 @@
+'use client';
 import { calculateOptimalSize } from '../../utils/calculateOptimalSize';
 import { motion } from 'motion/react';
 
@@ -6,6 +7,8 @@ export const OptimalLayout = ({
   height = 150,
   horizontalSpacing = 2,
   verticalSpacing = 2,
+  borderColor = 'white',
+  backgroundColor = 'transparent',
   children,
 }) => {
   const numItems = children.length;
@@ -29,13 +32,15 @@ export const OptimalLayout = ({
   return (
     <motion.div
       layout
-      className="container"
+      className={`container`}
       style={{
         width: `${width}px `,
         height: `${height}px`,
         gridTemplateColumns: `repeat(${itemsPerRow}, 1fr)`,
         gridTemplateRows: `repeat(${numRows}, 1fr)`,
         '--size': `${itemSize}px`,
+        border: `2px solid ${borderColor}`,
+        backgroundColor: backgroundColor,
       }}
     >
       {children}

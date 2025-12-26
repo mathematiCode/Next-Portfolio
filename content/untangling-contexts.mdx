@@ -1,0 +1,42 @@
+# Untangling Contexts and Components
+
+## The Challenge
+
+I have 5 different contexts each with their own functions that operate on that context, which felt really clean and modular to me. But it got messy because I was calling a function to update one context inside of a function that's supposed to operate on its own context. So I had to make sure the functions in each context only make changes to their own context and to bring any other logic or function calls outside of the context file.
+
+## The Solution
+
+Basically if movePiece is a function that operates on PiecesInPlay (a context) I had it set up like this:
+
+```typescript
+movePiece(newLocation) {
+  // math that checks if newLocation is valid
+  // updates newLocation to a valid one
+  // removePieceFromBoard (which updates a different context)
+  // actually move the piece
+  // addPieceToBoard (which updates a different context)
+}
+
+onDragEnd {
+  // Maybe more logic that also can update the location (this made things very confusing)
+  movePiece(newLocation)
+}
+```
+
+removePieceFromBoard and addPieceToBoard are functions in a different context file that just keeps track of the 2D array representing the board. But they don't actually do anything visually.
+
+And I had to change it to
+
+```typescript
+movePiece(newLocation) {
+  // actually move the piece in the PiecesInPlay context (which makes it move visually)
+}
+
+onDragEnd {
+  // math that checks if newLocation is valid
+  // updates newLocation to a valid one
+  // removePieceFromBoard (which updates a different context)
+  movePiece(newLocation)
+  // addPieceToBoard (which updates a different context)
+}
+```
