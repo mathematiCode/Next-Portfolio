@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { OptimalLayout } from './OptimalLayout';
 import { motion } from 'motion/react';
 import { range } from 'lodash';
@@ -10,6 +10,17 @@ function OptimalSpaceExample({}) {
   const [spacing, setSpacing] = useState<number | string>(5);
   const [width, setWidth] = useState<number | string>(800);
   const [height, setHeight] = useState<number | string>(300);
+
+  useLayoutEffect(() => {
+    // Update width based on window size before paint to avoid visual flash
+    // Runs synchronously after DOM mutations but before browser paint
+    // This is a valid use case for useLayoutEffect: measuring browser APIs and updating state before paint
+    if (window.innerWidth < 800) {
+      setWidth(300);
+    }
+    // Note: The linter warns about setState in effects, but this is intentional:
+    // useLayoutEffect is specifically designed for synchronous DOM measurements and immediate visual updates
+  }, []);
   function handleNumItems(event: React.ChangeEvent<HTMLInputElement>) {
     setNumItems(event.target.value);
   }
