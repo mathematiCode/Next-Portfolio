@@ -24,7 +24,7 @@ export const darkenColor = (hsl: hslType, amount: number): hslType => {
  * @param {object} hsl - HSL color object { h: number, s: number, l: number }
  * @returns {string} - CSS hsl() string
  */
-export const hslToCss = hsl => {
+export const hslToCss = (hsl: hslType) => {
   return `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
 };
 

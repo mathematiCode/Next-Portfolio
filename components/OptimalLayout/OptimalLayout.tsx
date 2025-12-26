@@ -1,6 +1,7 @@
 'use client';
 import { calculateOptimalSize } from '../../utils/calculateOptimalSize';
 import { motion } from 'motion/react';
+import { Children, CSSProperties } from 'react';
 
 export const OptimalLayout = ({
   width = 200,
@@ -10,8 +11,16 @@ export const OptimalLayout = ({
   borderColor = 'white',
   backgroundColor = 'transparent',
   children,
+}: {
+  width?: number;
+  height?: number;
+  horizontalSpacing?: number;
+  verticalSpacing?: number;
+  borderColor?: string;
+  backgroundColor?: string;
+  children: React.ReactNode;
 }) => {
-  const numItems = children.length;
+  const numItems = Children.count(children);
   if (numItems <= 1) {
     console.warn(
       'You are only passing one direct child. This is a layout component that optimizes the size and spacing of many items in a container when they are passed in as direct children. Make sure you are passing your items as direct children nodes wrapped only in a fragment.'
@@ -33,15 +42,17 @@ export const OptimalLayout = ({
     <motion.div
       layout
       className={`container`}
-      style={{
-        width: `${width}px `,
-        height: `${height}px`,
-        gridTemplateColumns: `repeat(${itemsPerRow}, 1fr)`,
-        gridTemplateRows: `repeat(${numRows}, 1fr)`,
-        '--size': `${itemSize}px`,
-        border: `2px solid ${borderColor}`,
-        backgroundColor: backgroundColor,
-      }}
+      style={
+        {
+          width: `${width}px `,
+          height: `${height}px`,
+          gridTemplateColumns: `repeat(${itemsPerRow}, 1fr)`,
+          gridTemplateRows: `repeat(${numRows}, 1fr)`,
+          '--size': `${itemSize}px`,
+          border: `2px solid ${borderColor}`,
+          backgroundColor: backgroundColor,
+        } as CSSProperties & { [key: `--${string}`]: string }
+      }
     >
       {children}
     </motion.div>

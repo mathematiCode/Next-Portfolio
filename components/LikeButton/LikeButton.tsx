@@ -82,12 +82,14 @@ export const LikeButton = ({
       ref={buttonRef}
       className={`like-button ${liked ? 'liked' : ''}`}
       onClick={handleClick}
-      style={{
-        '--heart-color': hslToCss(heartColor),
-        '--heart-color-light': hslToCss(
-          lightenColor({ h: 264, s: 92, l: 57 }, 0.3)
-        ),
-      }}
+      style={
+        {
+          '--heart-color': hslToCss(heartColor),
+          '--heart-color-light': hslToCss(
+            lightenColor({ h: 264, s: 92, l: 57 }, 0.3)
+          ),
+        } as React.CSSProperties & { [key: `--${string}`]: string }
+      }
       {...props}
     >
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
