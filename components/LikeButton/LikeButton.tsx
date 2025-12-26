@@ -21,7 +21,7 @@ export const LikeButton = ({
   ...props
 }) => {
   const [liked, setLiked] = useState(isLiked);
-  const buttonRef = useRef(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = () => {
     const newLikedState = !liked;
