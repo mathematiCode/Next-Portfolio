@@ -57,6 +57,14 @@
     "codeSnippet": ""
   },
   {
+    "id": "too-many-parameters",
+    "project": "visual-fraction-library",
+    "summary": "Refactoring Too Many Parameters",
+    "challenge": "",
+    "explanation": "",
+    "codeSnippet": ""
+  },
+  {
     "id": "loading-sequence",
     "project": "meet-near-me",
     "summary": "Alpine Loading Sequence for Embed Widget",
