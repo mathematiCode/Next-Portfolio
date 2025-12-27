@@ -8,9 +8,9 @@ function BlogsPage() {
         <Link href="/blogs/calculate-optimal-dimensions">
           Calculate Optimal Dimensions
         </Link>
-        {/* <Link href="/blogs/collision-detection">
+        <Link href="/blogs/collision-detection">
           Creating my own Collision Detection Algorithm
-        </Link> */}
+        </Link>
       </div>
     </>
   );

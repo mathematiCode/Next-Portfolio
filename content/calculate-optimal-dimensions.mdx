@@ -10,13 +10,14 @@ Given a width and height of a container and a number of roughly-square items to 
 
 For example, given a width of 900 pixels and a height of 300 pixels, the aspect ratio would be 3 (900 / 300). If we wanted to fit say 100 items in a 900 by 300 container, multiplying 100 by the aspect ratio allows us to consider how to evenly distribute 300 (100\*3) items within a 900 by 900 pixel square.
 
-<div className="flex justify-between items-center">
+<div className="flex flex-col md:flex-row justify-between items-center gap-4">
   <div className="w-[300px] h-[100px] relative justify-self-center">
     <div className="w-full h-[100px] border-2" />
     <span className="absolute top-[107px] left-[120px]">900px</span>
     <span className="absolute top-[45px] right-[-50px]">300px</span>
   </div>
-  <ArrowBigRight size={45} strokeWidth={1.25} />
+  <ArrowBigRight size={45} strokeWidth={1.25} className="hidden md:block" />
+  <ArrowBigDown size={45} strokeWidth={1.25} className="block mt-8 md:hidden" />
   <div className="w-[300px] h-[300px] relative justify-self-center">
     <div className="w-full h-[100px] border-2" />
     <div className="w-full h-[100px] border-2" />

@@ -7,7 +7,7 @@ import OptimalLayoutWithCircles from '@/components/OptimalLayout/OptimalLayoutWi
 import { LikeButton } from '@/components/LikeButton/LikeButton';
 import MDXCodeBlock from '@/components/MDXCodeBlock';
 import CollisionDetectionDemo from '@/components/CollisionDetectionDemo';
-import { ArrowBigRight } from 'lucide-react';
+import { ArrowBigRight, ArrowBigDown } from 'lucide-react';
 
 export default async function BlogPage({
   params,
@@ -33,6 +33,7 @@ export default async function BlogPage({
           code: MDXCodeBlock,
           CollisionDetectionDemo,
           ArrowBigRight,
+          ArrowBigDown,
           h1: ({ children }) => (
             <h1 className="text-4xl font-bold text-[#292D3E] mt-8 mb-4">
               {children}
