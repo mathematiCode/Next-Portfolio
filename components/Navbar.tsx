@@ -52,16 +52,18 @@ function Navbar() {
         >
           About{' '}
         </Link>
-        <Link
-          href={isMobile ? '/timelineblock' : '/timeline'}
-          className={`hover:text-[#292D3E] transition-colors ${
-            pathname === '/timeline' || pathname === '/timelineblock'
-              ? 'text-[#292D3E] font-bold'
-              : ''
-          }`}
-        >
-          Learning Journey
-        </Link>
+        {!isMobile && (
+          <Link
+            href={'/timeline'}
+            className={`hover:text-[#292D3E] transition-colors ${
+              pathname === '/timeline' || pathname === '/timelineblock'
+                ? 'text-[#292D3E] font-bold'
+                : ''
+            }`}
+          >
+            Learning Journey
+          </Link>
+        )}
         <Link
           href="/blogs"
           className={`hover:text-[#292D3E] transition-colors ${
