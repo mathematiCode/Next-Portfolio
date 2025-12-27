@@ -1,0 +1,11 @@
+# Optimal UX for out of bounds piece placements
+
+## The Challenge
+
+I needed a way to handle overlapping and out of bounds pieces. At this stage, it was possible to have a piece hidden under another piece and go completely unnoticed. At first I wanted to completely prevent pieces from overlapping by immediately shifting them into the closest valid location. Unfortunately, this was not always possible for pieces that were overlapping or out of bounds due to a mathematical transformation. For example, it's possible to make a piece wider than the whole game board. I felt having the pieces `sometimes` move into a valid spot and sometimes stay in an unvalid state would be a really confusing user experience.
+
+I considered disabling actions that caused the pieces to be longer or taller than the puzzle board but I realized this would take away an opportunity for players to make mistakes and learn from them. I considered transforming the piece into the unvalid state for a moment, and then transforming it back, but this still could remove the opportunity to think and learn from this. All transformations have an inverse so if a student accidentally doubled the width and halved the height of a piece and it ended up wider than the board, I wanted them to realize that they now have to halve the width and double the height, not undo it for them. Additionally, there are some cases where you'd want to temporarily transform a piece into an invalid state so you could apply a second transformation to get the pieces you want.
+
+## The Solution
+
+I decided to allow all piece overlaps and all valid and invalid transformations to maximize learning opportunities from making and fixing mistakes. I provided a clear affordance for overlapping and out of bounds by making the pieces vibrate to represent an unstable state.

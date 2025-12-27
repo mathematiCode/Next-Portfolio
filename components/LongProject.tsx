@@ -5,6 +5,7 @@ import { ProjectType } from '@/types';
 import Image from 'next/image';
 import challenges from '../data/challenges.json';
 import { useState } from 'react';
+import Link from 'next/link';
 
 interface ProjectProps {
   project: ProjectType;
@@ -22,36 +23,36 @@ function LongProject({ project }: ProjectProps) {
   const [currentChallenge, setCurrentChallenge] = useState(emptyChallenge);
   const [codeContent, setCodeContent] = useState<string>('');
 
-  const handleChallengeClick = async (challenge: typeof emptyChallenge) => {
-    setCurrentChallenge(challenge);
+  // const handleChallengeClick = async (challenge: typeof emptyChallenge) => {
+  //   setCurrentChallenge(challenge);
 
-    if (!challenge.codeSnippet) {
-      setCodeContent('');
-      return;
-    }
+  //   if (!challenge.codeSnippet) {
+  //     setCodeContent('');
+  //     return;
+  //   }
 
-    // Check if codeSnippet is a filename (ends with .js, .ts, .tsx, etc.)
-    const isFilename = /\.(js|ts|tsx|jsx|py|java|cpp|c|rb|go)$/i.test(
-      challenge.codeSnippet
-    );
+  //   // Check if codeSnippet is a filename (ends with .js, .ts, .tsx, etc.)
+  //   const isFilename = /\.(js|ts|tsx|jsx|py|java|cpp|c|rb|go)$/i.test(
+  //     challenge.codeSnippet
+  //   );
 
-    if (isFilename) {
-      try {
-        const response = await fetch(`/snippets/${challenge.codeSnippet}`);
-        if (response.ok) {
-          const code = await response.text();
-          setCodeContent(code);
-        } else {
-          setCodeContent(challenge.codeSnippet);
-        }
-      } catch (error) {
-        console.error('Error loading code snippet:', error);
-        setCodeContent(challenge.codeSnippet);
-      }
-    } else {
-      setCodeContent(challenge.codeSnippet);
-    }
-  };
+  //   if (isFilename) {
+  //     try {
+  //       const response = await fetch(`/snippets/${challenge.codeSnippet}`);
+  //       if (response.ok) {
+  //         const code = await response.text();
+  //         setCodeContent(code);
+  //       } else {
+  //         setCodeContent(challenge.codeSnippet);
+  //       }
+  //     } catch (error) {
+  //       console.error('Error loading code snippet:', error);
+  //       setCodeContent(challenge.codeSnippet);
+  //     }
+  //   } else {
+  //     setCodeContent(challenge.codeSnippet);
+  //   }
+  // };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[550px] rounded-lg bg-[#c5faf7] border-black border-2 relative shadow-[5px_5px_#3e3e3e]">
       {currentChallenge.id === '' ? (
@@ -59,7 +60,7 @@ function LongProject({ project }: ProjectProps) {
           <div className="flex flex-col h-full justify-between text-left">
             <div className="flex flex-col gap-4 text-left">
               <div>
-                <h2 className="text-3xl font-bold text-[#1a5a4a] mb-0 text-left">
+                <h2 className="text-3xl font-bold text-[#292D3E] mb-0 text-left">
                   {project.name}
                 </h2>
                 <span className="mt-0">{project.subtitle}</span>
@@ -84,7 +85,7 @@ function LongProject({ project }: ProjectProps) {
                         key={index}
                         className="text-md text-gray-700 flex items-start gap-2 text-left"
                       >
-                        <span className="text-[#1a5a4a]">•</span>
+                        <span className="text-[#292D3E]">•</span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -96,7 +97,7 @@ function LongProject({ project }: ProjectProps) {
                 {project.stack.map(tech => (
                   <span
                     key={tech}
-                    className="px-3 py-1 rounded-full bg-[#c5faf7] text-[#1a5a4a] text-sm font-medium border border-[#1a5a4a]"
+                    className="px-3 py-1 rounded-full bg-[#c5faf7] text-[#292D3E] text-sm font-medium border border-[#292D3E]"
                   >
                     {tech}
                   </span>
@@ -114,15 +115,16 @@ function LongProject({ project }: ProjectProps) {
                         ch => ch.id === challengeId
                       );
                       return (
-                        <button
+                        <Link
                           key={challengeId}
-                          onClick={() =>
-                            handleChallengeClick(challenge || emptyChallenge)
-                          }
+                          href={`/blogs/${challengeId}`}
+                          // onClick={() =>
+                          //   handleChallengeClick(challenge || emptyChallenge)
+                          // }
                           className="button"
                         >
                           {challenge?.summary || challengeId.replace(/-/g, ' ')}
-                        </button>
+                        </Link>
                       );
                     })}
                   </div>
@@ -154,7 +156,7 @@ function LongProject({ project }: ProjectProps) {
                   href={project.github}
                   target="_blank"
                   rel="noopener"
-                  className="flex items-center gap-2 px-4 py-2 bg-white text-[#1a5a4a] border-2 border-[#1a5a4a] rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-xl"
+                  className="flex items-center gap-2 px-4 py-2 bg-white text-[#292D3E] border-2 border-[#292D3E] rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-xl"
                 >
                   <Github size={20} />
                   Code
@@ -165,14 +167,11 @@ function LongProject({ project }: ProjectProps) {
         </>
       ) : (
         <div className="col-span-full">
-          {/* <h2>
-            {currentChallenge.summary}
-            </h2> */}
-          <h2 className="text-start text-xl font-bold text-[#1a5a4a] my-2">
+          <h2 className="text-start text-xl font-bold text-[#292D3E] my-2">
             The Challenge
           </h2>
           <p className="mb-6 text-start">{currentChallenge.challenge}</p>
-          <h2 className="text-start text-xl font-bold text-[#1a5a4a] mb-2">
+          <h2 className="text-start text-xl font-bold text-[#292D3E] mb-2">
             The Solution
           </h2>
           <p className="mb-6 text-start">{currentChallenge.explanation}</p>

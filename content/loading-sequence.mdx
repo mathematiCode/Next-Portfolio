@@ -1,0 +1,9 @@
+# Alpine Loading Sequence for Embed Widget
+
+## The Challenge
+
+To create the embed widget, I used innerHTML, but innerHTML doesn't execute javascript. We have several templ files (Go templating language) with script tags in the same file. To handle this, I had to write a script to extract the script tags out, replace them with html markers, and then insert them back after the DOM has been recreated for the embed. One challenge was getting the timing right for Alpine JS because in our HTML we have things like x-data=getHomeState() but getHomeState() uses an Alpine store that is only initialized after the alpine state script runs.
+
+## The Solution
+
+I implemented a retry mechanism that checks if the stores have been registered every 50ms (up to 20 retries, 1 second total) and only initializes Alpine once all stores are confirmed to exist.

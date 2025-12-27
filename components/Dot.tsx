@@ -68,8 +68,8 @@ function Dot({
         <Popover.Trigger asChild>
           <g onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <circle
-              cx={displayPoint.x}
-              cy={displayPoint.y}
+              cx={displayPoint?.x}
+              cy={displayPoint?.y}
               r={radius}
               fill="#3a3a3b"
               className="dot z-10 cursor-pointer"

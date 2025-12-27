@@ -17,7 +17,7 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
       <div className="flex flex-wrap m-1 gap-2">
         {stack.map((item: string) => (
           <span
-            className="px-3 py-1 rounded-full bg-[#c5faf7] text-[#1a5a4a] text-sm font-medium border border-[#1a5a4a]"
+            className="px-3 py-1 rounded-full bg-[#c5faf7] text-[#292D3E] text-sm font-medium border border-[#292D3E]"
             key={item}
           >
             {item}
@@ -47,7 +47,7 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
           href={github}
           target="_blank"
           rel="noopener"
-          className="flex items-center gap-2 px-4 py-2 bg-white text-[#1a5a4a] border-2 border-[#1a5a4a] rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-md"
+          className="flex items-center gap-2 px-4 py-2 bg-white text-[#292D3E] border-2 border-[#292D3E] rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-md"
         >
           <Github size={20} />
           Code

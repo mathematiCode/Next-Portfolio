@@ -45,7 +45,7 @@ function TimelinePage() {
       <h1>Timeline</h1>
       <div className="relative">
         <svg
-          className="justify-self-start"
+          className="justify-self-start pb-16"
           viewBox="-3 0 27 40"
           preserveAspectRatio="none"
           style={{ minWidth: '70%', maxWidth: '80%', minHeight: '100vh' }}
@@ -93,7 +93,7 @@ function TimelinePage() {
             );
           })}
         </svg>
-        <div className="absolute top-0 h-full right-0 w-60 border-gray-600 border-l-4 flex flex-col pt-16 justify-between">
+        <div className="absolute top-0 h-full right-0 w-60 border-gray-600 border-l-4 flex flex-col pt-16 justify-between pb-16">
           <span>Jan 2024</span>
           <span>Feb 2024</span>
           <span>March 2024</span>

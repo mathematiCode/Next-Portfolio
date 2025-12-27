@@ -1,18 +1,7 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import Navbar from '../components/Navbar';
 import '../index.css';
 import './globals.css';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: 'Julianna Messineo',
@@ -26,11 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased relative min-h-screen">
         <Navbar />
         <div className="lg:px-8 mx-auto">{children}</div>
+        <p className="absolute bottom-0 left-0 right-0 text-center py-4">
+          © 2025 Julianna Messineo
+        </p>
       </body>
     </html>
   );

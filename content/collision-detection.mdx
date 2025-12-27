@@ -1,0 +1,45 @@
+# Custom Collision Detection Algorithm
+
+## The Challenge
+
+Dnd Kit, the drag and drop library I was using assumed each draggable mapped to a single drop target, but my pieces spanned multiple grid cells. This was causing the pieces to occasionally drop into adjacent spaces instead of the correct space when they were placed near the edge.
+
+## The Solution
+
+I wrote a custom algorithm to determine valid drop positions based on the top-left corner of each piece. This made the drag and drop experience feel much more precise and predictable.
+
+First I created this rateDroppability function that assigns a number to each potential square on the board that a piece could be dropped on.
+
+```typescript
+export function rateDroppability(x: number, y: number, droppableRect: any) {
+  const { top, left, width, height } = droppableRect;
+  /* I'm multiplying the width and height by 2 to allow a greater range of droppableRects
+  to be considered by decreasing the likelihood of a negative xOffsetRatio or yOffsetRatio */
+  const xOffsetRatio = (width * 2 - Math.abs(x - left)) / (width * 2);
+  const yOffsetRatio = (height * 2 - Math.abs(y - top)) / (height * 2);
+  if (xOffsetRatio < 0 && yOffsetRatio < 0) return 0;
+  return (xOffsetRatio * yOffsetRatio).toFixed(3);
+}
+```
+
+<CollisionDetectionDemo />
+
+Then I
+
+```typescript
+function customCollisionDetection(args: any) {
+  const { collisionRect } = args;
+
+  const x = collisionRect.left;
+  const y = collisionRect.top;
+
+  let potentialDroppables: any = rectIntersection(args);
+  if (potentialDroppables[0]) {
+    potentialDroppables.forEach((droppable: any) => {
+      const droppableRect = droppable.data.droppableContainer.rect.current;
+      droppable.data.value = rateDroppability(x, y, droppableRect);
+    });
+  }
+  return potentialDroppables.sort(compareCollisionRects);
+}
+```

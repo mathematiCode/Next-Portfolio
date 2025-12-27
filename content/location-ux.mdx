@@ -1,0 +1,9 @@
+# UX for setting location temporarily or permanently
+
+## The Challenge
+
+I was creating a `Locate Me` feature that uses the browser geolocation API to locate users when they want to search for events near them, rather than selecting a city from the dropdown. I was asked to automatically update the user's permanent location in the database whenever this feature is used. Since this was just another option to update the state of the events showing (with the source of truth being the dropdown preview) I felt it would be confusing for Locate Me to have a different behavior than the rest of the dropdown.
+
+## The Solution
+
+I pushed for adding a checkbox or modal prompting the user if they want to update their default location. I really wanted the behavior for Locate Me and the rest of the dropdown to be the same but if someone was just checking out many different cities with the dropdown, they may get tired of having to click `No I don't want to update my default location` each time, which is honestly fair. So we settled on having a `Do you want to save this as your default city?` prompt only show when someone uses Locate Me.

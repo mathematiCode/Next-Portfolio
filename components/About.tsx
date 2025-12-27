@@ -6,7 +6,7 @@ function About() {
       className=" m-0 bg-[#c5faf7] rounded-lg border-2 p-4 xl:w-2/3 w-full"
     >
       <div className="text-center">
-        <h2 className="section-title animate-fade-in-up text-3xl font-bold text-[#1a5a4a] mb-2">
+        <h2 className="section-title animate-fade-in-up text-3xl font-bold text-[#292D3E] mb-2">
           About Me
         </h2>
         <p className="text-xl animate-fade-in-up animate-delay-100">

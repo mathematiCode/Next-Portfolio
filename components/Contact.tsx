@@ -6,7 +6,7 @@ function Contact() {
     <section id="contact" className="py-20 xl:w-2/3 w-full">
       <div className=" w-full">
         <div className="text-center">
-          <h2 className="section-title animate-fade-in-up text-3xl font-bold text-[#1a5a4a] mb-2">
+          <h2 className="section-title animate-fade-in-up text-3xl font-bold text-[#292D3E] mb-2">
             Let&apos;s Connect
           </h2>
           <p className="text-xl animate-fade-in-up animate-delay-100">
@@ -98,7 +98,6 @@ function Contact() {
         </div>
       </div>
       <Calendly />
-      <p>© 2025 Julianna Messineo</p>
     </section>
   );
 }
