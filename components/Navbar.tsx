@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,20 +36,47 @@ function Navbar() {
       }`}
     >
       <div className="flex items-center text-lg justify-end gap-6 p-4">
-        <Link href="/" className="hover:text-[#1a5a4a] transition-colors">
+        <Link
+          href="/"
+          className={`hover:text-[#292D3E] transition-colors ${
+            pathname === '/' ? 'text-[#292D3E] font-bold' : ''
+          }`}
+        >
           Home
         </Link>
         <Link
+          href="/about"
+          className={`hover:text-[#292D3E] transition-colors ${
+            pathname === '/about' ? 'text-[#292D3E] font-bold' : ''
+          }`}
+        >
+          About{' '}
+        </Link>
+        <Link
           href={isMobile ? '/timelineblock' : '/timeline'}
-          className="hover:text-[#1a5a4a] transition-colors"
+          className={`hover:text-[#292D3E] transition-colors ${
+            pathname === '/timeline' || pathname === '/timelineblock'
+              ? 'text-[#292D3E] font-bold'
+              : ''
+          }`}
         >
           Learning Journey
         </Link>
         <Link
-          href={`/blogs`}
-          className="hover:text-[#1a5a4a] transition-colors"
+          href="/blogs"
+          className={`hover:text-[#292D3E] transition-colors ${
+            pathname.startsWith('/blogs') ? 'text-[#292D3E] font-bold' : ''
+          }`}
         >
           Blog
+        </Link>
+        <Link
+          href="/contact"
+          className={`hover:text-[#292D3E] transition-colors ${
+            pathname === '/contact' ? 'text-[#292D3E] font-bold' : ''
+          }`}
+        >
+          Contact
         </Link>
       </div>
     </nav>

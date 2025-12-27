@@ -1,6 +1,7 @@
 import { OptimalLayout } from './OptimalLayout';
 import { calculateOptimalSize } from '@/utils/calculateOptimalSize';
 import { range } from 'lodash';
+import './styles.css';
 
 function OptimalLayoutWithCircles({
   numItems,

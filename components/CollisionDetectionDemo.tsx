@@ -112,31 +112,6 @@ function CollisionDetectionDemo({}) {
         </svg>
       </div>
       <div className="flex flex-col mx-4">
-        {/* <span>
-          x offset ratio: (width * 2 - Math.abs(x - left)) / (width * 2);
-        </span>
-        <span>
-          x offset ratio: (width * 2 - Math.abs({redDotX} - {yellowDotX})) /
-          (width * 2);
-        </span>
-        <span>
-          {' '}
-          x offset ratio: (width * 2 - Math.abs(
-          {(redDotX - yellowDotX).toFixed(2)})) / (width * 2);
-        </span>
-
-        <span>
-          y offset ratio: (height * 2 - Math.abs(y - top)) / (height * 2);
-        </span>
-        <span>
-          y offset ratio: (height * 2 - Math.abs({redDotY} - {yellowDotY})) /
-          (height * 2);
-        </span>
-        <span>
-          {' '}
-          y offset ratio: (height * 2 - Math.abs(
-          {(redDotY - yellowDotY).toFixed(2)})) / (height * 2)
-        </span> */}
         <span className="text-lg">
           Droppability Rating: {rateDroppability(redDotX, redDotY, yellowRect)}
         </span>
