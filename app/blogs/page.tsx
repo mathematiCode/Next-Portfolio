@@ -4,7 +4,11 @@ import { readFile } from 'fs/promises';
 import { join } from 'path';
 import CollisionDetectionDemoStatic from '@/components/CollisionDetectionDemoStatic';
 import OptimalLayoutWithCircles from '@/components/OptimalLayout/OptimalLayoutWithCircles';
-import ContextPreview from '@/components/ContextPreview';
+import {
+  CombinatorialExplosionPreview,
+  ContextPreview,
+  TooManyParamsPreview,
+} from '@/components/CodePreviews';
 import LoadingSequenceDiagram from '@/components/LoadingSequenceDiagram';
 
 interface BlogPost {
@@ -63,7 +67,7 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
     title:
       'Calculating the Optimal Distribution of Items to Maximize Available Space',
     preview: (
-      <OptimalLayoutWithCircles numItems={100} width={300} height={220} />
+      <OptimalLayoutWithCircles numItems={106} width={300} height={220} />
     ),
   },
   {
@@ -78,7 +82,7 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
   },
   {
     id: 'number-of-colors-for-division',
-    title: 'An Algorithm for Colors Needed to Avoid Matching Adjacent Groups',
+    title: 'An Algorithm to Avoid Matching Adjacent Groups',
     preview: (
       <Image
         src="/fraction-division.png"
@@ -94,6 +98,24 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
     preview: <LoadingSequenceDiagram />,
   },
   {
+    id: 'location-ux',
+    title: 'When friction is a good thing',
+    preview: (
+      <div className="relative w-full h-2/3 py-16 px-6 rounded-md text-2xl  bg-[#292D3E] text-white shadow-2xl ring-2 ring-orange-300">
+        Do you want to save this as your default location?
+        <div className="absolute flex right-4 bottom-4 gap-4">
+          <span className="bg-white text-[#292D3E] px-3 rounded">Yes</span>
+          <span className="bg-white text-[#292D3E] px-3 rounded">No</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'too-many-parameters',
+    title: 'Refactoring Functions with Way too Many Parameters',
+    preview: <TooManyParamsPreview />,
+  },
+  {
     id: 'ux-piece-placements',
     title: 'UX for handling out of bounds piece placements',
     preview: (
@@ -103,6 +125,26 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
         width={300}
         height={200}
       />
+    ),
+  },
+  {
+    id: 'combinatorial-explosion',
+    title: 'Refactoring To Decouple Data and Avoid Combinatorial Explosion ',
+    preview: <CombinatorialExplosionPreview />,
+  },
+  {
+    id: 'testing-multi-user',
+    title: 'Testing A Multi User Application',
+    preview: (
+      <div>
+        <Image
+          alt="Diagram showing 3 different users interacting with each other"
+          src="/secret-santa.png"
+          width={300}
+          height={200}
+          unoptimized
+        />
+      </div>
     ),
   },
 ];
@@ -136,12 +178,12 @@ async function BlogsPage() {
       <p className="text-gray-600 mb-8">
         Technical deep-dives and problem-solving approaches from my projects
       </p>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="@container grid gap-6 md:grid-cols-2 @lg:grid-cols-3">
         {blogPosts.map(post => (
           <Link
             key={post.id}
             href={`/blogs/${post.id}`}
-            className="group grid grid-rows-[200px_auto_1fr_auto] p-6 rounded-lg border-2 border-[#292D3E] hover:shadow-2xl transition-all duration-200 bg-[#c5faf7]"
+            className="group grid grid-rows-[200px_auto_1fr_auto] max-w-[380px] p-6 rounded-lg border-2 border-[#292D3E] transition-all duration-200 bg-[#c5faf7] shadow-[2px_2px_#3e3e3e] hover:shadow-[5px_5px_#3e3e3e]"
           >
             <div className="flex justify-center items-center overflow-hidden">
               {post.preview ? (

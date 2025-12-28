@@ -2,12 +2,13 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
 import { existsSync } from 'fs';
+import Link from 'next/link';
 import OptimalSpaceExample from '@/components/OptimalLayout/OptimalSpaceExample';
 import OptimalLayoutWithCircles from '@/components/OptimalLayout/OptimalLayoutWithCircles';
 import { LikeButton } from '@/components/LikeButton/LikeButton';
 import MDXCodeBlock from '@/components/MDXCodeBlock';
 import CollisionDetectionDemo from '@/components/CollisionDetectionDemo';
-import { ArrowBigRight, ArrowBigDown } from 'lucide-react';
+import { ArrowBigRight, ArrowBigDown, ArrowLeft } from 'lucide-react';
 
 export default async function BlogPage({
   params,
@@ -25,6 +26,13 @@ export default async function BlogPage({
 
   return (
     <div className="col-span-full text-start max-w-4xl mx-auto px-4 py-8">
+      <Link
+        href="/blogs"
+        className="inline-flex items-center gap-2 text-[#292D3E] hover:text-[#1a1a5a] transition-colors"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        <span>Back to all posts</span>
+      </Link>
       <MDXRemote
         source={source}
         components={{
@@ -35,7 +43,7 @@ export default async function BlogPage({
           ArrowBigRight,
           ArrowBigDown,
           h1: ({ children }) => (
-            <h1 className="text-4xl font-bold text-[#292D3E] mt-8 mb-4">
+            <h1 className="text-4xl font-bold text-[#292D3E] mt-2 mb-4">
               {children}
             </h1>
           ),
