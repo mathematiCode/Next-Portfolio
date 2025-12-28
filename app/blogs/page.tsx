@@ -16,6 +16,7 @@ interface BlogPost {
   title: string;
   description: string;
   preview?: React.ReactNode;
+  published: boolean;
 }
 
 // Number of words to extract for preview
@@ -69,16 +70,19 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
     preview: (
       <OptimalLayoutWithCircles numItems={106} width={300} height={220} />
     ),
+    published: true,
   },
   {
     id: 'collision-detection',
     title: 'Creating my own Collision Detection Algorithm',
     preview: <CollisionDetectionDemoStatic />,
+    published: true,
   },
   {
     id: 'untangling-contexts',
     title: 'Untangling Multiple Layers of React Context',
     preview: <ContextPreview />,
+    published: false,
   },
   {
     id: 'number-of-colors-for-division',
@@ -91,11 +95,13 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
         height={300}
       />
     ),
+    published: false,
   },
   {
     id: 'loading-sequence',
     title: 'Loading necessary dependencies for embeddable widget',
     preview: <LoadingSequenceDiagram />,
+    published: false,
   },
   {
     id: 'location-ux',
@@ -109,11 +115,13 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
         </div>
       </div>
     ),
+    published: false,
   },
   {
     id: 'too-many-parameters',
     title: 'Refactoring Functions with Way too Many Parameters',
     preview: <TooManyParamsPreview />,
+    published: false,
   },
   {
     id: 'ux-piece-placements',
@@ -126,11 +134,13 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
         height={200}
       />
     ),
+    published: false,
   },
   {
     id: 'combinatorial-explosion',
     title: 'Refactoring To Decouple Data and Avoid Combinatorial Explosion ',
     preview: <CombinatorialExplosionPreview />,
+    published: false,
   },
   {
     id: 'testing-multi-user',
@@ -146,6 +156,7 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
         />
       </div>
     ),
+    published: false,
   },
 ];
 
@@ -158,7 +169,12 @@ async function BlogsPage() {
 
       try {
         const content = await readFile(mdxPath, 'utf-8');
-        description = extractPreviewText(content, PREVIEW_WORD_COUNT);
+        description = `
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        `;
+        if (post.published) {
+          description = extractPreviewText(content, PREVIEW_WORD_COUNT);
+        }
       } catch (error) {
         console.error(`Error reading ${post.id}.mdx:`, error);
         description = 'Read the full post to learn more...';
@@ -183,19 +199,47 @@ async function BlogsPage() {
           <Link
             key={post.id}
             href={`/blogs/${post.id}`}
-            className="group grid grid-rows-[200px_auto_1fr_auto] max-w-[380px] p-6 rounded-lg border-2 border-[#292D3E] transition-all duration-200 bg-[#c5faf7] shadow-[2px_2px_#3e3e3e] hover:shadow-[5px_5px_#3e3e3e]"
+            className={`group grid grid-rows-[200px_auto_1fr_auto] max-w-[380px] p-6 rounded-lg border-2 transition-all duration-200 ${
+              post.published
+                ? 'border-[#292D3E] bg-[#c5faf7] shadow-[2px_2px_#3e3e3e] hover:shadow-[5px_5px_#3e3e3e] cursor-pointer'
+                : 'border-gray-600 bg-gray-100 opacity-60 shadow-[2px_2px_#3e3e3e] cursor-not-allowed'
+            }`}
           >
             <div className="flex justify-center items-center overflow-hidden">
               {post.preview ? (
-                <div className="scale-[0.8] origin-center">{post.preview}</div>
+                <div
+                  className={`scale-[0.8] origin-center ${
+                    !post.published ? 'opacity-70' : ''
+                  }`}
+                >
+                  {post.preview}
+                </div>
               ) : null}
             </div>
-            <h2 className="text-xl font-semibold text-[#292D3E] mb-2 group-hover:text-[#1a1a5a] transition-colors">
+            <h2
+              className={`text-xl font-semibold mb-2 transition-colors ${
+                post.published
+                  ? 'text-[#292D3E] group-hover:text-[#1a1a5a]'
+                  : 'text-gray-500'
+              }`}
+            >
               {post.title}
             </h2>
-            <p className="text-gray-600 text-sm">{post.description}</p>
-            <span className="inline-block mt-4 text-[#292D3E] font-medium text-sm group-hover:underline">
-              Read more →
+            <p
+              className={`text-sm ${
+                post.published ? 'text-gray-600' : 'text-gray-400'
+              }`}
+            >
+              {post.description}
+            </p>
+            <span
+              className={`inline-block mt-4 font-medium text-sm ${
+                post.published
+                  ? 'text-[#292D3E] group-hover:underline'
+                  : 'text-gray-400'
+              }`}
+            >
+              {post.published ? 'Read more →' : 'Coming soon...'}
             </span>
           </Link>
         ))}
