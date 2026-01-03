@@ -23,7 +23,7 @@ root {
   border-radius: 5px;
   background-color: transparent;
   box-shadow: 2px 2px rgb(62, 62, 62);
-  border: 2px solid black;
+  border: 2px solid #292d3e;
   padding-block: 3px;
   padding-inline: 7px;
   width: fit-content;

@@ -28,18 +28,18 @@
 
 label > input,
 .input-container > input {
-  color: white;
   font-size: 1.5rem;
-  border: 3px solid white;
+  border: 3px solid #292d3e;
   padding-inline: 10px;
+  border-radius: 5px;
 }
 
 label {
-  color: white;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   width: 192px;
+  color: #292d3e;
 }
 
 @media (width < 800px) {
@@ -51,7 +51,7 @@ label {
   label > input {
     font-size: 1rem;
     width: 70px;
-    border: 1px solid white;
+    border: 1px solid #292d3e;
   }
 }
 

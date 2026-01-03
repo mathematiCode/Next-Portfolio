@@ -5,6 +5,8 @@ import { existsSync } from 'fs';
 import Link from 'next/link';
 import OptimalSpaceExample from '@/components/OptimalLayout/OptimalSpaceExample';
 import OptimalLayoutWithCircles from '@/components/OptimalLayout/OptimalLayoutWithCircles';
+import AspectRatioDiagram from '@/components/OptimalLayout/AspectRatioDiagram';
+import SmallAspectRatioDiagram from '@/components/OptimalLayout/SmallAspectRatioDiagram';
 import { LikeButton } from '@/components/LikeButton/LikeButton';
 import MDXCodeBlock from '@/components/MDXCodeBlock';
 import CollisionDetectionDemo from '@/components/CollisionDetectionDemo';
@@ -38,6 +40,8 @@ export default async function BlogPage({
         components={{
           OptimalSpaceExample,
           OptimalLayoutWithCircles,
+          AspectRatioDiagram,
+          SmallAspectRatioDiagram,
           code: MDXCodeBlock,
           CollisionDetectionDemo,
           ArrowBigRight,
