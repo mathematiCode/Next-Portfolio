@@ -76,7 +76,7 @@ const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
     id: 'collision-detection',
     title: 'Creating my own Collision Detection Algorithm',
     preview: <CollisionDetectionDemoStatic />,
-    published: true,
+    published: false,
   },
   {
     id: 'untangling-contexts',

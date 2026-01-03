@@ -3,6 +3,7 @@ import { readFile } from 'fs/promises';
 import { join } from 'path';
 import { existsSync } from 'fs';
 import Link from 'next/link';
+import Image from 'next/image';
 import OptimalSpaceExample from '@/components/OptimalLayout/OptimalSpaceExample';
 import OptimalLayoutWithCircles from '@/components/OptimalLayout/OptimalLayoutWithCircles';
 import AspectRatioDiagram from '@/components/OptimalLayout/AspectRatioDiagram';
@@ -27,7 +28,7 @@ export default async function BlogPage({
   const source = await readFile(mdxPath, 'utf-8');
 
   return (
-    <div className="col-span-full text-start max-w-4xl mx-auto px-4 py-8">
+    <div className="col-span-full text-start max-w-4xl mx-auto px-4 py-8 pb-16">
       <Link
         href="/blogs"
         className="inline-flex items-center gap-2 text-[#292D3E] hover:text-[#1a1a5a] transition-colors"
@@ -46,6 +47,7 @@ export default async function BlogPage({
           CollisionDetectionDemo,
           ArrowBigRight,
           ArrowBigDown,
+          Image,
           h1: ({ children }) => (
             <h1 className="text-4xl font-bold text-[#292D3E] mt-2 mb-4">
               {children}
