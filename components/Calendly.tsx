@@ -33,7 +33,14 @@ function Calendly() {
         strategy="afterInteractive"
         onLoad={initCalendly}
       />
-      <div ref={widgetRef} style={{ minWidth: '320px', height: '700px' }}></div>
+      <div
+        ref={widgetRef}
+        style={{
+          minWidth: '320px',
+          width: '100%',
+          height: '700px',
+        }}
+      ></div>
     </div>
   );
 }

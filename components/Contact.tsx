@@ -1,103 +1,146 @@
-import { Github, Linkedin, MapPin, Mail } from 'lucide-react';
+'use client';
+
+import { useState } from 'react';
+import { Github, Linkedin, MapPin, Mail, Copy, Check } from 'lucide-react';
 import Calendly from './Calendly';
 
 function Contact() {
+  const [copied, setCopied] = useState(false);
+  const email = 'juliannamessineo@gmail.com';
+
+  const handleCopyEmail = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email:', err);
+    }
+  };
+
+  const contactItems = [
+    {
+      icon: Mail,
+      title: 'Email',
+      primary: 'juliannamessineo@gmail.com',
+      secondary: null,
+      href: 'mailto:juliannamessineo@gmail.com',
+    },
+    {
+      icon: MapPin,
+      title: 'Location',
+      primary: 'Austin, TX',
+      secondary: 'Available for remote work or relocation',
+      href: null,
+    },
+    {
+      icon: Github,
+      title: 'GitHub',
+      primary: '@mathemaiCode',
+      secondary: null,
+      href: 'https://github.com/mathematiCode',
+    },
+    {
+      icon: Linkedin,
+      title: 'LinkedIn',
+      primary: 'Professional Profile',
+      secondary: null,
+      href: 'https://linkedin.com/in/julianna-messineo/',
+    },
+  ];
+
   return (
-    <section id="contact" className="py-20 xl:w-2/3 w-full">
-      <div className=" w-full">
-        <div className="text-center">
-          <h2 className="section-title animate-fade-in-up text-3xl font-bold text-[#292D3E] mb-2">
-            Let&apos;s Connect
-          </h2>
-          <p className="text-xl animate-fade-in-up animate-delay-100">
-            I&apos;d love to discuss opportunities in educational technology and
-            development
-          </p>
-        </div>
+    <section className="min-h-screen flex flex-col items-center justify-center p-6 pb-12">
+      <div className="w-full max-w-4xl">
+        {/* Main Card */}
+        <div className="bg-[#c5faf7]/80 rounded-lg p-8 md:p-12 shadow-[5px_5px_#3e3e3e] border border-[#292D3E]/10">
+          {/* Header */}
+          <div className="text-center mb-10">
+            <h2 className="text-4xl md:text-5xl text-[#292D3E] mb-4 tracking-tight">
+              Get In Touch
+            </h2>
+            <p className="text-[#292D3E]/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+              Whether you&apos;re looking for a developer passionate about
+              education, want to collaborate on an edtech project, or just want
+              to chat about making math more accessible, I&apos;d love to hear
+              from you!
+            </p>
+          </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="rounded-2xl p-8 lg:p-12 shadow-xl animate-fade-in-up animate-delay-200">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
-                <p className="text-lg mb-8 leading-relaxed">
-                  Whether you&apos;re looking for a developer passionate about
-                  education, want to collaborate on an edtech project, or just
-                  want to chat about making math more accessible, I&apos;d love
-                  to hear from you!
-                </p>
+          {/* Contact Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {contactItems.map((item, index) => {
+              const Icon = item.icon;
+              const CardWrapper = item.href ? 'a' : 'div';
+              const cardProps = item.href
+                ? {
+                    href: item.href,
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                  }
+                : {};
 
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                      <Mail size={20} />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Email</p>
-                      <a
-                        href="mailto:juliannamessineo@gmail.com"
-                        className="hover:underline"
-                      >
-                        juliannamessineo@gmail.com
-                      </a>
-                    </div>
+              return (
+                <CardWrapper
+                  key={index}
+                  {...cardProps}
+                  className={`group flex items-center gap-4 transition-all duration-300 ${
+                    item.href ? 'cursor-pointer hover:translate-x-1' : ''
+                  }`}
+                >
+                  {/* Icon */}
+                  <div className="shrink-0 transition-transform duration-300 group-hover:scale-110">
+                    <Icon
+                      className="w-8 h-8 text-[#292D3E]"
+                      strokeWidth={1.5}
+                    />
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                      <MapPin size={20} />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Location</p>
-                      <p>Austin, TX</p>
-                      <p className="text-sm">
-                        Available for remote work or relocation
+                  {/* Content */}
+                  <div className="flex-1 min-w-0 flex items-end">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base font-semibold text-[#292D3E]">
+                        {item.title}
+                      </h3>
+                      <p className="text-[#292D3E]/80 truncate">
+                        {item.primary}
                       </p>
+                      {item.secondary && (
+                        <p className="text-[#292D3E]/60 text-sm">
+                          {item.secondary}
+                        </p>
+                      )}
                     </div>
+                    {item.title === 'Email' && (
+                      <button
+                        onClick={handleCopyEmail}
+                        className="shrink-0 rounded-md mb-1 hover:bg-[#292D3E]/10 transition-colors duration-200 group/copy"
+                        aria-label="Copy email address"
+                        title="Copy email"
+                      >
+                        {copied ? (
+                          <Check
+                            className="w-4 h-4 text-green-800"
+                            strokeWidth={3}
+                          />
+                        ) : (
+                          <Copy
+                            className="w-4 h-4 text-[#292D3E]/60 group-hover/copy:text-[#292D3E] transition-colors"
+                            strokeWidth={3}
+                          />
+                        )}
+                      </button>
+                    )}
                   </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-6">Follow My Work</h3>
-                <p className="text-lg mb-8">
-                  Check out my latest projects and educational content on these
-                  platforms:
-                </p>
-
-                <div className="space-y-4">
-                  <a
-                    href="https://github.com/mathematiCode"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:scale-105"
-                  >
-                    <Github size={24} />
-                    <div>
-                      <p className="font-semibold">GitHub</p>
-                      <p className="text-sm">@mathematiCode</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/in/julianna-messineo/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:scale-105"
-                  >
-                    <Linkedin size={24} />
-                    <div>
-                      <p className="font-semibold">LinkedIn</p>
-                      <p className="text-sm">Professional Profile</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+                </CardWrapper>
+              );
+            })}
           </div>
         </div>
+        <Calendly />
       </div>
-      <Calendly />
     </section>
   );
 }
