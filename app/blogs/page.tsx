@@ -64,6 +64,12 @@ function extractPreviewText(content: string, wordCount: number): string {
 
 const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
   {
+    id: '2025-review2',
+    title: '2025 Year in Review',
+    preview: null,
+    published: true,
+  },
+  {
     id: 'calculate-optimal-dimensions',
     title:
       'Calculating the Optimal Distribution of Items to Maximize Available Space',
