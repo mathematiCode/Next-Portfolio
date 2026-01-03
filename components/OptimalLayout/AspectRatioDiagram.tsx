@@ -8,7 +8,8 @@ function AspectRatioDiagram({}) {
           Hard Question
         </div>
         <figcaption className=" text-lg px-5 pt-14 pr-10">
-          How many items per row to evenly space 100 items in this rectangle?
+          How many items do we need per row to evenly space 100 items in this
+          rectangle?
         </figcaption>
         <div className="flex flex-col items-center gap-4 px-5 pb-5">
           <span className="text-2xl font-bold "> 100 Items </span>
@@ -39,7 +40,8 @@ function AspectRatioDiagram({}) {
           Easier Question
         </div>
         <figcaption className="text-lg px-5 pt-14">
-          How many items per row to evenly space 300 items in this square?
+          How many items do we need per row to evenly space 300 items in this
+          square?
         </figcaption>
         <div className="flex flex-col items-center gap-4 px-5 pb-5">
           <span className="text-2xl font-bold "> 300 Items </span>

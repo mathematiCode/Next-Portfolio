@@ -141,6 +141,7 @@ function LongProject({ project }: ProjectProps) {
                 width={300}
                 height={400}
                 className="rounded-md border-black border-2 object-cover h-full w-full"
+                loading="eager"
               />
               <div className="flex gap-3 mt-auto justify-start">
                 <a
