@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
 import { blogPostsConfig, BlogPostConfig } from './blogPostsConfig';
+import { parseFrontmatter } from '@/utils/parseFrontmatter';
 
 interface BlogPost extends BlogPostConfig {
   description: string;
@@ -58,7 +59,8 @@ async function BlogsPage() {
       let description = '';
 
       try {
-        const content = await readFile(mdxPath, 'utf-8');
+        const fileContent = await readFile(mdxPath, 'utf-8');
+        const { content } = parseFrontmatter(fileContent);
         description = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
         `;

@@ -12,6 +12,7 @@ import { LikeButton } from '@/components/LikeButton/LikeButton';
 import MDXCodeBlock from '@/components/MDXCodeBlock';
 import CollisionDetectionDemo from '@/components/CollisionDetectionDemo';
 import { ArrowBigRight, ArrowBigDown, ArrowLeft } from 'lucide-react';
+import { parseFrontmatter } from '@/utils/parseFrontmatter';
 
 export default async function BlogPage({
   params,
@@ -25,7 +26,8 @@ export default async function BlogPage({
     return <div>Blog post not found</div>;
   }
 
-  const source = await readFile(mdxPath, 'utf-8');
+  const fileContent = await readFile(mdxPath, 'utf-8');
+  const { content: source } = parseFrontmatter(fileContent);
 
   return (
     <div className="col-span-full text-start max-w-4xl mx-auto px-4 py-8 pb-16">
