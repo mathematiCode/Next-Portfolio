@@ -17,7 +17,7 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
       <div className="flex flex-wrap m-1 gap-2">
         {stack.map((item: string) => (
           <span
-            className="px-3 py-1 rounded-full bg-[#c5faf7] text-[#292D3E] text-sm font-medium border border-[#292D3E]"
+            className="px-3 py-1 rounded-full bg-secondary text-primary text-sm font-medium border border-primary"
             key={item}
           >
             {item}
@@ -38,7 +38,7 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
           href={deployed}
           target="_blank"
           rel="noopener"
-          className="flex items-center gap-2 px-4 py-2 bg-[#292D3E] text-white rounded-md hover:bg-[#393e57] transition-colors font-medium text-lg"
+          className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-hover transition-colors font-medium text-lg"
         >
           <ExternalLink size={20} />
           Live Demo
@@ -47,7 +47,7 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
           href={github}
           target="_blank"
           rel="noopener"
-          className="flex items-center gap-2 px-4 py-2 bg-white text-[#292D3E] border-2 border-[#292D3E] rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-md"
+          className="flex items-center gap-2 px-4 py-2 bg-white text-primary border-2 border-primary rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-md"
         >
           <Github size={20} />
           Code

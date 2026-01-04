@@ -9,11 +9,11 @@ interface ProjectProps {
 
 function LongProject({ project }: ProjectProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[500px] rounded-lg bg-[#c5faf7] border-black border-2 relative shadow-[5px_5px_#3e3e3e]">
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[500px] rounded-lg bg-secondary border-black border-2 relative shadow-md-primary">
       <div className="flex flex-col h-full justify-between text-left">
         <div className="flex flex-col gap-4 text-left">
           <div>
-            <h2 className="text-3xl font-bold text-[#292D3E] mb-0 text-left">
+            <h2 className="text-3xl font-bold text-primary mb-0 text-left">
               {project.name}
             </h2>
             <span className="mt-0">{project.subtitle}</span>
@@ -38,7 +38,7 @@ function LongProject({ project }: ProjectProps) {
                     key={index}
                     className="text-md text-gray-700 flex items-start gap-2 text-left"
                   >
-                    <span className="text-[#292D3E]">•</span>
+                    <span className="text-primary">•</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -50,7 +50,7 @@ function LongProject({ project }: ProjectProps) {
             {project.stack.map(tech => (
               <span
                 key={tech}
-                className="px-3 py-1 rounded-full bg-[#c5faf7] text-[#292D3E] text-sm font-medium border border-[#292D3E]"
+                className="px-3 py-1 rounded-full bg-secondary text-primary text-sm font-medium border border-primary"
               >
                 {tech}
               </span>
@@ -105,7 +105,7 @@ function LongProject({ project }: ProjectProps) {
               href={project.deployed}
               target="_blank"
               rel="noopener"
-              className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-colors font-medium text-lg"
+              className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-hover transition-colors font-medium text-lg"
             >
               <ExternalLink size={20} />
               Live Demo
@@ -114,7 +114,7 @@ function LongProject({ project }: ProjectProps) {
               href={project.github}
               target="_blank"
               rel="noopener"
-              className="flex items-center gap-2 px-4 py-2 bg-white text-[#292D3E] border-2 border-[#292D3E] rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-xl"
+              className="flex items-center gap-2 px-4 py-2 bg-white text-primary border-2 border-primary rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-xl"
             >
               <Github size={20} />
               Code

@@ -55,13 +55,13 @@ function Contact() {
     <section className="min-h-screen flex flex-col items-center justify-center p-6 pb-12">
       <div className="w-full max-w-4xl">
         {/* Main Card */}
-        <div className="bg-[#c5faf7]/80 rounded-lg p-8 md:p-12 shadow-[5px_5px_#3e3e3e] border border-[#292D3E]/10">
+        <div className="bg-secondary/80 rounded-lg p-8 md:p-12 shadow-md-primary border border-primary/10">
           {/* Header */}
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl text-[#292D3E] mb-4 tracking-tight">
+            <h2 className="text-4xl md:text-5xl text-primary mb-4 tracking-tight">
               Get In Touch
             </h2>
-            <p className="text-[#292D3E]/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="text-primary/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
               Whether you&apos;re looking for a developer passionate about
               education, want to collaborate on an edtech project, or just want
               to chat about making math more accessible, I&apos;d love to hear
@@ -92,23 +92,18 @@ function Contact() {
                 >
                   {/* Icon */}
                   <div className="shrink-0 transition-transform duration-300 group-hover:scale-110">
-                    <Icon
-                      className="w-8 h-8 text-[#292D3E]"
-                      strokeWidth={1.5}
-                    />
+                    <Icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 min-w-0 flex items-end">
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-base font-semibold text-[#292D3E]">
+                      <h3 className="text-base font-semibold text-primary">
                         {item.title}
                       </h3>
-                      <p className="text-[#292D3E]/80 truncate">
-                        {item.primary}
-                      </p>
+                      <p className="text-primary/80 truncate">{item.primary}</p>
                       {item.secondary && (
-                        <p className="text-[#292D3E]/60 text-sm">
+                        <p className="text-primary/60 text-sm">
                           {item.secondary}
                         </p>
                       )}
@@ -116,7 +111,7 @@ function Contact() {
                     {item.title === 'Email' && (
                       <button
                         onClick={handleCopyEmail}
-                        className="shrink-0 rounded-md mb-1 hover:bg-[#292D3E]/10 transition-colors duration-200 group/copy"
+                        className="shrink-0 rounded-md mb-1 hover:bg-primary/10 transition-colors duration-200 group/copy"
                         aria-label="Copy email address"
                         title="Copy email"
                       >
@@ -127,7 +122,7 @@ function Contact() {
                           />
                         ) : (
                           <Copy
-                            className="w-4 h-4 text-[#292D3E]/60 group-hover/copy:text-[#292D3E] transition-colors"
+                            className="w-4 h-4 text-primary/60 group-hover/copy:text-primary transition-colors"
                             strokeWidth={3}
                           />
                         )}

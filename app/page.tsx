@@ -11,7 +11,7 @@ export default function Home() {
           tech => (
             <span
               key={tech}
-              className="px-3 py-1 rounded-md bg-[#c5faf7] text-[#292D3E] text-sm font-medium border border-[#292D3E]"
+              className="px-3 py-1 rounded-md bg-secondary text-primary text-sm font-medium border border-primary"
             >
               {tech}
             </span>

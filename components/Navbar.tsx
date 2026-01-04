@@ -32,22 +32,22 @@ function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 h-[60px] z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#c5faf7] shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-secondary shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="flex items-center text-lg justify-end gap-6 p-4">
         <Link
           href="/"
-          className={`hover:text-[#292D3E] transition-colors ${
-            pathname === '/' ? 'text-[#292D3E] font-bold' : ''
+          className={`hover:text-primary transition-colors ${
+            pathname === '/' ? 'text-primary font-bold' : ''
           }`}
         >
           Home
         </Link>
         <Link
           href="/about"
-          className={`hover:text-[#292D3E] transition-colors ${
-            pathname === '/about' ? 'text-[#292D3E] font-bold' : ''
+          className={`hover:text-primary transition-colors ${
+            pathname === '/about' ? 'text-primary font-bold' : ''
           }`}
         >
           About{' '}
@@ -55,9 +55,9 @@ function Navbar() {
         {!isMobile && (
           <Link
             href={'/timeline'}
-            className={`hover:text-[#292D3E] transition-colors ${
+            className={`hover:text-primary transition-colors ${
               pathname === '/timeline' || pathname === '/timelineblock'
-                ? 'text-[#292D3E] font-bold'
+                ? 'text-primary font-bold'
                 : ''
             }`}
           >
@@ -66,16 +66,16 @@ function Navbar() {
         )}
         <Link
           href="/blogs"
-          className={`hover:text-[#292D3E] transition-colors ${
-            pathname.startsWith('/blogs') ? 'text-[#292D3E] font-bold' : ''
+          className={`hover:text-primary transition-colors ${
+            pathname.startsWith('/blogs') ? 'text-primary font-bold' : ''
           }`}
         >
           Blog
         </Link>
         <Link
           href="/contact"
-          className={`hover:text-[#292D3E] transition-colors ${
-            pathname === '/contact' ? 'text-[#292D3E] font-bold' : ''
+          className={`hover:text-primary transition-colors ${
+            pathname === '/contact' ? 'text-primary font-bold' : ''
           }`}
         >
           Contact

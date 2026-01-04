@@ -29,7 +29,7 @@ function OptimalLayoutWithCircles({
         {range(numItems).map((item: number, index: number) => {
           return (
             <div
-              className="bg-[#292D3E] w-full h-full rounded-full"
+              className="bg-primary w-full h-full rounded-full"
               key={index}
             ></div>
           );

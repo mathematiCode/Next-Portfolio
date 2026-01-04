@@ -20,7 +20,7 @@ function ProjectsPage() {
         {projects.map(project => {
           return (
             <div
-              className="flex flex-col items-center gap-4 w-[350px] h-[350px] rounded-lg bg-[#c5faf7] border-black border-2 relative shadow-[5px_5px_#3e3e3e]"
+              className="flex flex-col items-center gap-4 w-[350px] h-[350px] rounded-lg bg-secondary border-black border-2 relative shadow-md-primary"
               key={project.id}
             >
               <Project

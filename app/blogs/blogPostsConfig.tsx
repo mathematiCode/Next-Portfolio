@@ -74,11 +74,11 @@ export const blogPostsConfig: BlogPostConfig[] = [
     id: 'location-ux',
     title: 'When friction is a good thing',
     preview: (
-      <div className="relative w-full h-2/3 py-16 px-6 rounded-md text-2xl  bg-[#292D3E] text-white shadow-2xl ring-2 ring-orange-300">
+      <div className="relative w-full h-2/3 py-16 px-6 rounded-md text-2xl  bg-primary text-white shadow-2xl ring-2 ring-orange-300">
         Do you want to save this as your default location?
         <div className="absolute flex right-4 bottom-4 gap-4">
-          <span className="bg-white text-[#292D3E] px-3 rounded">Yes</span>
-          <span className="bg-white text-[#292D3E] px-3 rounded">No</span>
+          <span className="bg-white text-primary px-3 rounded">Yes</span>
+          <span className="bg-white text-primary px-3 rounded">No</span>
         </div>
       </div>
     ),

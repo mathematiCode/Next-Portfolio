@@ -80,7 +80,7 @@ async function BlogsPage() {
   );
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 pt-24 pb-16">
-      <h1 className="text-4xl font-bold text-[#292D3E] mb-5">
+      <h1 className="text-4xl font-bold text-primary mb-5">
         Development Challenges and Solutions
       </h1>
       <p className="text-gray-600 mb-8">
@@ -93,8 +93,8 @@ async function BlogsPage() {
             href={`/blogs/${post.id}`}
             className={`group grid grid-rows-[200px_auto_1fr_auto] max-w-[380px] p-6 rounded-lg border-2 transition-all duration-200 ${
               post.published
-                ? 'border-[#292D3E] bg-[#c5faf7] shadow-[2px_2px_#3e3e3e] hover:shadow-[5px_5px_#3e3e3e] cursor-pointer'
-                : 'border-gray-600 bg-gray-100 opacity-60 shadow-[2px_2px_#3e3e3e] cursor-not-allowed pointer-events-none'
+                ? 'border-primary bg-secondary shadow-sm-primary hover:shadow-md-primary cursor-pointer'
+                : 'border-gray-600 bg-gray-100 opacity-60 shadow-sm-primary cursor-not-allowed pointer-events-none'
             }`}
           >
             <div className="flex justify-center items-center overflow-hidden">
@@ -111,7 +111,7 @@ async function BlogsPage() {
             <h2
               className={`text-xl font-semibold mb-2 transition-colors ${
                 post.published
-                  ? 'text-[#292D3E] group-hover:text-[#1a1a5a]'
+                  ? 'text-primary group-hover:text-primary-hover'
                   : 'text-gray-500'
               }`}
             >
@@ -127,7 +127,7 @@ async function BlogsPage() {
             <span
               className={`inline-block mt-4 font-medium text-sm ${
                 post.published
-                  ? 'text-[#292D3E] group-hover:underline'
+                  ? 'text-primary group-hover:underline'
                   : 'text-gray-400'
               }`}
             >

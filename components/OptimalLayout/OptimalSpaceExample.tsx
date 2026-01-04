@@ -101,7 +101,7 @@ function OptimalSpaceExample({}) {
   };
   return (
     <div className="p-6 rounded-lg">
-      <h2 className="text-[##292D3E] text-2xl mb-3">
+      <h2 className="text-primary text-2xl mb-3">
         Try toggling the values below to see the algorithm in action
       </h2>
       <div className="inputs">

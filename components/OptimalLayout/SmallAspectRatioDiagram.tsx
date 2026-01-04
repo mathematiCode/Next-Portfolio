@@ -3,8 +3,8 @@ import { ArrowBigDown, ArrowBigRight } from 'lucide-react';
 function SmallAspectRatioDiagram({}) {
   return (
     <div className="grid lg:grid-cols-[1fr_70px_1fr] grid-cols-1 grid-rows-[auto_auto_70px_auto_auto] items-center lg:grid-rows-[auto_auto] gap-4">
-      <div className="bg-[#c5faf7]/80 border-2 border-[#52c1bc] rounded-xl grid grid-rows-subgrid items-center row-span-2 justify-self-center overflow-hidden relative">
-        <div className="absolute top-0 left-0 right-0 bg-[#52c1bc] font-semibold text-lg px-5 py-3 rounded-t-lg z-10">
+      <div className="bg-secondary/80 border-2 border-accent] rounded-xl grid grid-rows-subgrid items-center row-span-2 justify-self-center overflow-hidden relative">
+        <div className="absolute top-0 left-0 right-0 bg-accent] font-semibold text-lg px-5 py-3 rounded-t-lg z-10">
           Hard Question
         </div>
         <figcaption className="text-lg px-5 pt-14">
@@ -35,8 +35,8 @@ function SmallAspectRatioDiagram({}) {
           className="block lg:hidden"
         />
       </div>
-      <div className="bg-[#c5faf7]/80 border-2 border-[#52c1bc] rounded-xl grid grid-rows-subgrid row-span-2 overflow-hidden relative">
-        <div className="absolute top-0 left-0 right-0 bg-[#52c1bc] font-semibold text-lg px-5 py-3 rounded-t-lg z-10">
+      <div className="bg-secondary/80 border-2 border-accent] rounded-xl grid grid-rows-subgrid row-span-2 overflow-hidden relative">
+        <div className="absolute top-0 left-0 right-0 bg-accent] font-semibold text-lg px-5 py-3 rounded-t-lg z-10">
           Easier Question
         </div>
         <figcaption className="text-lg px-5 pt-14">
