@@ -15,7 +15,14 @@ function LoadingSequenceDiagram() {
       className="w-full h-full"
     >
       {/* Vertical timeline line */}
-      <line x1="20" y1="10" x2="20" y2="200" stroke="#292D3E" strokeWidth="2" />
+      <line
+        x1="20"
+        y1="10"
+        x2="20"
+        y2="200"
+        stroke="var(--color-primary)"
+        strokeWidth="2"
+      />
 
       {/* Steps */}
       {steps.map((step, index) => (
@@ -25,8 +32,8 @@ function LoadingSequenceDiagram() {
             cx="20"
             cy={step.y}
             r="6"
-            fill="#292D3E"
-            stroke="white"
+            fill="var(--color-primary)"
+            stroke="var(--color-light-accent)"
             strokeWidth="2"
           />
           {/* Step label */}
@@ -34,7 +41,7 @@ function LoadingSequenceDiagram() {
             x="35"
             y={step.y + 5}
             fontSize="12"
-            fill="#292D3E"
+            fill="var(--color-primary)"
             className="font-medium"
           >
             {step.label}
@@ -46,7 +53,7 @@ function LoadingSequenceDiagram() {
               y1={step.y + 6}
               x2="20"
               y2={steps[index + 1].y - 6}
-              stroke="#292D3E"
+              stroke="var(--color-primary)"
               strokeWidth="2"
               markerEnd="url(#arrowhead)"
             />
@@ -84,7 +91,7 @@ function LoadingSequenceDiagram() {
           refY="3"
           orient="auto"
         >
-          <polygon points="0 0, 10 3, 0 6" fill="#292D3E" />
+          <polygon points="0 0, 10 3, 0 6" fill="var(--color-primary)" />
         </marker>
       </defs>
     </svg>

@@ -183,7 +183,7 @@ function OptimalSpaceExample({}) {
         height={Number(height) || 0}
         horizontalSpacing={Number(spacing) || 0}
         verticalSpacing={2}
-        borderColor="#292D3E"
+        borderColor="var(--color-primary)"
       >
         {range(Number(numItems) || 0).map((item: number, index: number) => {
           return (

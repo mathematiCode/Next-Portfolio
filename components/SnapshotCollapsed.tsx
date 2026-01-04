@@ -29,7 +29,7 @@ function SnapshotCollapsed({ snapshot }: { snapshot: SnapshotType }) {
   if (!isExpanded && currentProject.id === '') {
     return (
       <div
-        className="flex items-center justify-between py-4 px-6 w-full rounded-lg bg-surface border-2 border-black relative mx-auto my-5 cursor-pointer hover:shadow-md-primary transition-all"
+        className="flex items-center justify-between py-4 px-6 w-full rounded-lg bg-surface border-2 border-primary relative mx-auto my-5 cursor-pointer hover:shadow-md-primary transition-all"
         onClick={() => setIsExpanded(true)}
       >
         <p className="text-left flex-1">{snapshot.summary}</p>
@@ -43,7 +43,7 @@ function SnapshotCollapsed({ snapshot }: { snapshot: SnapshotType }) {
   // Expanded view
   return (
     <div
-      className={`flex flex-col gap-3 py-10 px-10 w-full rounded-lg bg-surface border-2 border-black relative mx-auto my-5 overflow-auto shadow-md-primary ${
+      className={`flex flex-col gap-3 py-10 px-10 w-full rounded-lg bg-surface border-2 border-primary relative mx-auto my-5 overflow-auto shadow-md-primary ${
         currentProject.id == '' ? 'items-start' : 'items-center'
       }`}
     >

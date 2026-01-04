@@ -9,7 +9,7 @@ interface ProjectProps {
 
 function LongProject({ project }: ProjectProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[500px] rounded-lg bg-surface border-black border-2 relative shadow-md-primary">
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[500px] rounded-lg bg-surface border-primary border-2 relative shadow-md-primary">
       <div className="flex flex-col h-full justify-between text-left">
         <div className="flex flex-col gap-4 text-left">
           <div>
@@ -97,7 +97,7 @@ function LongProject({ project }: ProjectProps) {
             alt={project.name}
             width={300}
             height={400}
-            className="rounded-md border-black border-2 object-cover h-full w-full"
+            className="rounded-md border-primary border-2 object-cover h-full w-full"
             loading="eager"
           />
           <div className="flex gap-3 mt-auto justify-start">

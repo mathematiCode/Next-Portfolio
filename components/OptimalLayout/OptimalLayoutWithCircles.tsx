@@ -24,7 +24,7 @@ function OptimalLayoutWithCircles({
         height={height}
         horizontalSpacing={2}
         verticalSpacing={2}
-        borderColor="#292D3E"
+        borderColor="var(--color-primary)"
       >
         {range(numItems).map((item: number, index: number) => {
           return (

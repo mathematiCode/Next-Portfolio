@@ -8,7 +8,7 @@ export const OptimalLayout = ({
   height = 150,
   horizontalSpacing = 2,
   verticalSpacing = 2,
-  borderColor = 'white',
+  borderColor = 'var(--color-light-accent)',
   backgroundColor = 'transparent',
   children,
 }: {

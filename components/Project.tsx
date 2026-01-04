@@ -29,7 +29,7 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
           alt=""
           width={400}
           height={300}
-          className="rounded-md border-black border-2 w-4/5"
+          className="rounded-md border-primary border-2 w-4/5"
           src={image}
         />
       )}
