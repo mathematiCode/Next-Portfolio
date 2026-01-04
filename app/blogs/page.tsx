@@ -93,7 +93,7 @@ async function BlogsPage() {
             href={`/blogs/${post.id}`}
             className={`group grid grid-rows-[200px_auto_1fr_auto] max-w-[380px] p-6 rounded-lg border-2 transition-all duration-200 ${
               post.published
-                ? 'border-primary bg-secondary shadow-sm-primary hover:shadow-md-primary cursor-pointer'
+                ? 'border-primary bg-surface shadow-sm-primary hover:shadow-md-primary cursor-pointer'
                 : 'border-gray-600 bg-gray-100 opacity-60 shadow-sm-primary cursor-not-allowed pointer-events-none'
             }`}
           >

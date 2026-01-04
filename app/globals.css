@@ -3,8 +3,9 @@
 @theme {
   --color-primary: #292d3e;
   --color-primary-hover: #393e57;
-  --color-secondary: #c5faf7;
+  --color-surface: #c5faf7;
   --color-accent: #52c1bc;
+  --color-light-accent: #ffffff;
   --color-shadow: #3e3e3e;
 
   --shadow-sm-primary: 2px 2px var(--color-shadow);

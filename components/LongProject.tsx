@@ -9,7 +9,7 @@ interface ProjectProps {
 
 function LongProject({ project }: ProjectProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[500px] rounded-lg bg-secondary border-black border-2 relative shadow-md-primary">
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[500px] rounded-lg bg-surface border-black border-2 relative shadow-md-primary">
       <div className="flex flex-col h-full justify-between text-left">
         <div className="flex flex-col gap-4 text-left">
           <div>
@@ -50,7 +50,7 @@ function LongProject({ project }: ProjectProps) {
             {project.stack.map(tech => (
               <span
                 key={tech}
-                className="px-3 py-1 rounded-full bg-secondary text-primary text-sm font-medium border border-primary"
+                className="px-3 py-1 rounded-full bg-surface text-primary text-sm font-medium border border-primary"
               >
                 {tech}
               </span>

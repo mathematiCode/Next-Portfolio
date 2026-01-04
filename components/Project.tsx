@@ -17,7 +17,7 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
       <div className="flex flex-wrap m-1 gap-2">
         {stack.map((item: string) => (
           <span
-            className="px-3 py-1 rounded-full bg-secondary text-primary text-sm font-medium border border-primary"
+            className="px-3 py-1 rounded-full bg-surface text-primary text-sm font-medium border border-primary"
             key={item}
           >
             {item}

@@ -55,7 +55,7 @@ function Contact() {
     <section className="min-h-screen flex flex-col items-center justify-center p-6 pb-12">
       <div className="w-full max-w-4xl">
         {/* Main Card */}
-        <div className="bg-secondary/80 rounded-lg p-8 md:p-12 shadow-md-primary border border-primary/10">
+        <div className="bg-surface/80 rounded-lg p-8 md:p-12 shadow-md-primary border border-primary/10">
           {/* Header */}
           <div className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl text-primary mb-4 tracking-tight">

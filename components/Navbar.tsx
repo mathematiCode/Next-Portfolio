@@ -32,7 +32,7 @@ function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 h-[60px] z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-secondary shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-surface shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="flex items-center text-lg justify-end gap-6 p-4">

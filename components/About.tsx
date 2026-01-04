@@ -3,7 +3,7 @@ function About() {
   return (
     <section
       id="about"
-      className=" m-0 bg-secondary rounded-lg border-2 p-4 xl:w-2/3 w-full"
+      className=" m-0 bg-surface rounded-lg border-2 p-4 xl:w-2/3 w-full"
     >
       <div className="text-center">
         <h2 className="section-title animate-fade-in-up text-3xl font-bold text-primary mb-2">

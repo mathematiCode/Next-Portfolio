@@ -60,7 +60,7 @@ label {
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  background-color: var(--secondary-100);
+  background-color: var(--surface-100);
   width: 60px;
   border: solid aquamarine 2px;
   border-left: none;
