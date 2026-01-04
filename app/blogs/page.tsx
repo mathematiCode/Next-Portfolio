@@ -215,7 +215,7 @@ async function BlogsPage() {
             className={`group grid grid-rows-[200px_auto_1fr_auto] max-w-[380px] p-6 rounded-lg border-2 transition-all duration-200 ${
               post.published
                 ? 'border-[#292D3E] bg-[#c5faf7] shadow-[2px_2px_#3e3e3e] hover:shadow-[5px_5px_#3e3e3e] cursor-pointer'
-                : 'border-gray-600 bg-gray-100 opacity-60 shadow-[2px_2px_#3e3e3e] cursor-not-allowed'
+                : 'border-gray-600 bg-gray-100 opacity-60 shadow-[2px_2px_#3e3e3e] cursor-not-allowed pointer-events-none'
             }`}
           >
             <div className="flex justify-center items-center overflow-hidden">
