@@ -64,9 +64,16 @@ function extractPreviewText(content: string, wordCount: number): string {
 
 const blogPostsConfig: Omit<BlogPost, 'description'>[] = [
   {
-    id: '2025-review2',
+    id: '2025-review',
     title: '2025 Year in Review',
-    preview: null,
+    preview: (
+      <Image
+        src="/2025-review.png"
+        alt="career progression diagram showing Math Game to an Apprenticeship to an Intership to a Job Offer"
+        width={600}
+        height={300}
+      />
+    ),
     published: true,
   },
   {
