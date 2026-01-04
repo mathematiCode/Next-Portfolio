@@ -1,199 +1,125 @@
 'use client';
-import { CodeBlock } from 'react-code-block';
-import { Github, ExternalLink, ArrowBigLeft } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import { ProjectType } from '@/types';
 import Image from 'next/image';
-import challenges from '../data/challenges.json';
-import { useState } from 'react';
-import Link from 'next/link';
 
 interface ProjectProps {
   project: ProjectType;
 }
 
 function LongProject({ project }: ProjectProps) {
-  const emptyChallenge = {
-    id: '',
-    project: '',
-    summary: '',
-    challenge: '',
-    explanation: '',
-    codeSnippet: '',
-  };
-  const [currentChallenge, setCurrentChallenge] = useState(emptyChallenge);
-  const [codeContent, setCodeContent] = useState<string>('');
-
-  // const handleChallengeClick = async (challenge: typeof emptyChallenge) => {
-  //   setCurrentChallenge(challenge);
-
-  //   if (!challenge.codeSnippet) {
-  //     setCodeContent('');
-  //     return;
-  //   }
-
-  //   // Check if codeSnippet is a filename (ends with .js, .ts, .tsx, etc.)
-  //   const isFilename = /\.(js|ts|tsx|jsx|py|java|cpp|c|rb|go)$/i.test(
-  //     challenge.codeSnippet
-  //   );
-
-  //   if (isFilename) {
-  //     try {
-  //       const response = await fetch(`/snippets/${challenge.codeSnippet}`);
-  //       if (response.ok) {
-  //         const code = await response.text();
-  //         setCodeContent(code);
-  //       } else {
-  //         setCodeContent(challenge.codeSnippet);
-  //       }
-  //     } catch (error) {
-  //       console.error('Error loading code snippet:', error);
-  //       setCodeContent(challenge.codeSnippet);
-  //     }
-  //   } else {
-  //     setCodeContent(challenge.codeSnippet);
-  //   }
-  // };
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[550px] rounded-lg bg-[#c5faf7] border-black border-2 relative shadow-[5px_5px_#3e3e3e]">
-      {currentChallenge.id === '' ? (
-        <>
-          <div className="flex flex-col h-full justify-between text-left">
-            <div className="flex flex-col gap-4 text-left">
-              <div>
-                <h2 className="text-3xl font-bold text-[#292D3E] mb-0 text-left">
-                  {project.name}
-                </h2>
-                <span className="mt-0">{project.subtitle}</span>
-              </div>
-
-              {project.description && (
-                <p className="text-gray-700 text-md leading-relaxed text-left">
-                  {project.description}
-                </p>
-              )}
-
-              {project.features && project.features.length > 0 && (
-                <div className="flex flex-col gap-2 text-left">
-                  <h3 className="text-md font-semibold text-gray-800 text-left">
-                    {project.id === 'meet-near-me'
-                      ? 'Key Features I Built:'
-                      : 'Key Features:'}
-                  </h3>
-                  <ul className="flex flex-col gap-1.5 text-left">
-                    {project.features.map((feature, index) => (
-                      <li
-                        key={index}
-                        className="text-md text-gray-700 flex items-start gap-2 text-left"
-                      >
-                        <span className="text-[#292D3E]">•</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              <div className="flex flex-wrap gap-2 mt-2 justify-start">
-                {project.stack.map(tech => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 rounded-full bg-[#c5faf7] text-[#292D3E] text-sm font-medium border border-[#292D3E]"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {project.challenges && project.challenges.length > 0 && (
-                <div className="flex flex-col gap-2 mt-2 text-left">
-                  <h3 className="text-lg font-semibold text-gray-800 text-left">
-                    Challenges:
-                  </h3>
-                  <div className="flex flex-col gap-4 justify-start">
-                    {project.challenges.map(challengeId => {
-                      const challenge = challenges.find(
-                        ch => ch.id === challengeId
-                      );
-                      return (
-                        <Link
-                          key={challengeId}
-                          href={`/blogs/${challengeId}`}
-                          // onClick={() =>
-                          //   handleChallengeClick(challenge || emptyChallenge)
-                          // }
-                          className="button"
-                        >
-                          {challenge?.summary || challengeId.replace(/-/g, ' ')}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-            </div>
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px]  items-center justify-start gap-4 p-6 w-full xl:w-2/3 min-h-[500px] rounded-lg bg-[#c5faf7] border-black border-2 relative shadow-[5px_5px_#3e3e3e]">
+      <div className="flex flex-col h-full justify-between text-left">
+        <div className="flex flex-col gap-4 text-left">
+          <div>
+            <h2 className="text-3xl font-bold text-[#292D3E] mb-0 text-left">
+              {project.name}
+            </h2>
+            <span className="mt-0">{project.subtitle}</span>
           </div>
 
-          {project.image && (
-            <div className="flex flex-col gap-6 items-center justify-center">
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={300}
-                height={400}
-                className="rounded-md border-black border-2 object-cover h-full w-full"
-                loading="eager"
-              />
-              <div className="flex gap-3 mt-auto justify-start">
-                <a
-                  href={project.deployed}
-                  target="_blank"
-                  rel="noopener"
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-colors font-medium text-lg"
-                >
-                  <ExternalLink size={20} />
-                  Live Demo
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener"
-                  className="flex items-center gap-2 px-4 py-2 bg-white text-[#292D3E] border-2 border-[#292D3E] rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-xl"
-                >
-                  <Github size={20} />
-                  Code
-                </a>
-              </div>
+          {project.description && (
+            <p className="text-gray-700 text-md leading-relaxed text-left">
+              {project.description}
+            </p>
+          )}
+
+          {project.features && project.features.length > 0 && (
+            <div className="flex flex-col gap-2 text-left">
+              <h3 className="text-md font-semibold text-gray-800 text-left">
+                {project.id === 'meet-near-me'
+                  ? 'Key Features I Built:'
+                  : 'Key Features:'}
+              </h3>
+              <ul className="flex flex-col gap-1.5 text-left">
+                {project.features.map((feature, index) => (
+                  <li
+                    key={index}
+                    className="text-md text-gray-700 flex items-start gap-2 text-left"
+                  >
+                    <span className="text-[#292D3E]">•</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
-        </>
-      ) : (
-        <div className="col-span-full">
-          <h2 className="text-start text-xl font-bold text-[#292D3E] my-2">
-            The Challenge
-          </h2>
-          <p className="mb-6 text-start">{currentChallenge.challenge}</p>
-          <h2 className="text-start text-xl font-bold text-[#292D3E] mb-2">
-            The Solution
-          </h2>
-          <p className="mb-6 text-start">{currentChallenge.explanation}</p>
-          {codeContent && (
-            <CodeBlock code={codeContent} language="typescript">
-              <CodeBlock.Code className="bg-gray-900 p-6 rounded-xl shadow-lg text-start max-w-full overflow-x-auto">
-                <CodeBlock.LineContent className="whitespace-pre-wrap break-all">
-                  <CodeBlock.Token />
-                </CodeBlock.LineContent>
-              </CodeBlock.Code>
-            </CodeBlock>
-          )}
-          <button
-            className="absolute left-2 top-2 cursor-pointer border-none shadow-none"
-            onClick={() => {
-              setCurrentChallenge(emptyChallenge);
-              setCodeContent('');
-            }}
-          >
-            <ArrowBigLeft className="transition-all duration-200 hover:scale-118 hover:opacity-80 active:scale-95" />
-          </button>
+
+          <div className="flex flex-wrap gap-2 mt-2 justify-start">
+            {project.stack.map(tech => (
+              <span
+                key={tech}
+                className="px-3 py-1 rounded-full bg-[#c5faf7] text-[#292D3E] text-sm font-medium border border-[#292D3E]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          {/* 
+          {project.challenges && project.challenges.length > 0 && (
+            <div className="flex flex-col gap-2 mt-2 text-left">
+              <h3 className="text-lg font-semibold text-gray-800 text-left">
+                Challenges:
+              </h3>
+              <div className="flex flex-col gap-4 justify-start">
+                {project.challenges.map(challengeId => {
+                  const challenge = challenges.find(
+                    ch => ch.id === challengeId
+                  );
+                  const isPublished =
+                    blogPostPublishedStatus[challengeId] ?? false;
+                  return (
+                    <Link
+                      key={challengeId}
+                      href={isPublished ? `/blogs/${challengeId}` : '#'}
+                      onClick={e => !isPublished && e.preventDefault()}
+                      className={`button ${
+                        !isPublished
+                          ? 'opacity-40 cursor-not-allowed pointer-events-none text-gray-500'
+                          : ''
+                      }`}
+                    >
+                      {challenge?.summary || challengeId.replace(/-/g, ' ')}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )} */}
+        </div>
+      </div>
+
+      {project.image && (
+        <div className="flex flex-col gap-6 items-center justify-center">
+          <Image
+            src={project.image}
+            alt={project.name}
+            width={300}
+            height={400}
+            className="rounded-md border-black border-2 object-cover h-full w-full"
+            loading="eager"
+          />
+          <div className="flex gap-3 mt-auto justify-start">
+            <a
+              href={project.deployed}
+              target="_blank"
+              rel="noopener"
+              className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-colors font-medium text-lg"
+            >
+              <ExternalLink size={20} />
+              Live Demo
+            </a>
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener"
+              className="flex items-center gap-2 px-4 py-2 bg-white text-[#292D3E] border-2 border-[#292D3E] rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-xl"
+            >
+              <Github size={20} />
+              Code
+            </a>
+          </div>
         </div>
       )}
     </div>
