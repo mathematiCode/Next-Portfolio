@@ -20,14 +20,14 @@ function LongProject({ project }: ProjectProps) {
           </div>
 
           {project.description && (
-            <p className="text-gray-700 text-md leading-relaxed text-left">
+            <p className="text-base-200 text-md leading-relaxed text-left">
               {project.description}
             </p>
           )}
 
           {project.features && project.features.length > 0 && (
             <div className="flex flex-col gap-2 text-left">
-              <h3 className="text-md font-semibold text-gray-800 text-left">
+              <h3 className="text-md font-semibold text-base-300 text-left">
                 {project.id === 'meet-near-me'
                   ? 'Key Features I Built:'
                   : 'Key Features:'}
@@ -36,7 +36,7 @@ function LongProject({ project }: ProjectProps) {
                 {project.features.map((feature, index) => (
                   <li
                     key={index}
-                    className="text-md text-gray-700 flex items-start gap-2 text-left"
+                    className="text-md text-base-200 flex items-start gap-2 text-left"
                   >
                     <span className="text-primary">•</span>
                     <span>{feature}</span>
@@ -59,7 +59,7 @@ function LongProject({ project }: ProjectProps) {
           {/* 
           {project.challenges && project.challenges.length > 0 && (
             <div className="flex flex-col gap-2 mt-2 text-left">
-              <h3 className="text-lg font-semibold text-gray-800 text-left">
+              <h3 className="text-lg font-semibold text-base-300 text-left">
                 Challenges:
               </h3>
               <div className="flex flex-col gap-4 justify-start">
@@ -76,7 +76,7 @@ function LongProject({ project }: ProjectProps) {
                       onClick={e => !isPublished && e.preventDefault()}
                       className={`button ${
                         !isPublished
-                          ? 'opacity-40 cursor-not-allowed pointer-events-none text-gray-500'
+                          ? 'opacity-40 cursor-not-allowed pointer-events-none text-base-100'
                           : ''
                       }`}
                     >
@@ -105,7 +105,7 @@ function LongProject({ project }: ProjectProps) {
               href={project.deployed}
               target="_blank"
               rel="noopener"
-              className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-hover transition-colors font-medium text-lg"
+              className="flex items-center gap-2 px-4 py-2 bg-primary text-light-accent rounded-md hover:bg-primary-hover transition-colors font-medium text-lg"
             >
               <ExternalLink size={20} />
               Live Demo
@@ -114,7 +114,7 @@ function LongProject({ project }: ProjectProps) {
               href={project.github}
               target="_blank"
               rel="noopener"
-              className="flex items-center gap-2 px-4 py-2 bg-white text-primary border-2 border-primary rounded-md hover:bg-[#f0fdfc] transition-colors font-medium text-xl"
+              className="flex items-center gap-2 px-4 py-2 bg-light-accent text-primary border-2 border-primary rounded-md hover:bg-light-accent-hover transition-colors font-medium text-xl"
             >
               <Github size={20} />
               Code

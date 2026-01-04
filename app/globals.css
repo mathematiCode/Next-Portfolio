@@ -6,7 +6,11 @@
   --color-surface: #c5faf7;
   --color-accent: #52c1bc;
   --color-light-accent: #ffffff;
+  --color-light-accent-hover: #f0fdfc;
   --color-shadow: #3e3e3e;
+  --color-base-100: oklch(37.2% 0.044 257.287);
+  --color-base-200: oklch(27.9% 0.041 260.031);
+  --color-base-300: oklch(20.8% 0.042 265.755);
 
   --shadow-sm-primary: 2px 2px var(--color-shadow);
   --shadow-md-primary: 5px 5px var(--color-shadow);

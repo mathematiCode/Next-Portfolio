@@ -64,7 +64,7 @@ function TimelinePage() {
             A 3 1 0 0 1 8 40
           "
             fill="none"
-            stroke="#4b4b4f"
+            stroke="var(--color-base-100)"
             strokeWidth={thickness}
           />
           {timeline.map((snapshot, index) => {
@@ -93,7 +93,7 @@ function TimelinePage() {
             );
           })}
         </svg>
-        <div className="absolute top-0 h-full right-0 w-60 border-gray-600 border-l-4 flex flex-col pt-16 justify-between pb-16">
+        <div className="absolute top-0 h-full right-0 w-60 border-base-100 border-l-4 flex flex-col pt-16 justify-between pb-16">
           <span>Jan 2024</span>
           <span>Feb 2024</span>
           <span>March 2024</span>

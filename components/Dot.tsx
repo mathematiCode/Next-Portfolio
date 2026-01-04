@@ -71,7 +71,7 @@ function Dot({
               cx={displayPoint?.x}
               cy={displayPoint?.y}
               r={radius}
-              fill="#3a3a3b"
+              fill="var(--color-base-300)"
               className="dot z-10 cursor-pointer"
             />
           </g>

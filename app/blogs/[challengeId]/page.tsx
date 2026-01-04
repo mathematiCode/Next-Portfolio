@@ -66,14 +66,14 @@ export default async function BlogPage({
             </h3>
           ),
           p: ({ children }) => (
-            <p className="mb-4 text-gray-700 leading-relaxed">{children}</p>
+            <p className="mb-4 text-base-200 leading-relaxed">{children}</p>
           ),
           a: ({ href, children }) => (
             <a
               href={href}
               target="_blank"
               rel="noopener"
-              className="text-[#2e365a] underline hover:text-primary-hover"
+              className="text-primary underline hover:text-primary-hover"
             >
               {children}
             </a>

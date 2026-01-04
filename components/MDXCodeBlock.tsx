@@ -15,7 +15,7 @@ export default function MDXCodeBlock({
   if (!match) {
     // Inline code
     return (
-      <code className="text-gray-800 px-1.5 py-0.5 w-[320px] md:w-fit rounded text-xs sm:text-sm font-mono wrap-break-word">
+      <code className="text-base-300 px-1.5 py-0.5 w-[320px] md:w-fit rounded text-xs sm:text-sm font-mono wrap-break-word">
         {children}
       </code>
     );

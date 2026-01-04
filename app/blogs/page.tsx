@@ -83,7 +83,7 @@ async function BlogsPage() {
       <h1 className="text-4xl font-bold text-primary mb-5">
         Development Challenges and Solutions
       </h1>
-      <p className="text-gray-600 mb-8">
+      <p className="text-base-100 mb-8">
         Technical deep-dives and problem-solving approaches from my projects
       </p>
       <div className="@container grid gap-6 md:grid-cols-2 @lg:grid-cols-3">
@@ -94,7 +94,7 @@ async function BlogsPage() {
             className={`group grid grid-rows-[200px_auto_1fr_auto] max-w-[380px] p-6 rounded-lg border-2 transition-all duration-200 ${
               post.published
                 ? 'border-primary bg-surface shadow-sm-primary hover:shadow-md-primary cursor-pointer'
-                : 'border-gray-600 bg-gray-100 opacity-60 shadow-sm-primary cursor-not-allowed pointer-events-none'
+                : 'border-base-100 bg-gray-100 opacity-60 shadow-sm-primary cursor-not-allowed pointer-events-none'
             }`}
           >
             <div className="flex justify-center items-center overflow-hidden">
@@ -112,14 +112,14 @@ async function BlogsPage() {
               className={`text-xl font-semibold mb-2 transition-colors ${
                 post.published
                   ? 'text-primary group-hover:text-primary-hover'
-                  : 'text-gray-500'
+                  : 'text-base-100'
               }`}
             >
               {post.title}
             </h2>
             <p
               className={`text-sm ${
-                post.published ? 'text-gray-600' : 'text-gray-400'
+                post.published ? 'text-base-100' : 'text-gray-400'
               }`}
             >
               {post.description}
