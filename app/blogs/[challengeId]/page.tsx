@@ -70,8 +70,8 @@ export default async function BlogPage({
             <a
               href={href}
               target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#2e365a] hover:underline"
+              rel="noopener"
+              className="text-[#2e365a] underline hover:text-[#1a1a5a]"
             >
               {children}
             </a>
