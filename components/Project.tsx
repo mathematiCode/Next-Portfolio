@@ -38,7 +38,7 @@ function Project({ title, stack, image, deployed, github }: ProjectProps) {
           href={deployed}
           target="_blank"
           rel="noopener"
-          className="flex items-center gap-2 px-4 py-2 bg-teal-700 text-white rounded-md hover:bg-teal-600 transition-colors font-medium text-lg"
+          className="flex items-center gap-2 px-4 py-2 bg-[#292D3E] text-white rounded-md hover:bg-[#393e57] transition-colors font-medium text-lg"
         >
           <ExternalLink size={20} />
           Live Demo
