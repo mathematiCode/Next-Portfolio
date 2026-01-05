@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@hotjar/browser": "^1.0.9",
     "@neondatabase/serverless": "^1.0.2",
     "@radix-ui/react-popover": "^1.1.15",
     "bright": "^1.0.0",
