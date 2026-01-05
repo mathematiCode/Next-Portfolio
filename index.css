@@ -68,9 +68,9 @@ h1 {
   gap: 10px;
   width: 600px;
   border-radius: 10px;
-  background-color: #c5faf7;
-  border: 2px solid black;
-  box-shadow: 5px 5px rgb(62, 62, 62);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  box-shadow: 5px 5px var(--color-shadow);
   position: relative;
 }
 
