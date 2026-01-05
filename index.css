@@ -3,7 +3,7 @@ root {
 }
 
 .button {
-  color: black;
+  color: var(--color-primary);
   text-decoration: none;
   text-align: start;
   font-weight: 600;

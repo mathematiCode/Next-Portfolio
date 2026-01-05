@@ -33,7 +33,7 @@ function Rectangle({
           style={{
             width: `${unitSize}px`,
             height: `${unitSize}px`,
-            border: '1px solid black',
+            border: '1px solid var(--color-base-200)',
           }}
         />
       ))}

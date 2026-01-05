@@ -91,10 +91,10 @@ async function BlogsPage() {
           <Link
             key={post.id}
             href={`/blogs/${post.id}`}
-            className={`group grid grid-rows-[200px_auto_1fr_auto] max-w-[380px] p-6 rounded-lg border-2 transition-all duration-200 ${
+            className={`group grid grid-rows-[200px_auto_1fr_auto] max-w-[380px] p-6 rounded-lg border-2 transition-all justify-self-center duration-200 ${
               post.published
                 ? 'border-primary bg-surface shadow-sm-primary hover:shadow-md-primary cursor-pointer'
-                : 'border-base-100 bg-gray-100 opacity-60 shadow-sm-primary cursor-not-allowed pointer-events-none'
+                : 'border-base-100 bg-surface/60 opacity-60 shadow-sm-primary cursor-not-allowed pointer-events-none'
             }`}
           >
             <div className="flex justify-center items-center overflow-hidden">
@@ -119,7 +119,7 @@ async function BlogsPage() {
             </h2>
             <p
               className={`text-sm ${
-                post.published ? 'text-base-100' : 'text-gray-400'
+                post.published ? 'text-base-100' : 'text-disabled'
               }`}
             >
               {post.description}
@@ -128,7 +128,7 @@ async function BlogsPage() {
               className={`inline-block mt-4 font-medium text-sm ${
                 post.published
                   ? 'text-primary group-hover:underline'
-                  : 'text-gray-400'
+                  : 'text-disabled'
               }`}
             >
               {post.published ? 'Read more →' : 'Coming soon...'}

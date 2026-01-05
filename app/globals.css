@@ -1,12 +1,16 @@
 @import 'tailwindcss';
 
 @theme {
+  /* Light mode (default) */
   --color-primary: #292d3e;
   --color-primary-hover: #393e57;
+  --color-background-light: #c5faf7;
+  --color-background-dark: #7ee4df;
   --color-surface: #c5faf7;
   --color-accent: #52c1bc;
   --color-light-accent: #ffffff;
   --color-light-accent-hover: #f0fdfc;
+  --color-disabled: #565656;
   --color-shadow: #3e3e3e;
   --color-base-100: oklch(37.2% 0.044 257.287);
   --color-base-200: oklch(27.9% 0.041 260.031);
@@ -16,10 +20,30 @@
   --shadow-md-primary: 5px 5px var(--color-shadow);
 }
 
+.dark {
+  --color-primary: #b5e2e0;
+  --color-primary-hover: #eafefd;
+  --color-background-light: #121520;
+  --color-background-dark: #0f1116;
+  --color-surface: #1f222d;
+  --color-accent: #52c1bc;
+  --color-light-accent: #000000;
+  --color-light-accent-hover: #252525;
+  --color-disabled: #969696;
+  --color-shadow: #9ebfbd;
+  --color-base-100: #b9dadc;
+  --color-base-200: #cfcfcf;
+  --color-base-300: #ffffff;
+}
+
 html {
   margin: 0;
   padding: 0;
-  background: linear-gradient(45deg, #c5faf7, #7ee4df);
+  background: linear-gradient(
+    45deg,
+    var(--color-background-light),
+    var(--color-background-dark)
+  );
   min-height: 100vh;
   height: auto;
 }
@@ -27,6 +51,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  color: var(--color-base-100);
   text-align: center;
   padding-top: 65px;
   min-height: 100vh;
