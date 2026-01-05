@@ -7,11 +7,8 @@ function Intro() {
       className=" w-full xl:w-2/3 flex items-center justify-center relative flex-col lg:flex-row gap-12"
     >
       <div className="lg:w-1/2 text-center lg:text-left">
-        <h1 className="text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
+        <h2 className="text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
           Product Minded Developer
-        </h1>
-        <h2 className="text-xl lg:text-2xl mb-6 mt-3 animate-fade-in-up animate-delay-100">
-          Making Math Education Joyful
         </h2>
         <p className="text-xl mb-8 leading-relaxed animate-fade-in-up animate-delay-200">
           Building meaningful and intuitive learning experiences through
