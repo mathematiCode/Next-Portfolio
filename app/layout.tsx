@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Navbar from '../components/Navbar';
+import { ThemeProvider } from '../components/ThemeProvider';
 import '../index.css';
 import './globals.css';
 
@@ -16,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased relative min-h-screen">
-        <Navbar />
-        <div className="lg:px-9 mx-auto">{children}</div>
-        <p className="absolute bottom-0 left-0 right-0 text-center py-4">
-          © 2025 Julianna Messineo
-        </p>
+        <ThemeProvider>
+          <Navbar />
+          <div className="lg:px-9 mx-auto">{children}</div>
+          <p className="absolute bottom-0 left-0 right-0 text-center py-4">
+            © 2025 Julianna Messineo
+          </p>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { ThemeToggle } from './ThemeToggle';
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,6 +37,7 @@ function Navbar() {
       }`}
     >
       <div className="flex items-center text-lg justify-end gap-6 p-4">
+        <ThemeToggle />
         <Link
           href="/"
           className={`hover:text-primary transition-colors ${
