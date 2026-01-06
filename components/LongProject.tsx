@@ -110,15 +110,17 @@ function LongProject({ project }: ProjectProps) {
               <ExternalLink size={20} />
               Live Demo
             </a>
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener"
-              className="flex items-center gap-2 px-4 py-2 bg-light-accent text-primary border-2 border-primary rounded-md hover:bg-light-accent-hover transition-colors font-medium text-xl"
-            >
-              <Github size={20} />
-              Code
-            </a>
+            {project.github && project.github.trim() !== '' && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener"
+                className="flex items-center gap-2 px-4 py-2 bg-light-accent text-primary border-2 border-primary rounded-md hover:bg-light-accent-hover transition-colors font-medium text-xl"
+              >
+                <Github size={20} />
+                Code
+              </a>
+            )}
           </div>
         </div>
       )}
