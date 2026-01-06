@@ -43,14 +43,15 @@ function Intro() {
         </div>
       </div>
 
-      {/* Profile Image */}
       <div className="lg:w-1/2 flex justify-center animate-fade-in-right animate-delay-200">
         <div className="relative">
           <div className="absolute inset-0 rounded-full blur-xl opacity-30"></div>
           <Image
             src="/headshot.png"
             alt="Julianna Messineo"
-            className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-4"
+            className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-4 border-primary"
+            width={300}
+            height={300}
           />
         </div>
       </div>

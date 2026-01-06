@@ -12,13 +12,9 @@ function OptimalLayoutWithCircles({
   width: number;
   height: number;
 }) {
-  const { itemsPerRow, numRows } = calculateOptimalSize(
-    width,
-    height,
-    numItems
-  );
+  const { itemsPerRow } = calculateOptimalSize(width, height, numItems);
   return (
-    <div className="w-fit justify-self-center text-center">
+    <div className="w-fit mx-auto text-center">
       <OptimalLayout
         width={width}
         height={height}
