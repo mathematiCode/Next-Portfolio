@@ -64,7 +64,7 @@ function TimelinePage() {
             A 3 1 0 0 1 8 40
           "
             fill="none"
-            stroke="var(--color-base-100)"
+            stroke="var(--color-primary)"
             strokeWidth={thickness}
           />
           {timeline.map((snapshot, index) => {

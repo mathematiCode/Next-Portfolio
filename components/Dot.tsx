@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, useLayoutEffect, RefObject } from 'react';
+import { useState, useRef, useEffect, RefObject } from 'react';
 import * as Popover from '@radix-ui/react-popover';
 import Snapshot from './Snapshot';
 import type { SnapshotType } from '../types';
@@ -71,7 +71,7 @@ function Dot({
               cx={displayPoint?.x}
               cy={displayPoint?.y}
               r={radius}
-              fill="var(--color-base-300)"
+              fill="var(--color-dot)"
               className="dot z-10 cursor-pointer"
             />
           </g>

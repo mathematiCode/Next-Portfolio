@@ -8,6 +8,8 @@
   --color-background-dark: #7ee4df;
   --color-surface: #c5faf7;
   --color-accent: #52c1bc;
+  --color-accent-text: #292d3e;
+  --color-dot: #484d65;
   --color-light-accent: #ffffff;
   --color-light-accent-hover: #f0fdfc;
   --color-disabled: #565656;
@@ -15,6 +17,7 @@
   --color-base-100: oklch(37.2% 0.044 257.287);
   --color-base-200: oklch(27.9% 0.041 260.031);
   --color-base-300: oklch(20.8% 0.042 265.755);
+  --color-pink-accent: rgb(228, 74, 99);
 
   --shadow-sm-primary: 2px 2px var(--color-shadow);
   --shadow-md-primary: 5px 5px var(--color-shadow);
@@ -22,11 +25,13 @@
 
 .dark {
   --color-primary: #b5e2e0;
-  --color-primary-hover: #98d6d3;
+  --color-primary-hover: #b5e2e0;
   --color-background-light: #121520;
   --color-background-dark: #0f1116;
   --color-surface: #1f222d;
   --color-accent: #52c1bc;
+  --color-accent-text: #292d3e;
+  --color-dot: #52c1bc;
   --color-light-accent: #000000;
   --color-light-accent-hover: #252525;
   --color-disabled: #969696;
@@ -34,6 +39,7 @@
   --color-base-100: #b9dadc;
   --color-base-200: #cfcfcf;
   --color-base-300: #ffffff;
+  --color-pink-accent: pink;
 }
 
 html {

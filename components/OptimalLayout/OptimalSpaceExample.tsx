@@ -191,7 +191,7 @@ function OptimalSpaceExample({}) {
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path
                   d="M3.68546 5.43796C8.61936 1.29159 11.8685 7.4309 12.0406 7.4309C12.2126 7.43091 15.4617 1.29159 20.3956 5.43796C26.8941 10.8991 13.5 21.8215 12.0406 21.8215C10.5811 21.8215 -2.81297 10.8991 3.68546 5.43796Z"
-                  stroke="crimson"
+                  stroke="var(--color-pink-accent)"
                   strokeWidth="2"
                   strokeLinecap="round"
                 />
