@@ -23,7 +23,7 @@ export default function MDXCodeBlock({
 
   // Code block with syntax highlighting using bright material-palenight
   return (
-    <div className="my-4 sm:my-6 rounded-lg overflow-x-auto -mx-4 sm:mx-0 w-full ">
+    <div className="my-4 sm:my-6 rounded-lg overflow-x-auto mx-auto sm:mx-0 w-full ">
       <Code theme="material-palenight" lang={language}>
         {codeString}
       </Code>
