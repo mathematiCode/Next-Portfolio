@@ -8,8 +8,8 @@ import type { SnapshotType } from '../types';
 function Dot({
   snapshot,
   radius,
-  pathRef,
-  percent,
+  // pathRef,
+  // percent,
   calculatedPoint,
 }: {
   snapshot: SnapshotType;

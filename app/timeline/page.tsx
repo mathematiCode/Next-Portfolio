@@ -36,7 +36,7 @@ function TimelinePage() {
         y: parseFloat(tempPoint.y.toFixed(2)),
       });
     });
-
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPoints(calculatedPoints);
   }, []);
 

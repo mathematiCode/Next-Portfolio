@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 function Intro() {
   return (
@@ -46,7 +47,7 @@ function Intro() {
       <div className="lg:w-1/2 flex justify-center animate-fade-in-right animate-delay-200">
         <div className="relative">
           <div className="absolute inset-0 rounded-full blur-xl opacity-30"></div>
-          <img
+          <Image
             src="/headshot.png"
             alt="Julianna Messineo"
             className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-4"
