@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { OptimalLayout } from './OptimalLayout';
 import { motion } from 'motion/react';
 import { range } from 'lodash';
@@ -8,13 +8,17 @@ import './styles.css';
 function OptimalSpaceExample({}) {
   const [numItems, setNumItems] = useState<number | string>(75);
   const [spacing, setSpacing] = useState<number | string>(5);
-  // Initialize width based on window size if available (client-side), otherwise default to 800
-  const [width, setWidth] = useState<number | string>(() => {
-    if (typeof window !== 'undefined' && window.innerWidth < 800) {
-      return 300;
+  const [width, setWidth] = useState<number | string>(300);
+
+  // This is necessary to avoid SSR/hydration mismatch
+  useLayoutEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 850 && width === 300) {
+        // eslint-disable-next-line
+        setWidth(800);
+      }
     }
-    return 800;
-  });
+  }, [width]);
   const [height, setHeight] = useState<number | string>(300);
   const [numItemsError, setNumItemsError] = useState<string>('');
   const [spacingError, setSpacingError] = useState<string>('');
