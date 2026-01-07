@@ -96,7 +96,7 @@ export const blogPostsConfig: BlogPostConfig[] = [
     preview: (
       <Image
         alt="math puzzle with one piece placed out of bounds"
-        src="/out-of-bounds.png"
+        src="/out-of-bounds-no-bg.png"
         width={300}
         height={200}
       />

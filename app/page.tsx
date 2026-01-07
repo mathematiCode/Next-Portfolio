@@ -7,7 +7,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen items-center justify-center font-sans">
       <h1>Julianna Messineo</h1>
       <div className="flex flex-wrap gap-2 justify-center">
-        {['React', 'Next JS', 'Golang', 'Tailwind', 'Alpine JS', 'HTMX'].map(
+        {['React', 'Next JS', 'Go', 'Tailwind', 'Alpine JS', 'HTMX'].map(
           tech => (
             <span
               key={tech}
