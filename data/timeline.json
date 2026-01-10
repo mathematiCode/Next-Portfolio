@@ -224,7 +224,7 @@
     ],
     "questions": [
       "Is it okay to have three different puzzle piece components (depending on where they're located in the DOM) all visually pretending to be the same puzzle piece?",
-      "If so, how do I create the illusion that they're all the same illusion during and after drag and drop?",
+      "If so, how do I create the illusion that they're all the same puzzle piece during and after drag and drop?",
       "How do I maintain their rotated state without having them re-rotate when they move to a new place in the DOM?",
       "How do I allow the boards and pieces to be generated dynamically from my levels.json?",
       "How do I adjust the CSS of the board so it has the right border for any given board shape (with missing corners, inside, etc)?",
