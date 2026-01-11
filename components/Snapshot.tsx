@@ -31,7 +31,7 @@ function Snapshot({ snapshot }: { snapshot: SnapshotType }) {
             {snapshot.timeframe}
           </span>
           <h2>Learning Focus</h2>
-          <p className="text-start">{snapshot.learning}</p>
+          <p className="text-start text-base-200">{snapshot.learning}</p>
           <h2>Projects</h2>
           <div className="snapshot-projects">
             {snapshot.projects.map(projID => {
